@@ -6,9 +6,12 @@
     <title>Workout Plan</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
-        .workout-container { max-width: 600px; margin: auto; }
-        .exercise { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .workout-container { max-width: 800px; margin: auto; }
+        .exercise { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px; text-align: left; }
         h2 { color: #333; }
+        label { display: block; margin-top: 5px; }
+        input { width: 100px; padding: 5px; margin-top: 5px; }
+        button { margin-top: 10px; padding: 5px 10px; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -21,21 +24,33 @@
             const data = await response.json();
             const container = document.getElementById('workout-container');
             
-            data.forEach(workout => {
+            data.forEach((workout, index) => {
                 const div = document.createElement('div');
                 div.classList.add('exercise');
                 div.innerHTML = `
                     <h2>${workout["Workout Day"]} - ${workout.Exercise}</h2>
-                    <p><strong>Sets:</strong> ${workout["Working Sets"]}</p>
-                    <p><strong>Reps:</strong> ${workout.Reps}</p>
+                    <p><strong>Sets:</strong> <input type="number" id="sets-${index}" value="${workout["Working Sets"]}" /></p>
+                    <p><strong>Reps:</strong> <input type="text" id="reps-${index}" value="${workout.Reps}" /></p>
+                    <p><strong>Load:</strong> <input type="text" id="load-${index}" placeholder="Enter weight" /></p>
                     <p><strong>Rest:</strong> ${workout.Rest}</p>
                     <p><strong>Notes:</strong> ${workout.Notes}</p>
+                    <button onclick="saveProgress(${index})">Save</button>
                 `;
                 container.appendChild(div);
             });
         }
 
-        loadWorkout();
+        function saveProgress(index) {
+            const sets = document.getElementById(`sets-${index}`).value;
+            const reps = document.getElementById(`reps-${index}`).value;
+            const load = document.getElementById(`load-${index}`).value;
+            localStorage.setItem(`workout-${index}`, JSON.stringify({ sets, reps, load }));
+            alert('Workout saved!');
+        }
+
+        window.onload = function() {
+            loadWorkout();
+        };
     </script>
 </body>
 </html>
