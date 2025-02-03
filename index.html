@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Plan</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        .workout-container { max-width: 600px; margin: auto; }
+        .exercise { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Workout Plan</h1>
+    <div class="workout-container" id="workout-container"></div>
+
+    <script>
+        async function loadWorkout() {
+            const response = await fetch('workout_plan.json');
+            const data = await response.json();
+            const container = document.getElementById('workout-container');
+            
+            data.forEach(workout => {
+                const div = document.createElement('div');
+                div.classList.add('exercise');
+                div.innerHTML = `
+                    <h2>${workout["Workout Day"]} - ${workout.Exercise}</h2>
+                    <p><strong>Sets:</strong> ${workout["Working Sets"]}</p>
+                    <p><strong>Reps:</strong> ${workout.Reps}</p>
+                    <p><strong>Rest:</strong> ${workout.Rest}</p>
+                    <p><strong>Notes:</strong> ${workout.Notes}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        loadWorkout();
+    </script>
+</body>
+</html>
