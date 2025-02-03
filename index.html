@@ -20,19 +20,35 @@
 <body>
     <h1>Workout Plan</h1>
     <select id="phase-selector" onchange="loadWorkout()">
-        <option value="workout_plan_phase_1.json">Phase 1 - Base Hypertrophy</option>
-        <option value="workout_plan_phase_2.json">Phase 2 - Maximum Effort</option>
-        <option value="workout_plan_phase_3.json">Phase 3 - Hypertrophy & Endurance</option>
+        <option value="workout_plan_phase_1_with_links.json">Phase 1 - Base Hypertrophy</option>
+        <option value="workout_plan_phase_2_with_links.json">Phase 2 - Maximum Effort</option>
+        <option value="workout_plan_phase_3_with_links.json">Phase 3 - Hypertrophy & Endurance</option>
     </select>
     <div class="workout-container" id="workout-container"></div>
 
     <script>
         async function loadWorkout() {
+            const basePath = "https://yourusername.github.io/workoutapp/"; // Replace with actual GitHub Pages URL
             const selectedPhase = document.getElementById('phase-selector').value;
-            const response = await fetch(selectedPhase);
-            const data = await response.json();
+            console.log("Fetching JSON from:", basePath + selectedPhase); // Debugging log
+
+            try {
+                const response = await fetch(basePath + selectedPhase);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log("Loaded JSON data:", data); // Debugging log
+                displayWorkout(data);
+            } catch (error) {
+                console.error("Error fetching JSON:", error);
+                alert("Failed to load workout data. Check console for errors.");
+            }
+        }
+
+        function displayWorkout(data) {
             const container = document.getElementById('workout-container');
-            container.innerHTML = ""; 
+            container.innerHTML = "";
             
             let currentPhase = "";
             let currentWeek = "";
@@ -57,14 +73,14 @@
                 const div = document.createElement('div');
                 div.classList.add('exercise');
                 div.innerHTML = `
-                    <h2><a href="${workout.ExerciseLink}" target="_blank">${workout.Exercise}</a></h2>
-                    <p><strong>Sets:</strong> <input type="number" id="sets-${index}" value="${workout["Working Sets"]}" /></p>
-                    <p><strong>Reps:</strong> <input type="text" id="reps-${index}" value="${workout.Reps}" /></p>
+                    <h2><a href="${workout.ExerciseLink || '#'}" target="_blank">${workout.Exercise}</a></h2>
+                    <p><strong>Sets:</strong> <input type="number" id="sets-${index}" value="${workout["Working Sets"] || ''}" /></p>
+                    <p><strong>Reps:</strong> <input type="text" id="reps-${index}" value="${workout.Reps || ''}" /></p>
                     <p><strong>Load:</strong> <input type="text" id="load-${index}" placeholder="Enter weight" /></p>
-                    <p><strong>Rest:</strong> ${workout.Rest}</p>
-                    <p><strong>Notes:</strong> ${workout.Notes}</p>
-                    <p><strong>Substitution 1:</strong> <a href="${workout["Substitution Option 1 Link"]}" target="_blank">${workout["Substitution Option 1"]}</a></p>
-                    <p><strong>Substitution 2:</strong> <a href="${workout["Substitution Option 2 Link"]}" target="_blank">${workout["Substitution Option 2"]}</a></p>
+                    <p><strong>Rest:</strong> ${workout.Rest || 'N/A'}</p>
+                    <p><strong>Notes:</strong> ${workout.Notes || 'No notes available'}</p>
+                    <p><strong>Substitution 1:</strong> <a href="${workout["Substitution Option 1 Link"] || '#'}" target="_blank">${workout["Substitution Option 1"] || 'N/A'}</a></p>
+                    <p><strong>Substitution 2:</strong> <a href="${workout["Substitution Option 2 Link"] || '#'}" target="_blank">${workout["Substitution Option 2"] || 'N/A'}</a></p>
                     <button onclick="saveProgress(${index})">Save</button>
                 `;
                 container.appendChild(div);
