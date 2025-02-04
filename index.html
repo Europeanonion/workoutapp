@@ -385,14 +385,14 @@ const PHASE_OPTIONS = [
       async function loadWorkout(selectedPhase, retryCount = 3) {
         const spinner = document.getElementById("loading-spinner");
         spinner.classList.add("active");
-
+  
         const url = selectedPhase; // Relative path to JSON file
         try {
           const response = await fetch(url);
           if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-
+  
           const data = await response.json();
-          if (!Array.isArray(data) || data.length === 0) {
+          if (!data.weeks || !Array.isArray(data.weeks) || data.weeks.length === 0) {
             throw new Error("Invalid or empty JSON data");
           }
           displayWorkout(data);
@@ -409,28 +409,28 @@ const PHASE_OPTIONS = [
           spinner.classList.remove("active");
         }
       }
-
+  
       // Display Workout
       function displayWorkout(data) {
         const container = document.getElementById("workout-container");
         container.innerHTML = "";
-
+      
         let exerciseIndex = 0; // To track the index of each exercise
-
+      
         data.weeks.forEach((weekObj) => {
           // Add week-level heading
           const weekHeader = document.createElement("div");
           weekHeader.classList.add("week", "d-flex", "align-items-center", "mt-4", "mb-2");
           weekHeader.innerHTML = `<i class="fas fa-calendar-alt me-2"></i> Week ${weekObj.week}`;
           container.appendChild(weekHeader);
-
+      
           weekObj.workouts.forEach((workoutDay) => {
             // Add day-level heading
             const dayHeader = document.createElement("div");
             dayHeader.classList.add("day", "d-flex", "align-items-center", "mb-2");
             dayHeader.innerHTML = `<i class="fas fa-dumbbell me-2"></i> ${workoutDay.day}`;
             container.appendChild(dayHeader);
-
+      
             workoutDay.exercises.forEach((exercise) => {
               // Render each exercise
               container.appendChild(createExerciseElement(exercise, exerciseIndex));
@@ -439,6 +439,7 @@ const PHASE_OPTIONS = [
           });
         });
       }
+      
 
       // Create Exercise Element
       function createExerciseElement(exercise, index) {
