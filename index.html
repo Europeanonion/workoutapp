@@ -271,11 +271,14 @@
   <script>
     (() => {
       // Constants and Configuration
-      const PHASE_OPTIONS = [
-        { value: "data/workout_plan_phase_1_with_links.json", label: "Phase 1 - Base Hypertrophy" },
-        { value: "data/workout_plan_phase_2_with_links.json", label: "Phase 2 - Maximum Effort" },
-        { value: "data/workout_plan_phase_3_with_links.json", label: "Phase 3 - Hypertrophy & Endurance" }
-      ];
+      const BASE_URL = "https://europeanonion.github.io/workoutapp";
+
+const PHASE_OPTIONS = [
+  { value: `${BASE_URL}/workout_plan_phase_1_with_links.json`, label: "Phase 1 - Base Hypertrophy" },
+  { value: `${BASE_URL}/workout_plan_phase_2_with_links.json`, label: "Phase 2 - Maximum Effort" },
+  { value: `${BASE_URL}/workout_plan_phase_3_with_links.json`, label: "Phase 3 - Hypertrophy & Endurance" }
+];
+
 
       const STORAGE_KEYS = {
         SELECTED_PHASE: 'selectedPhase',
