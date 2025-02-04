@@ -14,7 +14,13 @@ const STORAGE_KEYS = {
  * @param {object} data - The workout data (sets, reps, load)
  */
 function saveWorkoutData(index, data) {
-  localStorage.setItem(`${STORAGE_KEYS.WORKOUT_PREFIX}${index}`, JSON.stringify(data));
+  try {
+    localStorage.setItem(`${STORAGE_KEYS.WORKOUT_PREFIX}${index}`, JSON.stringify(data));
+    console.log(`[Storage] Workout data saved for index ${index}:`, data);
+  } catch (error) {
+    console.error(`[Storage] Error saving workout data for index ${index}:`, error);
+    showToast("Failed to save workout data.", "danger");
+  }
 }
 
 /**
@@ -23,8 +29,15 @@ function saveWorkoutData(index, data) {
  * @returns {object|null} - The retrieved data or null if not found
  */
 function getWorkoutData(index) {
-  const data = localStorage.getItem(`${STORAGE_KEYS.WORKOUT_PREFIX}${index}`);
-  return data ? JSON.parse(data) : null;
+  try {
+    const data = localStorage.getItem(`${STORAGE_KEYS.WORKOUT_PREFIX}${index}`);
+    console.log(`[Storage] Retrieved workout data for index ${index}:`, data);
+    return data ? JSON.parse(data) : null;
+  } catch (error) {
+    console.error(`[Storage] Error retrieving workout data for index ${index}:`, error);
+    showToast("Failed to retrieve workout data.", "danger");
+    return null;
+  }
 }
 
 /**
@@ -32,9 +45,15 @@ function getWorkoutData(index) {
  * @param {object} entry - The workout history entry
  */
 function saveWorkoutHistory(entry) {
-  const history = JSON.parse(localStorage.getItem(STORAGE_KEYS.WORKOUT_HISTORY)) || [];
-  history.push(entry);
-  localStorage.setItem(STORAGE_KEYS.WORKOUT_HISTORY, JSON.stringify(history));
+  try {
+    const history = JSON.parse(localStorage.getItem(STORAGE_KEYS.WORKOUT_HISTORY)) || [];
+    history.push(entry);
+    localStorage.setItem(STORAGE_KEYS.WORKOUT_HISTORY, JSON.stringify(history));
+    console.log(`[Storage] Workout history updated:`, entry);
+  } catch (error) {
+    console.error(`[Storage] Error saving workout history:`, error);
+    showToast("Failed to save workout history.", "danger");
+  }
 }
 
 /**
@@ -42,7 +61,15 @@ function saveWorkoutHistory(entry) {
  * @returns {Array} - The workout history
  */
 function getWorkoutHistory() {
-  return JSON.parse(localStorage.getItem(STORAGE_KEYS.WORKOUT_HISTORY)) || [];
+  try {
+    const history = JSON.parse(localStorage.getItem(STORAGE_KEYS.WORKOUT_HISTORY)) || [];
+    console.log(`[Storage] Retrieved workout history:`, history);
+    return history;
+  } catch (error) {
+    console.error(`[Storage] Error retrieving workout history:`, error);
+    showToast("Failed to retrieve workout history.", "danger");
+    return [];
+  }
 }
 
 /**
@@ -50,7 +77,13 @@ function getWorkoutHistory() {
  * @param {string} phase - The selected phase URL
  */
 function saveSelectedPhase(phase) {
-  localStorage.setItem(STORAGE_KEYS.SELECTED_PHASE, phase);
+  try {
+    localStorage.setItem(STORAGE_KEYS.SELECTED_PHASE, phase);
+    console.log(`[Storage] Selected phase saved: ${phase}`);
+  } catch (error) {
+    console.error(`[Storage] Error saving selected phase:`, error);
+    showToast("Failed to save selected phase.", "danger");
+  }
 }
 
 /**
@@ -58,7 +91,15 @@ function saveSelectedPhase(phase) {
  * @returns {string|null} - The selected phase URL or null if not set
  */
 function getSelectedPhase() {
-  return localStorage.getItem(STORAGE_KEYS.SELECTED_PHASE);
+  try {
+    const phase = localStorage.getItem(STORAGE_KEYS.SELECTED_PHASE);
+    console.log(`[Storage] Retrieved selected phase: ${phase}`);
+    return phase;
+  } catch (error) {
+    console.error(`[Storage] Error retrieving selected phase:`, error);
+    showToast("Failed to retrieve selected phase.", "danger");
+    return null;
+  }
 }
 
 /**
@@ -66,7 +107,13 @@ function getSelectedPhase() {
  * @param {string} theme - The selected theme ('dark' or 'light')
  */
 function saveTheme(theme) {
-  localStorage.setItem(STORAGE_KEYS.THEME, theme);
+  try {
+    localStorage.setItem(STORAGE_KEYS.THEME, theme);
+    console.log(`[Storage] Theme preference saved: ${theme}`);
+  } catch (error) {
+    console.error(`[Storage] Error saving theme preference:`, error);
+    showToast("Failed to save theme preference.", "danger");
+  }
 }
 
 /**
@@ -74,16 +121,42 @@ function saveTheme(theme) {
  * @returns {string|null} - The saved theme or null if not set
  */
 function getTheme() {
-  return localStorage.getItem(STORAGE_KEYS.THEME);
+  try {
+    const theme = localStorage.getItem(STORAGE_KEYS.THEME);
+    console.log(`[Storage] Retrieved theme preference: ${theme}`);
+    return theme;
+  } catch (error) {
+    console.error(`[Storage] Error retrieving theme preference:`, error);
+    showToast("Failed to retrieve theme preference.", "danger");
+    return null;
+  }
 }
 
 /**
  * Clear all workout-related data from localStorage
  */
 function clearWorkoutData() {
-  Object.keys(localStorage).forEach(key => {
-    if (key.startsWith(STORAGE_KEYS.WORKOUT_PREFIX) || key === STORAGE_KEYS.WORKOUT_HISTORY) {
-      localStorage.removeItem(key);
-    }
-  });
+  try {
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith(STORAGE_KEYS.WORKOUT_PREFIX) || key === STORAGE_KEYS.WORKOUT_HISTORY) {
+        localStorage.removeItem(key);
+        console.log(`[Storage] Removed key from localStorage: ${key}`);
+      }
+    });
+    console.log("[Storage] All workout-related data cleared.");
+  } catch (error) {
+    console.error("[Storage] Error clearing workout data:", error);
+    showToast("Failed to clear workout data.", "danger");
+  }
 }
+
+// Expose functions to the global scope if needed
+window.saveWorkoutData = saveWorkoutData;
+window.getWorkoutData = getWorkoutData;
+window.saveWorkoutHistory = saveWorkoutHistory;
+window.getWorkoutHistory = getWorkoutHistory;
+window.saveSelectedPhase = saveSelectedPhase;
+window.getSelectedPhase = getSelectedPhase;
+window.saveTheme = saveTheme;
+window.getTheme = getTheme;
+window.clearWorkoutData = clearWorkoutData;
