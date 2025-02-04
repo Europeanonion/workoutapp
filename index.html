@@ -112,22 +112,6 @@
       transform: translateY(-1px);
     }
 
-    /* Footer Styles */
-    footer {
-      background-color: var(--color-primary);
-      color: #ffffff;
-      padding: 1rem 0;
-    }
-
-    footer a {
-      color: #ffffff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
     /* Loading Spinner Styles */
     #loading-spinner {
       display: none;
@@ -158,8 +142,6 @@
   <!-- Header Section -->
   <header class="text-center">
     <div class="container">
-      <!-- Logo -->
-      <img src="images/logo.png" alt="Workout Tracker Logo" class="mb-3" style="height: 60px;">
       <h1>Workout Plan + Tracker</h1>
       <!-- Theme Toggle Switch -->
       <div class="form-check form-switch">
@@ -284,59 +266,6 @@
       <div id="toast-container" class="toast-container"></div>
     </div>
   </main>
-
-  <!-- Footer Section -->
-  <footer class="bg-dark text-white py-4">
-    <div class="container text-center">
-      <p class="mb-1">&copy; 2025 Your Name or Company. All rights reserved.</p>
-      <p class="mb-0">
-        <a href="https://github.com/yourusername/workoutapp" target="_blank" rel="noopener noreferrer" class="me-3">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-twitter"></i> Twitter
-        </a>
-      </p>
-      <button type="button" class="btn btn-link text-white mt-3" data-bs-toggle="modal" data-bs-target="#helpModal">
-        <i class="fas fa-question-circle me-2"></i> Help & FAQ
-      </button>
-    </div>
-  </footer>
-
-  <!-- Help & FAQ Modal -->
-  <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="helpModalLabel">Help & FAQ</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <h6>How to Save Your Workout:</h6>
-          <p>Fill in the sets, reps, and load for each exercise, then click the "Save" button.</p>
-          
-          <h6>Viewing History:</h6>
-          <p>Click on the "Show History" button to view your past workouts, total volume, and more.</p>
-          
-          <h6>Exporting Data:</h6>
-          <p>Use the "Export CSV" button to download your workout history for backup or analysis.</p>
-          
-          <h6>Resetting Data:</h6>
-          <p>If you need to clear all your workout data, click the "Reset All Data" button. Note that this action cannot be undone.</p>
-          
-          <h6>Dark Mode:</h6>
-          <p>Toggle the dark mode switch in the header to switch between light and dark themes.</p>
-          
-          <!-- Add more FAQs as needed -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            <i class="fas fa-times me-2"></i> Close
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- JavaScript for Functionality -->
   <script>
