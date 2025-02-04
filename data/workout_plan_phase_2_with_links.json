@@ -1,1 +1,881 @@
-
+{
+    "phase": "Maximum Effort",
+    "weeks": [
+        {
+            "week": 1,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "High-Incline Smith Machine Press",
+                            "link": "https://youtu.be/egBQ9Svdnok",
+                            "warmup_sets": 2,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline DB Press",
+                                    "link": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+                                },
+                                {
+                                    "name": "Incline Machine Press",
+                                    "link": "https://youtu.be/b8fYnZ-usP0"
+                                }
+                            ],
+                            "notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Neutral-Grip Lat Pulldown",
+                            "link": "https://youtu.be/12xHxUnBEiI?t=240",
+                            "warmup_sets": 3,
+                            "working_sets": 3,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Neutral-Grip Pull-Up",
+                                    "link": "https://youtu.be/3FnK1F28UBg"
+                                },
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                }
+                            ],
+                            "notes": "Pull your elbows down against your sides."
+                        },
+                        {
+                            "name": "Pendlay Row",
+                            "link": "https://youtu.be/axoeDmW0oAY?t=185",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Meadows Row",
+                                    "link": "https://youtu.be/f2JDJV0AnyY?t=336"
+                                },
+                                {
+                                    "name": "Single-Arm Row",
+                                    "link": "https://youtu.be/djKXLt7kv7Q?t=115"
+                                }
+                            ],
+                            "notes": "Initiate the movement by squeezing your shoulder blades together, pull to your lower chest."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat or Machine Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Squat",
+                                    "link": "https://youtu.be/N56STpGGRYE"
+                                },
+                                {
+                                    "name": "Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, set your hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 2,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "High-Incline Smith Machine Press",
+                            "link": "https://youtu.be/egBQ9Svdnok",
+                            "warmup_sets": 2,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline DB Press",
+                                    "link": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+                                },
+                                {
+                                    "name": "Incline Machine Press",
+                                    "link": "https://youtu.be/b8fYnZ-usP0"
+                                }
+                            ],
+                            "notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Neutral-Grip Lat Pulldown",
+                            "link": "https://youtu.be/12xHxUnBEiI?t=240",
+                            "warmup_sets": 3,
+                            "working_sets": 3,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Neutral-Grip Pull-Up",
+                                    "link": "https://youtu.be/3FnK1F28UBg"
+                                },
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                }
+                            ],
+                            "notes": "Pull your elbows down against your sides."
+                        },
+                        {
+                            "name": "Pendlay Row",
+                            "link": "https://youtu.be/axoeDmW0oAY?t=185",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Meadows Row",
+                                    "link": "https://youtu.be/f2JDJV0AnyY?t=336"
+                                },
+                                {
+                                    "name": "Single-Arm Row",
+                                    "link": "https://youtu.be/djKXLt7kv7Q?t=115"
+                                }
+                            ],
+                            "notes": "Initiate the movement by squeezing your shoulder blades together, pull to your lower chest."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat or Machine Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Squat",
+                                    "link": "https://youtu.be/N56STpGGRYE"
+                                },
+                                {
+                                    "name": "Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, set your hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 3,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "High-Incline Smith Machine Press",
+                            "link": "https://youtu.be/egBQ9Svdnok",
+                            "warmup_sets": 2,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline DB Press",
+                                    "link": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+                                },
+                                {
+                                    "name": "Incline Machine Press",
+                                    "link": "https://youtu.be/b8fYnZ-usP0"
+                                }
+                            ],
+                            "notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Neutral-Grip Lat Pulldown",
+                            "link": "https://youtu.be/12xHxUnBEiI?t=240",
+                            "warmup_sets": 3,
+                            "working_sets": 3,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Neutral-Grip Pull-Up",
+                                    "link": "https://youtu.be/3FnK1F28UBg"
+                                },
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                }
+                            ],
+                            "notes": "Pull your elbows down against your sides."
+                        },
+                        {
+                            "name": "Pendlay Row",
+                            "link": "https://youtu.be/axoeDmW0oAY?t=185",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Meadows Row",
+                                    "link": "https://youtu.be/f2JDJV0AnyY?t=336"
+                                },
+                                {
+                                    "name": "Single-Arm Row",
+                                    "link": "https://youtu.be/djKXLt7kv7Q?t=115"
+                                }
+                            ],
+                            "notes": "Initiate the movement by squeezing your shoulder blades together, pull to your lower chest."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat or Machine Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Squat",
+                                    "link": "https://youtu.be/N56STpGGRYE"
+                                },
+                                {
+                                    "name": "Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, set your hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 4,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "High-Incline Smith Machine Press",
+                            "link": "https://youtu.be/egBQ9Svdnok",
+                            "warmup_sets": 2,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline DB Press",
+                                    "link": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+                                },
+                                {
+                                    "name": "Incline Machine Press",
+                                    "link": "https://youtu.be/b8fYnZ-usP0"
+                                }
+                            ],
+                            "notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Neutral-Grip Lat Pulldown",
+                            "link": "https://youtu.be/12xHxUnBEiI?t=240",
+                            "warmup_sets": 3,
+                            "working_sets": 3,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Neutral-Grip Pull-Up",
+                                    "link": "https://youtu.be/3FnK1F28UBg"
+                                },
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                }
+                            ],
+                            "notes": "Pull your elbows down against your sides."
+                        },
+                        {
+                            "name": "Pendlay Row",
+                            "link": "https://youtu.be/axoeDmW0oAY?t=185",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Meadows Row",
+                                    "link": "https://youtu.be/f2JDJV0AnyY?t=336"
+                                },
+                                {
+                                    "name": "Single-Arm Row",
+                                    "link": "https://youtu.be/djKXLt7kv7Q?t=115"
+                                }
+                            ],
+                            "notes": "Initiate the movement by squeezing your shoulder blades together, pull to your lower chest."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat or Machine Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Squat",
+                                    "link": "https://youtu.be/N56STpGGRYE"
+                                },
+                                {
+                                    "name": "Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, set your hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 5,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "High-Incline Smith Machine Press",
+                            "link": "https://youtu.be/egBQ9Svdnok",
+                            "warmup_sets": 2,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline DB Press",
+                                    "link": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+                                },
+                                {
+                                    "name": "Incline Machine Press",
+                                    "link": "https://youtu.be/b8fYnZ-usP0"
+                                }
+                            ],
+                            "notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Neutral-Grip Lat Pulldown",
+                            "link": "https://youtu.be/12xHxUnBEiI?t=240",
+                            "warmup_sets": 3,
+                            "working_sets": 3,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Neutral-Grip Pull-Up",
+                                    "link": "https://youtu.be/3FnK1F28UBg"
+                                },
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                }
+                            ],
+                            "notes": "Pull your elbows down against your sides."
+                        },
+                        {
+                            "name": "Pendlay Row",
+                            "link": "https://youtu.be/axoeDmW0oAY?t=185",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Meadows Row",
+                                    "link": "https://youtu.be/f2JDJV0AnyY?t=336"
+                                },
+                                {
+                                    "name": "Single-Arm Row",
+                                    "link": "https://youtu.be/djKXLt7kv7Q?t=115"
+                                }
+                            ],
+                            "notes": "Initiate the movement by squeezing your shoulder blades together, pull to your lower chest."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat or Machine Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Squat",
+                                    "link": "https://youtu.be/N56STpGGRYE"
+                                },
+                                {
+                                    "name": "Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "10",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, set your hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 6,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "7",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "High-Incline Smith Machine Press",
+                            "link": "https://youtu.be/egBQ9Svdnok",
+                            "warmup_sets": 2,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "8",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline DB Press",
+                                    "link": "https://www.youtube.com/watch?v=p2t9daxLpB8"
+                                },
+                                {
+                                    "name": "Incline Machine Press",
+                                    "link": "https://youtu.be/b8fYnZ-usP0"
+                                }
+                            ],
+                            "notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Neutral-Grip Lat Pulldown",
+                            "link": "https://youtu.be/12xHxUnBEiI?t=240",
+                            "warmup_sets": 3,
+                            "working_sets": 3,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "8",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Neutral-Grip Pull-Up",
+                                    "link": "https://youtu.be/3FnK1F28UBg"
+                                },
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                }
+                            ],
+                            "notes": "Pull your elbows down against your sides."
+                        },
+                        {
+                            "name": "Pendlay Row",
+                            "link": "https://youtu.be/axoeDmW0oAY?t=185",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "8",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Meadows Row",
+                                    "link": "https://youtu.be/f2JDJV0AnyY?t=336"
+                                },
+                                {
+                                    "name": "Single-Arm Row",
+                                    "link": "https://youtu.be/djKXLt7kv7Q?t=115"
+                                }
+                            ],
+                            "notes": "Initiate the movement by squeezing your shoulder blades together, pull to your lower chest."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat or Machine Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "7",
+                            "rest": "~3-5 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Squat",
+                                    "link": "https://youtu.be/N56STpGGRYE"
+                                },
+                                {
+                                    "name": "Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 3,
+                            "working_sets": 2,
+                            "reps": "4-6",
+                            "load": "",
+                            "RPE": "8",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, set your hips back."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
