@@ -1,455 +1,881 @@
-[
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Push #1: Bench Press",
-      "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-      "Warm-up Sets": "3-4",
-      "Working Sets": "1",
-      "Reps": "3-5",
-      "Load": "",
-      "RPE": "8-9",
-      "Rest": "~3-4 min",
-      "Substitution Option 1": "DB Bench Press",
-      "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
-      "Substitution Option 2": "Machine Chest Press",
-      "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240",
-      "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Push #1: Larsen Press",
-      "ExerciseLink": "https://youtu.be/RQjPWrMMDqQ",
-      "Warm-up Sets": "0",
-      "Working Sets": "2",
-      "Reps": "10",
-      "Load": "",
-      "RPE": "8-9",
-      "Rest": "~3-4 min",
-      "Substitution Option 1": "DB Bench Press (No Leg Drive)",
-      "Substitution Option 1 Link": "https://youtu.be/ers_ZfvpL34",
-      "Substitution Option 2": "Machine Chest Press (No Leg Drive)",
-      "Substitution Option 2 Link": "https://youtu.be/0GW4HdrWlcQ",
-      "Notes": "Shoulder blades still retracted and depressed. Slight arch in upper back. Zero leg drive."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Push #1: Standing Dumbbell Arnold Press",
-      "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
-      "Warm-up Sets": "2",
-      "Working Sets": "3",
-      "Reps": "8-10",
-      "Load": "",
-      "RPE": "8-9",
-      "Rest": "~2-3 min",
-      "Substitution Option 1": "Seated DB Shoulder Press",
-      "Substitution Option 1 Link": "https://youtu.be/ae9IxwoEpQ8?t=507",
-      "Substitution Option 2": "Machine Shoulder Press",
-      "Substitution Option 2 Link": "https://www.youtube.com/watch?v=flr4ohSl0j8",
-      "Notes": "Start with your elbows in front of you and palms facing in. Rotate the dumbbells so that your palms face forward as you press."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Push #1: A1. Press-Around",
-      "ExerciseLink": "https://youtu.be/NsEbXsTwas8?t=483",
-      "Warm-up Sets": "1",
-      "Working Sets": "2",
-      "Reps": "12-15",
-      "Load": "",
-      "RPE": "9-10",
-      "Rest": "0 min",
-      "Substitution Option 1": "DB Flye",
-      "Substitution Option 1 Link": "https://youtu.be/e-zTAhmXetM",
-      "Substitution Option 2": "Deficit Push Up",
-      "Substitution Option 2 Link": "https://youtu.be/-MRNjTr6xrE?t=791",
-      "Notes": "Brace with your non-working arm, squeeze your pecs by pressing the cable across your body"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Push #1: A2. Pec Static Stretch 30s",
-      "ExerciseLink": "https://youtu.be/B5ZoqtHClCA",
-      "Warm-up Sets": "0",
-      "Working Sets": "2",
-      "Reps": "30s HOLD",
-      "Load": "",
-      "RPE": "N/A",
-      "Rest": "0 min",
-      "Substitution Option 1": "N/A",
-      "Substitution Option 1 Link": "#",
-      "Substitution Option 2": "N/A",
-      "Substitution Option 2 Link": "#",
-      "Notes": "Hold a pec stretch for 30 seconds. The stretch should be held at about a 7/10 intensity."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Push #1: Cross-Body Cable Y-Raise (Side Delt)",
-      "ExerciseLink": "https://youtu.be/Jt2hV6dCbmE",
-      "Warm-up Sets": "1",
-      "Working Sets": "3",
-      "Reps": "12-15",
-      "Load": "",
-      "RPE": "9-10",
-      "Rest": "~1-2 min",
-      "Substitution Option 1": "DB Lateral Raise",
-      "Substitution Option 1 Link": "https://youtu.be/v_ZkxWzYnMc?t=215",
-      "Substitution Option 2": "Machine Lateral Raise",
-      "Substitution Option 2 Link": "https://youtu.be/-9QsrJ542ao",
-      "Notes": "Think about swinging the cable out and up as if \"drawing a sword\" from your side"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Push #1: Squeeze-Only Triceps Pressdown + Stretch-Only Overhead Triceps Extension",
-      "ExerciseLink": "https://youtu.be/M9k0RcOQKOo",
-      "Warm-up Sets": "1",
-      "Working Sets": "3",
-      "Reps": "8 + 8",
-      "Load": "",
-      "RPE": "9-10",
-      "Rest": "~1-2 min",
-      "Substitution Option 1": "Triceps Pressdown (12-15 reps)",
-      "Substitution Option 1 Link": "https://youtu.be/94DXwlcX8Po?t=106",
-      "Substitution Option 2": "DB Skull Crusher (12-15 reps)",
-      "Substitution Option 2 Link": "https://youtu.be/popGXI-qs98?t=336",
-      "Notes": "Do the second half of the ROM for pressdowns (\"the squeeze\") and the first half of the ROM for overhead extensions (\"the stretch\")"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Push #1: N1-Style Cross-Body Triceps Extension",
-      "ExerciseLink": "https://youtu.be/tkCXYakxafs",
-      "Warm-up Sets": "0",
-      "Working Sets": "2",
-      "Reps": "10-12",
-      "Load": "",
-      "RPE": "10",
-      "Rest": "~1-2 min",
-      "Substitution Option 1": "Single-Arm Tricep Pressdown",
-      "Substitution Option 1 Link": "https://youtu.be/g3_V9jIP35g",
-      "Substitution Option 2": "Single-Arm Cable Tricep Kickback",
-      "Substitution Option 2 Link": "https://youtu.be/94DXwlcX8Po?t=327",
-      "Notes": "Extend your triceps with your arm more out to the side than a regular pressdown. Feel the stretch as the cable moves across your torso"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Pull #1: Lat Pulldown (Feeder Sets)",
-      "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
-      "Warm-up Sets": "0",
-      "Working Sets": "4",
-      "Reps": "10",
-      "Load": "See Notes",
-      "RPE": "",
-      "Rest": "~2-3 min",
-      "Substitution Option 1": "Machine Pulldown",
-      "Substitution Option 1 Link": "https://youtu.be/j8Q50oBDK44",
-      "Substitution Option 2": "Pull-Up",
-      "Substitution Option 2 Link": "https://youtu.be/Hdc7Mw6BIEE?t=99",
-      "Notes": "Do 4 feeder sets of 10 reps by gradually building the weight up. Sets 1–3: RPE ~4–8. Set 4 is your hard set: try to hit failure at 10 reps."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Pull #1: Lat Pulldown (Failure Set)",
-      "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
-      "Warm-up Sets": "0",
-      "Working Sets": "1",
-      "Reps": "10+5",
-      "Load": "",
-      "RPE": "10",
-      "Rest": "~2-3 min",
-      "Substitution Option 1": "Machine Pulldown",
-      "Substitution Option 1 Link": "https://youtu.be/j8Q50oBDK44",
-      "Substitution Option 2": "Pull-Up",
-      "Substitution Option 2 Link": "https://youtu.be/Hdc7Mw6BIEE?t=99",
-      "Notes": "After hitting failure at ~10 reps, do a dropset (~30-50% drop) for another 5 reps with controlled technique."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Pull #1: Omni-Grip Machine Chest-Supported Row",
-      "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
-      "Warm-up Sets": "2",
-      "Working Sets": "3",
-      "Reps": "10-12",
-      "Load": "",
-      "RPE": "8-9",
-      "Rest": "~2-3 min",
-      "Substitution Option 1": "Incline Chest-Supported DB Row",
-      "Substitution Option 1 Link": "https://youtu.be/bsx8PIGIuaI",
-      "Substitution Option 2": "Cable Seated Row",
-      "Substitution Option 2 Link": "https://youtu.be/FbWfA_s0XL8?t=273",
-      "Notes": "Use 3 different grips for the 3 working sets (going from wider to closer if possible)."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Pull #1: A1. Bottom-Half DB Lat Pullover",
-      "ExerciseLink": "https://youtu.be/blJj6xxOJQs",
-      "Warm-up Sets": "1",
-      "Working Sets": "2",
-      "Reps": "10-12",
-      "Load": "",
-      "RPE": "9-10",
-      "Rest": "0 min",
-      "Substitution Option 1": "Cable Lat Pullover",
-      "Substitution Option 1 Link": "https://youtu.be/Vf7wf6bZODQ",
-      "Substitution Option 2": "1-Arm Lat Pull-In",
-      "Substitution Option 2 Link": "https://youtu.be/f2JDJV0AnyY?t=36",
-      "Notes": "Do DB lat pullovers but cut out the top half of the ROM (stay in the stretched aspect)."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Pull #1: A2. Lat Static Stretch 30s",
-      "ExerciseLink": "https://youtu.be/gxD9coWulU0",
-      "Warm-up Sets": "0",
-      "Working Sets": "2",
-      "Reps": "30s HOLD",
-      "Load": "",
-      "RPE": "N/A",
-      "Rest": "0 min",
-      "Substitution Option 1": "N/A",
-      "Substitution Option 1 Link": "#",
-      "Substitution Option 2": "N/A",
-      "Substitution Option 2 Link": "#",
-      "Notes": "Hold a lat stretch for 30 seconds at ~7/10 intensity."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Pull #1: Omni-Direction Face Pull",
-      "ExerciseLink": "https://youtu.be/uoWXumFUeCc",
-      "Warm-up Sets": "1",
-      "Working Sets": "3",
-      "Reps": "12-15",
-      "Load": "",
-      "RPE": "9-10",
-      "Rest": "~1-2 min",
-      "Substitution Option 1": "Reverse Cable Flye",
-      "Substitution Option 1 Link": "https://youtu.be/uCV40OQMGpM",
-      "Substitution Option 2": "Bent-Over Reverse DB Flye",
-      "Substitution Option 2 Link": "https://youtu.be/qfc70k40318?t=311",
-      "Notes": "1st set: low-to-high, 2nd set: mid-range, 3rd set: high-to-low"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Pull #1: EZ-Bar Curl",
-      "ExerciseLink": "https://www.youtube.com/watch?v=Dd0t5UOCEUc",
-      "Warm-up Sets": "1",
-      "Working Sets": "3",
-      "Reps": "6-8",
-      "Load": "",
-      "RPE": "9-10",
-      "Rest": "~1-2 min",
-      "Substitution Option 1": "DB Curl",
-      "Substitution Option 1 Link": "https://youtu.be/i1YgFZB6alI?t=487",
-      "Substitution Option 2": "Cable Curl",
-      "Substitution Option 2 Link": "https://youtu.be/tw1h5XOD23Y",
-      "Notes": "Focus on contracting your biceps, minimize torso momentum"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Pull #1: Bottom-Half Preacher Curl",
-      "ExerciseLink": "https://youtu.be/hAELX8JE9uw",
-      "Warm-up Sets": "0",
-      "Working Sets": "2",
-      "Reps": "10-12",
-      "Load": "",
-      "RPE": "10",
-      "Rest": "~1-2 min",
-      "Substitution Option 1": "Bottom-Half Spider Curl",
-      "Substitution Option 1 Link": "https://youtu.be/Nat88nFRS5U",
-      "Substitution Option 2": "Bottom-Half Bayesian Curl",
-      "Substitution Option 2 Link": "https://youtu.be/7d5WEXB0W5Y",
-      "Notes": "Stay in the stretched aspect of the lift (no top half)."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Legs #1: Squat",
-      "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-      "Warm-up Sets": "3-4",
-      "Working Sets": "1",
-      "Reps": "3-5",
-      "Load": "",
-      "RPE": "8-9",
-      "Rest": "~3-4 min",
-      "Substitution Option 1": "Hack Squat",
-      "Substitution Option 1 Link": "https://youtu.be/wEgQUCdtFLg",
-      "Substitution Option 2": "DB Bulgarian Split Squat",
-      "Substitution Option 2 Link": "https://youtu.be/htDXu61MPio",
-      "Notes": "Sit back and down, keep your upper back tight to the bar"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Legs #1: Pause Squat (Back off)",
-      "ExerciseLink": "https://youtu.be/1Rd1QgA46hQ",
-      "Warm-up Sets": "0",
-      "Working Sets": "2",
-      "Reps": "5",
-      "Load": "",
-      "RPE": "8-9",
-      "Rest": "~3-4 min",
-      "Substitution Option 1": "Pause Hack Squat",
-      "Substitution Option 1 Link": "https://youtu.be/JAT2dTyLXPI",
-      "Substitution Option 2": "Pause DB Bulgarian Split Squat",
-      "Substitution Option 2 Link": "https://youtu.be/HyFNlo47d8Y",
-      "Notes": "Drop weight ~25% from your top set. 2 second pause. Keep upper back tight."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Legs #1: Barbell RDL",
-      "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-      "Warm-up Sets": "2",
-      "Working Sets": "3",
-      "Reps": "8-10",
-      "Load": "",
-      "RPE": "8-9",
-      "Rest": "~2-3 min",
-      "Substitution Option 1": "DB RDL",
-      "Substitution Option 1 Link": "https://youtu.be/V5u2AP9wBwE",
-      "Substitution Option 2": "45° Hyperextension",
-      "Substitution Option 2 Link": "https://youtu.be/J46aPqFl0WE?t=178",
-      "Notes": "Maintain a neutral lower back, push hips back, avoid spinal rounding."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Legs #1: Walking Lunge",
-      "ExerciseLink": "https://youtu.be/Y4Vv2ASsyhs?t=536",
-      "Warm-up Sets": "1",
-      "Working Sets": "2",
-      "Reps": "10",
-      "Load": "",
-      "RPE": "8-9",
-      "Rest": "~2-3 min",
-      "Substitution Option 1": "DB Step-Up",
-      "Substitution Option 1 Link": "https://youtu.be/cP77gUDvAPA?t=745",
-      "Substitution Option 2": "Goblet Squat",
-      "Substitution Option 2 Link": "https://youtu.be/v-mQm_droHg?t=489",
-      "Notes": "Take medium strides, minimize pushing off your rear leg."
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Legs #1: Seated Leg Curl",
-      "ExerciseLink": "https://youtu.be/2CMmuH4qJh0",
-      "Warm-up Sets": "1",
-      "Working Sets": "3",
-      "Reps": "10-12",
-      "Load": "",
-      "RPE": "9-10",
-      "Rest": "~1-2 min",
-      "Substitution Option 1": "Lying Leg Curl",
-      "Substitution Option 1 Link": "https://www.youtube.com/watch?v=e_48W0vlU58&feature=youtu.be",
-      "Substitution Option 2": "Nordic Ham Curl",
-      "Substitution Option 2 Link": "https://youtu.be/qVek72z3F1U?t=683",
-      "Notes": "Focus on squeezing your hamstrings to move the weight"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Legs #1: Leg Press Toe Press",
-      "ExerciseLink": "https://youtu.be/VJ_9xii47Sk",
-      "Warm-up Sets": "1",
-      "Working Sets": "4",
-      "Reps": "10-12",
-      "Load": "",
-      "RPE": "9-10",
-      "Rest": "~1-2 min",
-      "Substitution Option 1": "Seated Calf Raise",
-      "Substitution Option 1 Link": "https://youtu.be/-qsRtp_PbVM?t=311",
-      "Substitution Option 2": "Standing Calf Raise",
-      "Substitution Option 2 Link": "https://youtu.be/-qsRtp_PbVM?t=162",
-      "Notes": "Press all the way up to your toes, stretch calves at bottom, don't bounce"
-    },
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "1",
-      "Exercise": "Legs #1: Decline Plate-Weighted Crunch",
-      "ExerciseLink": "https://youtu.be/Aos574-Brzw",
-      "Warm-up Sets": "1",
-      "Working Sets": "3",
-      "Reps": "10-12",
-      "Load": "",
-      "RPE": "9-10",
-      "Rest": "~1-2 min",
-      "Substitution Option 1": "Cable Crunch",
-      "Substitution Option 1 Link": "https://youtu.be/2RrGnjxSsiA?t=124",
-      "Substitution Option 2": "Machine Crunch",
-      "Substitution Option 2 Link": "https://youtu.be/zU6X6DLCH_U",
-      "Notes": "Hold a plate or DB to your chest and crunch hard!"
-    },
-  
-    /* ------------------------------------------------------------------
-       Continue the same pattern for:
-         - Week 2
-         - Week 3
-         - Week 4
-         - Week 5
-         - Week 6
-       Each row becomes one object with the same keys.
-       Example for Week 2, first row:
-       ------------------------------------------------------------------ */
-  
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "2",
-      "Exercise": "Push #1: Bench Press",
-      "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-      "Warm-up Sets": "3-4",
-      "Working Sets": "1",
-      "Reps": "3-5",
-      "Load": "",
-      "RPE": "8-9",
-      "Rest": "~3-4 min",
-      "Substitution Option 1": "DB Bench Press",
-      "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
-      "Substitution Option 2": "Machine Chest Press",
-      "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240",
-      "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep"
-    },
-    /* 
-       ...and so on for every row under Week 2, 
-       followed by Weeks 3, 4, 5, and 6,
-       matching the columns exactly:
-         - "Exercise" (including the label like "Push #1", "Pull #2", etc.)
-         - "ExerciseLink"
-         - "Warm-up Sets", "Working Sets", "Reps", "Load", "RPE", "Rest"
-         - "Substitution Option 1", "Substitution Option 1 Link"
-         - "Substitution Option 2", "Substitution Option 2 Link"
-         - "Notes"
-    */
-  
-    /* ------------------------------------------------------------------ 
-       The final object might look like this example for Week 6:
-       ------------------------------------------------------------------ */
-    {
-      "Phase": "Phase 1 - Base Hypertrophy (Moderate Volume, Moderate Intensity)",
-      "Week": "6",
-      "Exercise": "Legs #2: Deadlift",
-      "ExerciseLink": "https://youtu.be/VL5Ab0T07e4?t=175",
-      "Warm-up Sets": "3-4",
-      "Working Sets": "1",
-      "Reps": "4",
-      "Load": "",
-      "RPE": "5-6",
-      "Rest": "~3-5 min",
-      "Substitution Option 1": "Trap Bar Deadlift",
-      "Substitution Option 1 Link": "https://youtu.be/AWsIWeZa_Mw",
-      "Substitution Option 2": "Barbell Hip Thrust",
-      "Substitution Option 2 Link": "https://youtu.be/xDmFkJxPzeM?t=97",
-      "Notes": "Brace your lats, chest tall, pull the slack out of the bar before lifting (SEMI-DELOAD WEEK)."
-    }
-  ]
-  
+{
+    "phase": "Base Hypertrophy",
+    "weeks": [
+        {
+            "week": 1,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "Standing Dumbbell Arnold Press",
+                            "link": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Seated DB Shoulder Press",
+                                    "link": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                                },
+                                {
+                                    "name": "Machine Shoulder Press",
+                                    "link": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                                }
+                            ],
+                            "notes": "Start with elbows in front, palms facing in, rotate outward while pressing."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Lat Pulldown (Feeder Sets)",
+                            "link": "https://youtu.be/O94yEoGXtBY?t=150",
+                            "warmup_sets": 0,
+                            "working_sets": 4,
+                            "reps": 10,
+                            "load": "See Notes",
+                            "RPE": "",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                },
+                                {
+                                    "name": "Pull-Up",
+                                    "link": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                                }
+                            ],
+                            "notes": "Gradually increase weight over sets, last set to failure."
+                        },
+                        {
+                            "name": "Omni-Grip Machine Chest-Supported Row",
+                            "link": "https://youtu.be/w2YTOoDBOZg",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "10-12",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline Chest-Supported DB Row",
+                                    "link": "https://youtu.be/bsx8PIGIuaI"
+                                },
+                                {
+                                    "name": "Cable Seated Row",
+                                    "link": "https://youtu.be/FbWfA_s0XL8?t=273"
+                                }
+                            ],
+                            "notes": "Use 3 different grips, going from wider to closer."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "2-4",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Hack Squat",
+                                    "link": "https://youtu.be/wEgQUCdtFLg"
+                                },
+                                {
+                                    "name": "DB Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, push hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 2,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "Standing Dumbbell Arnold Press",
+                            "link": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Seated DB Shoulder Press",
+                                    "link": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                                },
+                                {
+                                    "name": "Machine Shoulder Press",
+                                    "link": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                                }
+                            ],
+                            "notes": "Start with elbows in front, palms facing in, rotate outward while pressing."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Lat Pulldown (Feeder Sets)",
+                            "link": "https://youtu.be/O94yEoGXtBY?t=150",
+                            "warmup_sets": 0,
+                            "working_sets": 4,
+                            "reps": 10,
+                            "load": "See Notes",
+                            "RPE": "",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                },
+                                {
+                                    "name": "Pull-Up",
+                                    "link": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                                }
+                            ],
+                            "notes": "Gradually increase weight over sets, last set to failure."
+                        },
+                        {
+                            "name": "Omni-Grip Machine Chest-Supported Row",
+                            "link": "https://youtu.be/w2YTOoDBOZg",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "10-12",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline Chest-Supported DB Row",
+                                    "link": "https://youtu.be/bsx8PIGIuaI"
+                                },
+                                {
+                                    "name": "Cable Seated Row",
+                                    "link": "https://youtu.be/FbWfA_s0XL8?t=273"
+                                }
+                            ],
+                            "notes": "Use 3 different grips, going from wider to closer."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "2-4",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Hack Squat",
+                                    "link": "https://youtu.be/wEgQUCdtFLg"
+                                },
+                                {
+                                    "name": "DB Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, push hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 3,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "Standing Dumbbell Arnold Press",
+                            "link": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Seated DB Shoulder Press",
+                                    "link": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                                },
+                                {
+                                    "name": "Machine Shoulder Press",
+                                    "link": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                                }
+                            ],
+                            "notes": "Start with elbows in front, palms facing in, rotate outward while pressing."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Lat Pulldown (Feeder Sets)",
+                            "link": "https://youtu.be/O94yEoGXtBY?t=150",
+                            "warmup_sets": 0,
+                            "working_sets": 4,
+                            "reps": 10,
+                            "load": "See Notes",
+                            "RPE": "",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                },
+                                {
+                                    "name": "Pull-Up",
+                                    "link": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                                }
+                            ],
+                            "notes": "Gradually increase weight over sets, last set to failure."
+                        },
+                        {
+                            "name": "Omni-Grip Machine Chest-Supported Row",
+                            "link": "https://youtu.be/w2YTOoDBOZg",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "10-12",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline Chest-Supported DB Row",
+                                    "link": "https://youtu.be/bsx8PIGIuaI"
+                                },
+                                {
+                                    "name": "Cable Seated Row",
+                                    "link": "https://youtu.be/FbWfA_s0XL8?t=273"
+                                }
+                            ],
+                            "notes": "Use 3 different grips, going from wider to closer."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "2-4",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Hack Squat",
+                                    "link": "https://youtu.be/wEgQUCdtFLg"
+                                },
+                                {
+                                    "name": "DB Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, push hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 4,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "Standing Dumbbell Arnold Press",
+                            "link": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Seated DB Shoulder Press",
+                                    "link": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                                },
+                                {
+                                    "name": "Machine Shoulder Press",
+                                    "link": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                                }
+                            ],
+                            "notes": "Start with elbows in front, palms facing in, rotate outward while pressing."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Lat Pulldown (Feeder Sets)",
+                            "link": "https://youtu.be/O94yEoGXtBY?t=150",
+                            "warmup_sets": 0,
+                            "working_sets": 4,
+                            "reps": 10,
+                            "load": "See Notes",
+                            "RPE": "",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                },
+                                {
+                                    "name": "Pull-Up",
+                                    "link": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                                }
+                            ],
+                            "notes": "Gradually increase weight over sets, last set to failure."
+                        },
+                        {
+                            "name": "Omni-Grip Machine Chest-Supported Row",
+                            "link": "https://youtu.be/w2YTOoDBOZg",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "10-12",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline Chest-Supported DB Row",
+                                    "link": "https://youtu.be/bsx8PIGIuaI"
+                                },
+                                {
+                                    "name": "Cable Seated Row",
+                                    "link": "https://youtu.be/FbWfA_s0XL8?t=273"
+                                }
+                            ],
+                            "notes": "Use 3 different grips, going from wider to closer."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "2-4",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Hack Squat",
+                                    "link": "https://youtu.be/wEgQUCdtFLg"
+                                },
+                                {
+                                    "name": "DB Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, push hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 5,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "Standing Dumbbell Arnold Press",
+                            "link": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Seated DB Shoulder Press",
+                                    "link": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                                },
+                                {
+                                    "name": "Machine Shoulder Press",
+                                    "link": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                                }
+                            ],
+                            "notes": "Start with elbows in front, palms facing in, rotate outward while pressing."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Lat Pulldown (Feeder Sets)",
+                            "link": "https://youtu.be/O94yEoGXtBY?t=150",
+                            "warmup_sets": 0,
+                            "working_sets": 4,
+                            "reps": 10,
+                            "load": "See Notes",
+                            "RPE": "",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                },
+                                {
+                                    "name": "Pull-Up",
+                                    "link": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                                }
+                            ],
+                            "notes": "Gradually increase weight over sets, last set to failure."
+                        },
+                        {
+                            "name": "Omni-Grip Machine Chest-Supported Row",
+                            "link": "https://youtu.be/w2YTOoDBOZg",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "10-12",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline Chest-Supported DB Row",
+                                    "link": "https://youtu.be/bsx8PIGIuaI"
+                                },
+                                {
+                                    "name": "Cable Seated Row",
+                                    "link": "https://youtu.be/FbWfA_s0XL8?t=273"
+                                }
+                            ],
+                            "notes": "Use 3 different grips, going from wider to closer."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "2-4",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Hack Squat",
+                                    "link": "https://youtu.be/wEgQUCdtFLg"
+                                },
+                                {
+                                    "name": "DB Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-10",
+                            "load": "",
+                            "RPE": "8-9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, push hips back."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 6,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Bench Press",
+                            "link": "https://youtu.be/vcBig73ojpE?t=134",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "3-5",
+                            "load": "",
+                            "RPE": "7",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Bench Press",
+                                    "link": "https://youtu.be/URQ1Wn7lY3A"
+                                },
+                                {
+                                    "name": "Machine Chest Press",
+                                    "link": "https://youtu.be/k1S_Any3NIA?t=240"
+                                }
+                            ],
+                            "notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                        },
+                        {
+                            "name": "Standing Dumbbell Arnold Press",
+                            "link": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-8",
+                            "load": "",
+                            "RPE": "7",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Seated DB Shoulder Press",
+                                    "link": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                                },
+                                {
+                                    "name": "Machine Shoulder Press",
+                                    "link": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                                }
+                            ],
+                            "notes": "Start with elbows in front, palms facing in, rotate outward while pressing."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "Lat Pulldown (Feeder Sets)",
+                            "link": "https://youtu.be/O94yEoGXtBY?t=150",
+                            "warmup_sets": 0,
+                            "working_sets": 4,
+                            "reps": 10,
+                            "load": "See Notes",
+                            "RPE": "7",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Machine Pulldown",
+                                    "link": "https://youtu.be/j8Q50oBDK44"
+                                },
+                                {
+                                    "name": "Pull-Up",
+                                    "link": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                                }
+                            ],
+                            "notes": "Gradually increase weight over sets, last set to failure."
+                        },
+                        {
+                            "name": "Omni-Grip Machine Chest-Supported Row",
+                            "link": "https://youtu.be/w2YTOoDBOZg",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-12",
+                            "load": "",
+                            "RPE": "7",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Incline Chest-Supported DB Row",
+                                    "link": "https://youtu.be/bsx8PIGIuaI"
+                                },
+                                {
+                                    "name": "Cable Seated Row",
+                                    "link": "https://youtu.be/FbWfA_s0XL8?t=273"
+                                }
+                            ],
+                            "notes": "Use 3 different grips, going from wider to closer."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Squat",
+                            "link": "https://youtu.be/bEv6CCg2BC8?t=147",
+                            "warmup_sets": "3-4",
+                            "working_sets": 1,
+                            "reps": "2-4",
+                            "load": "",
+                            "RPE": "7",
+                            "rest": "~3-4 min",
+                            "substitutions": [
+                                {
+                                    "name": "Hack Squat",
+                                    "link": "https://youtu.be/wEgQUCdtFLg"
+                                },
+                                {
+                                    "name": "DB Bulgarian Split Squat",
+                                    "link": "https://youtu.be/htDXu61MPio"
+                                }
+                            ],
+                            "notes": "Sit back and down, keep upper back tight."
+                        },
+                        {
+                            "name": "Barbell RDL",
+                            "link": "https://youtu.be/_oyxCn2iSjU?t=95",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": "8-8",
+                            "load": "",
+                            "RPE": "7",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB RDL",
+                                    "link": "https://youtu.be/V5u2AP9wBwE"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Maintain neutral lower back, push hips back."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
