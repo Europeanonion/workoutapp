@@ -34,40 +34,39 @@
    * Display Workout Data on the Page
    * @param {Object} data - The workout data JSON
    */
-  function displayWorkout(data) {
-    console.log("Displaying workout data.");
+   function displayWorkout(data) {
     const container = document.getElementById("workout-container");
-    container.innerHTML = ""; // Clear existing content
-
-    let exerciseIndex = 0; // To uniquely identify exercises
-
+    container.innerHTML = ""; // Clear previous data
+  
+    let exerciseIndex = 0; // To track the index of each exercise
+  
     data.weeks.forEach((weekObj) => {
-      // Create Week Header
+      // Add week-level heading
       const weekHeader = document.createElement("div");
-      weekHeader.classList.add("week", "d-flex", "align-items-center", "mt-4", "mb-2");
+      weekHeader.classList.add("week", "d-flex", "align-items-center", "mt-4", "mb-2", "p-2");
       weekHeader.innerHTML = `<i class="fas fa-calendar-alt me-2"></i> Week ${weekObj.week}`;
       container.appendChild(weekHeader);
-      console.log(`Week ${weekObj.week} added.`);
-
-      // Iterate through each workout day
+  
       weekObj.workouts.forEach((workoutDay) => {
-        // Create Day Header
+        // Add day-level heading
         const dayHeader = document.createElement("div");
-        dayHeader.classList.add("day", "d-flex", "align-items-center", "mb-2");
+        dayHeader.classList.add("day", "d-flex", "align-items-center", "mb-3", "p-2", "bg-dark", "text-white");
         dayHeader.innerHTML = `<i class="fas fa-dumbbell me-2"></i> ${workoutDay.day}`;
         container.appendChild(dayHeader);
-        console.log(`Workout day '${workoutDay.day}' added.`);
-
-        // Iterate through each exercise
+  
+        // Create a row for exercises
+        const rowDiv = document.createElement("div");
+        rowDiv.classList.add("row", "gx-3"); // Bootstrap grid row
+  
         workoutDay.exercises.forEach((exercise) => {
-          const exerciseElement = createExerciseElement(exercise, exerciseIndex);
-          container.appendChild(exerciseElement);
-          console.log(`Exercise '${exercise.Exercise}' added at index ${exerciseIndex}.`);
+          rowDiv.appendChild(createExerciseElement(exercise, exerciseIndex));
           exerciseIndex++;
         });
+  
+        container.appendChild(rowDiv);
       });
     });
-  }
+  }  
 
   /**
    * Create a DOM Element for an Exercise
