@@ -1,1 +1,443 @@
-
+{
+    "phase": "Supercompensation (High Volume, Moderate Intensity)",
+    "weeks": [
+        {
+            "week": 1,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Low Incline DB Press",
+                            "link": "https://youtu.be/6-PFsU1q1kU",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": 20,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Low Incline Machine Press",
+                                    "link": "https://youtu.be/y66lTqlOa4I"
+                                },
+                                {
+                                    "name": "Low Incline Smith Machine Press",
+                                    "link": "https://youtu.be/Kx53V2h3sqU"
+                                }
+                            ],
+                            "notes": "15\u00b0 bench angle, tuck your elbows on the negative, flare as you press."
+                        },
+                        {
+                            "name": "Machine Shoulder Press",
+                            "link": "https://www.youtube.com/watch?v=flr4ohSl0j8",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": 15,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Shoulder Press",
+                                    "link": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                                },
+                                {
+                                    "name": "Standing DB Arnold Press",
+                                    "link": "https://www.youtube.com/watch?v=zOpA1Op0zvc"
+                                }
+                            ],
+                            "notes": "Don't stop in between reps, keep smooth and controlled tension on the delts."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "1-Arm Half Kneeling Lat Pulldown",
+                            "link": "https://youtu.be/B0W4DQeo1tE",
+                            "warmup_sets": 1,
+                            "working_sets": 2,
+                            "reps": 20,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~1-2 min",
+                            "substitutions": [
+                                {
+                                    "name": "1-Arm Lat Pull-In",
+                                    "link": "https://youtu.be/f2JDJV0AnyY?t=36"
+                                },
+                                {
+                                    "name": "Cable Lat Pullover",
+                                    "link": "https://youtu.be/Vf7wf6bZODQ"
+                                }
+                            ],
+                            "notes": "Keep chest tall, keep elbow tucked in, focus on squeezing your lat."
+                        },
+                        {
+                            "name": "Omni-Grip Lat Pulldown",
+                            "link": "https://youtu.be/qVek72z3F1U?t=927",
+                            "warmup_sets": 1,
+                            "working_sets": 3,
+                            "reps": 20,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Omni-Grip Pull-Up",
+                                    "link": "https://youtu.be/C47fKaggsJY"
+                                },
+                                {
+                                    "name": "Chin-Up",
+                                    "link": "https://youtu.be/-d2Uui6MtRk"
+                                }
+                            ],
+                            "notes": "One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand)."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Front Squat",
+                            "link": "https://youtu.be/v-mQm_droHg?t=135",
+                            "warmup_sets": "2-3",
+                            "working_sets": 3,
+                            "reps": 15,
+                            "load": "",
+                            "RPE": "7-8",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "High-Bar Box Squat",
+                                    "link": "https://youtu.be/dIf07rQm3Rs"
+                                },
+                                {
+                                    "name": "Goblet Squat",
+                                    "link": "https://youtu.be/v-mQm_droHg?t=489"
+                                }
+                            ],
+                            "notes": "Push but stay controlled. Focus on keeping your torso upright."
+                        },
+                        {
+                            "name": "Dumbbell RDL",
+                            "link": "https://youtu.be/V5u2AP9wBwE",
+                            "warmup_sets": 1,
+                            "working_sets": 3,
+                            "reps": 20,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Barbell RDL",
+                                    "link": "https://youtu.be/_oyxCn2iSjU?t=95"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Emphasize the stretch in your hamstrings, prevent your lower back from rounding."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 2,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Low Incline DB Press",
+                            "link": "https://youtu.be/6-PFsU1q1kU",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": 20,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Low Incline Machine Press",
+                                    "link": "https://youtu.be/y66lTqlOa4I"
+                                },
+                                {
+                                    "name": "Low Incline Smith Machine Press",
+                                    "link": "https://youtu.be/Kx53V2h3sqU"
+                                }
+                            ],
+                            "notes": "15\u00b0 bench angle, tuck your elbows on the negative, flare as you press."
+                        },
+                        {
+                            "name": "Machine Shoulder Press",
+                            "link": "https://www.youtube.com/watch?v=flr4ohSl0j8",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": 15,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Shoulder Press",
+                                    "link": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                                },
+                                {
+                                    "name": "Standing DB Arnold Press",
+                                    "link": "https://www.youtube.com/watch?v=zOpA1Op0zvc"
+                                }
+                            ],
+                            "notes": "Don't stop in between reps, keep smooth and controlled tension on the delts."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "1-Arm Half Kneeling Lat Pulldown",
+                            "link": "https://youtu.be/B0W4DQeo1tE",
+                            "warmup_sets": 1,
+                            "working_sets": 2,
+                            "reps": 20,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~1-2 min",
+                            "substitutions": [
+                                {
+                                    "name": "1-Arm Lat Pull-In",
+                                    "link": "https://youtu.be/f2JDJV0AnyY?t=36"
+                                },
+                                {
+                                    "name": "Cable Lat Pullover",
+                                    "link": "https://youtu.be/Vf7wf6bZODQ"
+                                }
+                            ],
+                            "notes": "Keep chest tall, keep elbow tucked in, focus on squeezing your lat."
+                        },
+                        {
+                            "name": "Omni-Grip Lat Pulldown",
+                            "link": "https://youtu.be/qVek72z3F1U?t=927",
+                            "warmup_sets": 1,
+                            "working_sets": 3,
+                            "reps": 20,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Omni-Grip Pull-Up",
+                                    "link": "https://youtu.be/C47fKaggsJY"
+                                },
+                                {
+                                    "name": "Chin-Up",
+                                    "link": "https://youtu.be/-d2Uui6MtRk"
+                                }
+                            ],
+                            "notes": "One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand)."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Front Squat",
+                            "link": "https://youtu.be/v-mQm_droHg?t=135",
+                            "warmup_sets": "2-3",
+                            "working_sets": 3,
+                            "reps": 15,
+                            "load": "",
+                            "RPE": "7-8",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "High-Bar Box Squat",
+                                    "link": "https://youtu.be/dIf07rQm3Rs"
+                                },
+                                {
+                                    "name": "Goblet Squat",
+                                    "link": "https://youtu.be/v-mQm_droHg?t=489"
+                                }
+                            ],
+                            "notes": "Push but stay controlled. Focus on keeping your torso upright."
+                        },
+                        {
+                            "name": "Dumbbell RDL",
+                            "link": "https://youtu.be/V5u2AP9wBwE",
+                            "warmup_sets": 1,
+                            "working_sets": 3,
+                            "reps": 20,
+                            "load": "",
+                            "RPE": "9",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Barbell RDL",
+                                    "link": "https://youtu.be/_oyxCn2iSjU?t=95"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Emphasize the stretch in your hamstrings, prevent your lower back from rounding."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "week": 3,
+            "workouts": [
+                {
+                    "day": "Push #1",
+                    "exercises": [
+                        {
+                            "name": "Low Incline DB Press",
+                            "link": "https://youtu.be/6-PFsU1q1kU",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": 16,
+                            "load": "",
+                            "RPE": "6",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Low Incline Machine Press",
+                                    "link": "https://youtu.be/y66lTqlOa4I"
+                                },
+                                {
+                                    "name": "Low Incline Smith Machine Press",
+                                    "link": "https://youtu.be/Kx53V2h3sqU"
+                                }
+                            ],
+                            "notes": "15\u00b0 bench angle, tuck your elbows on the negative, flare as you press."
+                        },
+                        {
+                            "name": "Machine Shoulder Press",
+                            "link": "https://www.youtube.com/watch?v=flr4ohSl0j8",
+                            "warmup_sets": 2,
+                            "working_sets": 3,
+                            "reps": 12,
+                            "load": "",
+                            "RPE": "6",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "DB Shoulder Press",
+                                    "link": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                                },
+                                {
+                                    "name": "Standing DB Arnold Press",
+                                    "link": "https://www.youtube.com/watch?v=zOpA1Op0zvc"
+                                }
+                            ],
+                            "notes": "Don't stop in between reps, keep smooth and controlled tension on the delts."
+                        }
+                    ]
+                },
+                {
+                    "day": "Pull #1",
+                    "exercises": [
+                        {
+                            "name": "1-Arm Half Kneeling Lat Pulldown",
+                            "link": "https://youtu.be/B0W4DQeo1tE",
+                            "warmup_sets": 1,
+                            "working_sets": 2,
+                            "reps": 16,
+                            "load": "",
+                            "RPE": "6",
+                            "rest": "~1-2 min",
+                            "substitutions": [
+                                {
+                                    "name": "1-Arm Lat Pull-In",
+                                    "link": "https://youtu.be/f2JDJV0AnyY?t=36"
+                                },
+                                {
+                                    "name": "Cable Lat Pullover",
+                                    "link": "https://youtu.be/Vf7wf6bZODQ"
+                                }
+                            ],
+                            "notes": "Keep chest tall, keep elbow tucked in, focus on squeezing your lat."
+                        },
+                        {
+                            "name": "Omni-Grip Lat Pulldown",
+                            "link": "https://youtu.be/qVek72z3F1U?t=927",
+                            "warmup_sets": 1,
+                            "working_sets": 3,
+                            "reps": 16,
+                            "load": "",
+                            "RPE": "6",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Omni-Grip Pull-Up",
+                                    "link": "https://youtu.be/C47fKaggsJY"
+                                },
+                                {
+                                    "name": "Chin-Up",
+                                    "link": "https://youtu.be/-d2Uui6MtRk"
+                                }
+                            ],
+                            "notes": "One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand)."
+                        }
+                    ]
+                },
+                {
+                    "day": "Legs #1",
+                    "exercises": [
+                        {
+                            "name": "Front Squat",
+                            "link": "https://youtu.be/v-mQm_droHg?t=135",
+                            "warmup_sets": "2-3",
+                            "working_sets": 3,
+                            "reps": 12,
+                            "load": "",
+                            "RPE": "6",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "High-Bar Box Squat",
+                                    "link": "https://youtu.be/dIf07rQm3Rs"
+                                },
+                                {
+                                    "name": "Goblet Squat",
+                                    "link": "https://youtu.be/v-mQm_droHg?t=489"
+                                }
+                            ],
+                            "notes": "Push but stay controlled. Focus on keeping your torso upright."
+                        },
+                        {
+                            "name": "Dumbbell RDL",
+                            "link": "https://youtu.be/V5u2AP9wBwE",
+                            "warmup_sets": 1,
+                            "working_sets": 3,
+                            "reps": 16,
+                            "load": "",
+                            "RPE": "6",
+                            "rest": "~2-3 min",
+                            "substitutions": [
+                                {
+                                    "name": "Barbell RDL",
+                                    "link": "https://youtu.be/_oyxCn2iSjU?t=95"
+                                },
+                                {
+                                    "name": "45\u00b0 Hyperextension",
+                                    "link": "https://youtu.be/J46aPqFl0WE?t=178"
+                                }
+                            ],
+                            "notes": "Emphasize the stretch in your hamstrings, prevent your lower back from rounding."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
