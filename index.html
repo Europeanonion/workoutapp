@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Workout Plan</title>
+  <title>Workout Plan with Tracker</title>
   <style>
+    /* Basic Reset & Body */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f7f7f7;
       color: #333;
     }
+    /* Sticky Header */
     header {
       background: #2c3e50;
       color: #fff;
@@ -24,6 +29,8 @@
       margin: 0;
       font-size: 1.5rem;
     }
+
+    /* Main Content */
     main {
       padding: 1rem;
       max-width: 800px;
@@ -53,6 +60,8 @@
     .reset-btn:hover {
       background: #c0392b;
     }
+
+    /* Workout Sections */
     .phase {
       font-size: 1.2rem;
       font-weight: bold;
@@ -76,6 +85,7 @@
     .exercise h2 {
       color: #2c3e50;
       margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
     }
     .exercise a {
       text-decoration: none;
@@ -105,33 +115,129 @@
     .save-btn:hover {
       background: #1a6390;
     }
+
+    /* Tracker / History Section */
+    .tracker-controls {
+      margin: 2rem 0 1rem;
+    }
+    .history-section {
+      display: none; /* hidden by default; toggled via JS */
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 1rem;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+    .history-section h2 {
+      margin-top: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    table th, table td {
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem;
+    }
+    .export-btn {
+      background: #16a085;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-right: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .export-btn:hover {
+      background: #12806e;
+    }
+    .history-close-btn {
+      background: #7f8c8d;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .history-close-btn:hover {
+      background: #606f70;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Workout Plan</h1>
+    <h1>Workout Plan + Tracker</h1>
   </header>
 
   <main>
+    <!-- PHASE SELECTOR + RESET -->
     <label for="phase-selector">Select Workout Phase:</label>
     <select id="phase-selector" title="Select Workout Phase" aria-label="Workout Phase"></select>
+
     <button class="reset-btn" id="reset-data-btn" aria-label="Reset all saved workout data">
       Reset All Data
     </button>
 
+    <!-- WORKOUT CONTAINER -->
     <div id="workout-container"></div>
+
+    <!-- TRACKER CONTROLS -->
+    <div class="tracker-controls">
+      <button class="export-btn" id="show-history-btn" aria-label="Show workout history">
+        Show History
+      </button>
+      <button class="export-btn" id="export-csv-btn" aria-label="Export workout history as CSV">
+        Export CSV
+      </button>
+    </div>
+
+    <!-- HISTORY SECTION -->
+    <div class="history-section" id="history-section">
+      <h2>Workout History</h2>
+      <p id="history-stats"></p>
+      <table id="history-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Load</th>
+            <th>Volume</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button class="history-close-btn" id="close-history-btn" aria-label="Close history view">
+        Close
+      </button>
+    </div>
   </main>
 
   <script>
-    const basePath = "https://europeanonion.github.io/workoutapp/";
+    // 1. SETUP PHASE OPTIONS
     const PHASE_OPTIONS = [
       { value: "workout_plan_phase_1_with_links.json", label: "Phase 1 - Base Hypertrophy" },
       { value: "workout_plan_phase_2_with_links.json", label: "Phase 2 - Maximum Effort" },
       { value: "workout_plan_phase_3_with_links.json", label: "Phase 3 - Hypertrophy & Endurance" }
     ];
 
+    // 2. GITHUB PAGES PATH (replace with your actual username/path)
+    const basePath = "https://yourusername.github.io/workoutapp/";
+
+    // 3. INIT
     function init() {
-      // Populate the select dropdown
+      populatePhaseSelector();
+      bindUIEvents();
+      loadSavedPhase();
+    }
+
+    function populatePhaseSelector() {
       const phaseSelector = document.getElementById("phase-selector");
       PHASE_OPTIONS.forEach(opt => {
         const optionEl = document.createElement("option");
@@ -139,31 +245,42 @@
         optionEl.textContent = opt.label;
         phaseSelector.appendChild(optionEl);
       });
+    }
 
-      // Restore saved phase or default
-      const savedPhase = localStorage.getItem("selectedPhase") || PHASE_OPTIONS[0].value;
-      phaseSelector.value = savedPhase;
+    function bindUIEvents() {
+      // Phase selector changes
+      document.getElementById("phase-selector").addEventListener("change", handlePhaseChange);
 
-      // Event listeners
-      phaseSelector.addEventListener("change", handlePhaseChange);
+      // Reset data
       document.getElementById("reset-data-btn").addEventListener("click", resetAllData);
 
-      // Load workout data
+      // Show/Hide history
+      document.getElementById("show-history-btn").addEventListener("click", toggleHistory);
+      document.getElementById("close-history-btn").addEventListener("click", toggleHistory);
+
+      // Export CSV
+      document.getElementById("export-csv-btn").addEventListener("click", exportCSV);
+    }
+
+    function loadSavedPhase() {
+      const savedPhase = localStorage.getItem("selectedPhase") || PHASE_OPTIONS[0].value;
+      const phaseSelector = document.getElementById("phase-selector");
+      phaseSelector.value = savedPhase;
       loadWorkout(savedPhase);
     }
 
+    // 4. HANDLER: PHASE CHANGE
     function handlePhaseChange() {
-      const phaseSelector = document.getElementById("phase-selector");
-      const selectedPhase = phaseSelector.value;
+      const selectedPhase = document.getElementById("phase-selector").value;
       localStorage.setItem("selectedPhase", selectedPhase);
       loadWorkout(selectedPhase);
     }
 
+    // 5. FETCH & DISPLAY WORKOUT
     async function loadWorkout(selectedPhase) {
-      console.log("Fetching JSON from:", basePath + selectedPhase);
-
+      const url = basePath + selectedPhase;
       try {
-        const response = await fetch(basePath + selectedPhase);
+        const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const data = await response.json();
@@ -200,11 +317,11 @@
           weekHeader.textContent = `Week ${currentWeek}`;
           container.appendChild(weekHeader);
         }
-
         container.appendChild(createExerciseElement(workout, index));
       });
     }
 
+    // 6. CREATE EXERCISE ELEMENT
     function createExerciseElement(workout, index) {
       const exerciseDiv = document.createElement("div");
       exerciseDiv.classList.add("exercise");
@@ -220,13 +337,16 @@
           </a>
         </h2>
         <p><strong>Sets:</strong>
-          <input type="number" aria-label="Sets for ${workout.Exercise}" id="sets-${index}" value="${setsValue}" />
+          <input type="number" min="0" aria-label="Sets for ${workout.Exercise}"
+                 id="sets-${index}" value="${setsValue}" />
         </p>
         <p><strong>Reps:</strong>
-          <input type="text" aria-label="Reps for ${workout.Exercise}" id="reps-${index}" value="${repsValue}" />
+          <input type="number" min="0" aria-label="Reps for ${workout.Exercise}"
+                 id="reps-${index}" value="${repsValue}" />
         </p>
-        <p><strong>Load:</strong>
-          <input type="text" aria-label="Load for ${workout.Exercise}" id="load-${index}" placeholder="Enter weight" value="${loadValue}" />
+        <p><strong>Load (kg):</strong>
+          <input type="number" min="0" aria-label="Load for ${workout.Exercise}"
+                 id="load-${index}" placeholder="Weight" value="${loadValue}" />
         </p>
         <p><strong>Rest:</strong> ${workout.Rest || 'N/A'}</p>
         <p><strong>Notes:</strong> ${workout.Notes || 'No notes available'}</p>
@@ -240,69 +360,183 @@
             ${workout["Substitution Option 2"] || 'N/A'}
           </a>
         </p>
-        <button class="save-btn" aria-label="Save workout data for ${workout.Exercise}" id="save-btn-${index}">
+        <button class="save-btn" aria-label="Save workout data for ${workout.Exercise}"
+                id="save-btn-${index}">
           Save
         </button>
       `;
 
-      // Add a click listener for Save
+      // Add SAVE button event
       exerciseDiv.querySelector(`#save-btn-${index}`).addEventListener("click", () => {
         saveProgress(index, workout.Exercise);
       });
+
       return exerciseDiv;
     }
 
+    // 7. SAVE PROGRESS
     function saveProgress(index, exerciseName) {
+      // Get current input values
       const sets = document.getElementById(`sets-${index}`).value.trim();
       const reps = document.getElementById(`reps-${index}`).value.trim();
       const load = document.getElementById(`load-${index}`).value.trim();
 
-      // Basic numeric validation for sets and reps
-      if (!validateNumber(sets) || !validateNumber(reps)) {
-        alert(`Please enter numeric values for sets and reps (Exercise: ${exerciseName}).`);
+      // Basic validation
+      if (!validateNumber(sets) || !validateNumber(reps) || !validateNumber(load)) {
+        alert(`Please ensure sets, reps, and load are numeric (Exercise: ${exerciseName}).`);
         return;
       }
 
+      // Save to localStorage (for immediate recall)
       localStorage.setItem(`workout-${index}`, JSON.stringify({ sets, reps, load }));
+
+      // Also log in workoutHistory
+      saveToHistory(exerciseName, sets, reps, load);
+
+      // Give feedback
       showSaveConfirmation(index);
     }
 
     function validateNumber(value) {
       // Allow empty or digits only
-      // If you want strictly required numbers, remove the '|| value===""' check
+      // If you need strictly required numbers, remove '|| value===""' check
       return value === "" || /^[0-9]+$/.test(value);
     }
 
     function showSaveConfirmation(index) {
-      const saveBtn = document.getElementById(`save-btn-${index}`);
-      const originalText = saveBtn.textContent;
-      saveBtn.textContent = "Saved!";
-      saveBtn.disabled = true;
+      const btn = document.getElementById(`save-btn-${index}`);
+      const originalText = btn.textContent;
+      btn.textContent = "Saved!";
+      btn.disabled = true;
       setTimeout(() => {
-        saveBtn.textContent = originalText;
-        saveBtn.disabled = false;
+        btn.textContent = originalText;
+        btn.disabled = false;
       }, 1500);
     }
 
+    // 8. HISTORY LOGGING
+    function saveToHistory(exercise, sets, reps, load) {
+      const historyData = JSON.parse(localStorage.getItem("workoutHistory")) || [];
+      const date = new Date().toISOString(); // or local time if you prefer
+
+      historyData.push({
+        date,
+        exercise,
+        sets: Number(sets) || 0,
+        reps: Number(reps) || 0,
+        load: Number(load) || 0
+      });
+      localStorage.setItem("workoutHistory", JSON.stringify(historyData));
+    }
+
+    // 9. GET SAVED VALUE FOR A SPECIFIC EXERCISE INDEX + KEY
     function getSavedValue(index, key) {
       const savedData = localStorage.getItem(`workout-${index}`);
       return savedData ? JSON.parse(savedData)[key] : null;
     }
 
+    // 10. HISTORY SECTION TOGGLE
+    function toggleHistory() {
+      const historySection = document.getElementById("history-section");
+      const isHidden = historySection.style.display === "none" || !historySection.style.display;
+      if (isHidden) {
+        updateHistoryTable();
+        historySection.style.display = "block";
+      } else {
+        historySection.style.display = "none";
+      }
+    }
+
+    // 11. UPDATE HISTORY TABLE WITH LOGGED ENTRIES
+    function updateHistoryTable() {
+      const historyData = JSON.parse(localStorage.getItem("workoutHistory")) || [];
+      const tableBody = document.querySelector("#history-table tbody");
+      tableBody.innerHTML = "";
+
+      let totalVolume = 0;
+
+      // Sort by date descending if you prefer:
+      // historyData.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      historyData.forEach(entry => {
+        const row = document.createElement("tr");
+
+        // Calculate volume = sets * reps * load
+        const volume = entry.sets * entry.reps * entry.load;
+        totalVolume += volume;
+
+        row.innerHTML = `
+          <td>${formatDate(entry.date)}</td>
+          <td>${entry.exercise}</td>
+          <td>${entry.sets}</td>
+          <td>${entry.reps}</td>
+          <td>${entry.load}</td>
+          <td>${volume}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+
+      // Update stats
+      const statsEl = document.getElementById("history-stats");
+      statsEl.textContent = `Total Logged Entries: ${historyData.length} | Cumulative Volume: ${totalVolume}`;
+    }
+
+    function formatDate(dateString) {
+      // Convert ISO date to something readable, e.g. YYYY-MM-DD HH:mm
+      const d = new Date(dateString);
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      const hours = String(d.getHours()).padStart(2, "0");
+      const mins = String(d.getMinutes()).padStart(2, "0");
+      return `${year}-${month}-${day} ${hours}:${mins}`;
+    }
+
+    // 12. EXPORT CSV
+    function exportCSV() {
+      const historyData = JSON.parse(localStorage.getItem("workoutHistory")) || [];
+      if (!historyData.length) {
+        alert("No history data to export.");
+        return;
+      }
+      // CSV header
+      let csvContent = "Date,Exercise,Sets,Reps,Load,Volume\n";
+      historyData.forEach(entry => {
+        const volume = entry.sets * entry.reps * entry.load;
+        csvContent += `"${formatDate(entry.date)}","${entry.exercise}",${entry.sets},${entry.reps},${entry.load},${volume}\n`;
+      });
+
+      // Create a temporary blob link
+      const blob = new Blob([csvContent], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.setAttribute("href", url);
+      a.setAttribute("download", "workout_history.csv");
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    // 13. RESET ALL DATA
     function resetAllData() {
-      if (!confirm("Are you sure you want to clear all saved workout data?")) return;
+      if (!confirm("Are you sure you want to clear ALL workout data?")) return;
+
+      // Clear everything related to workout keys
       Object.keys(localStorage).forEach(key => {
-        if (key.startsWith("workout-")) {
+        if (key.startsWith("workout-") || key === "workoutHistory") {
           localStorage.removeItem(key);
         }
       });
       alert("All saved workout data has been cleared.");
-      // Reload the current phase so cleared data is reflected in inputs
+
+      // Reload current phase
       const currentPhase = document.getElementById("phase-selector").value;
       loadWorkout(currentPhase);
     }
 
-    // Initialize app on page load
+    // 14. START
     window.addEventListener("load", init);
   </script>
 </body>
