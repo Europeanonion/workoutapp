@@ -5,38 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Plan</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; text-align: center; }
         .workout-container { max-width: 800px; margin: auto; }
         .phase { font-size: 24px; font-weight: bold; margin-top: 20px; }
         .week { font-size: 20px; font-weight: bold; margin-top: 10px; }
-        .exercise { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px; text-align: left; }
+        .exercise { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); text-align: left; }
         h2 { color: #333; }
         label { display: block; margin-top: 5px; }
         input { width: 100px; padding: 5px; margin-top: 5px; }
-        button { margin-top: 10px; padding: 5px 10px; cursor: pointer; }
+        button { background: #007BFF; color: white; border: none; padding: 8px 12px; border-radius: 5px; transition: 0.3s; }
+        button:hover { background: #0056b3; cursor: pointer; }
         a { color: blue; text-decoration: none; }
+        #dark-mode-toggle { margin: 15px; padding: 10px 15px; background: #333; color: white; border-radius: 5px; cursor: pointer; }
+        .dark-mode { background-color: #121212; color: #f1f1f1; }
+        .dark-mode .exercise { background: #222; color: white; }
+        #search-bar { width: 80%; padding: 10px; margin: 10px 0; }
+        .tab { overflow: hidden; border-bottom: 2px solid #007BFF; display: flex; justify-content: center; margin-bottom: 20px; }
+        .tab button { background: none; border: none; padding: 10px 20px; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        .tab button:hover { background: #007BFF; color: white; }
+        .tabcontent { display: none; padding: 20px; }
     </style>
 </head>
 <body>
     <h1>Workout Plan</h1>
-    <label for="phase-selector">Select Workout Phase:</label>
-    <select id="phase-selector" title="Select Workout Phase">
-        <option value="workout_plan_phase_1_with_links.json">Phase 1 - Base Hypertrophy</option>
-        <option value="workout_plan_phase_2_with_links.json">Phase 2 - Maximum Effort</option>
-        <option value="workout_plan_phase_3_with_links.json">Phase 3 - Hypertrophy & Endurance</option>
-    </select>
+    <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
+    <input type="text" id="search-bar" placeholder="Search exercises...">
+    <div class="tab">
+        <button class="tablinks" onclick="openWeek(event, 'Week1')">Week 1</button>
+        <button class="tablinks" onclick="openWeek(event, 'Week2')">Week 2</button>
+        <button class="tablinks" onclick="openWeek(event, 'Week3')">Week 3</button>
+    </div>
+    <div id="Week1" class="tabcontent"></div>
+    <div id="Week2" class="tabcontent"></div>
+    <div id="Week3" class="tabcontent"></div>
     <div class="workout-container" id="workout-container"></div>
 
     <script>
         const basePath = "https://europeanonion.github.io/workoutapp/";
 
-        document.getElementById("phase-selector").addEventListener("change", () => {
-            const selectedPhase = document.getElementById("phase-selector").value;
-            localStorage.setItem("selectedPhase", selectedPhase);
-            loadWorkout(selectedPhase);
+        document.getElementById("dark-mode-toggle").addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
         });
 
-        async function loadWorkout(selectedPhase = localStorage.getItem("selectedPhase") || "workout_plan_phase_1_with_links.json") {
+        if (localStorage.getItem("dark-mode") === "true") {
+            document.body.classList.add("dark-mode");
+        }
+
+        document.getElementById("search-bar").addEventListener("input", function () {
+            const query = this.value.toLowerCase();
+            document.querySelectorAll(".exercise").forEach(exercise => {
+                exercise.style.display = exercise.innerText.toLowerCase().includes(query) ? "block" : "none";
+            });
+        });
+
+        function openWeek(evt, weekName) {
+            document.querySelectorAll(".tabcontent").forEach(tab => tab.style.display = "none");
+            document.getElementById(weekName).style.display = "block";
+        }
+
+        async function loadWorkout() {
+            const selectedPhase = localStorage.getItem("selectedPhase") || "workout_plan_phase_1_with_links.json";
             console.log("Fetching JSON from:", basePath + selectedPhase);
 
             try {
@@ -54,64 +83,23 @@
         function displayWorkout(data) {
             const container = document.getElementById("workout-container");
             container.innerHTML = "";
-            
-            let currentPhase = "";
-            let currentWeek = "";
-            
-            data.forEach((workout, index) => {
-                if (workout.Phase !== currentPhase) {
-                    currentPhase = workout.Phase;
-                    const phaseHeader = document.createElement("div");
-                    phaseHeader.classList.add("phase");
-                    phaseHeader.textContent = currentPhase;
-                    container.appendChild(phaseHeader);
-                }
-                
-                if (workout.Week !== currentWeek) {
-                    currentWeek = workout.Week;
-                    const weekHeader = document.createElement("div");
-                    weekHeader.classList.add("week");
-                    weekHeader.textContent = `Week ${currentWeek}`;
-                    container.appendChild(weekHeader);
-                }
-                
-                container.appendChild(createExerciseElement(workout, index));
+            data.forEach(workout => {
+                const div = document.createElement("div");
+                div.classList.add("exercise");
+                div.innerHTML = `
+                    <h2><a href="${workout.ExerciseLink || '#'}" target="_blank">${workout.Exercise}</a></h2>
+                    <p><strong>Sets:</strong> ${workout["Working Sets"] || 'N/A'}</p>
+                    <p><strong>Reps:</strong> ${workout.Reps || 'N/A'}</p>
+                    <p><strong>Rest:</strong> ${workout.Rest || 'N/A'}</p>
+                    <p><strong>Notes:</strong> ${workout.Notes || 'No notes available'}</p>
+                    <p><strong>Substitution 1:</strong> <a href="${workout["Substitution Option 1 Link"] || '#'}" target="_blank">${workout["Substitution Option 1"] || 'N/A'}</a></p>
+                    <p><strong>Substitution 2:</strong> <a href="${workout["Substitution Option 2 Link"] || '#'}" target="_blank">${workout["Substitution Option 2"] || 'N/A'}</a></p>
+                `;
+                container.appendChild(div);
             });
         }
 
-        function createExerciseElement(workout, index) {
-            const div = document.createElement("div");
-            div.classList.add("exercise");
-            div.innerHTML = `
-                <h2><a href="${workout.ExerciseLink || '#'}" target="_blank">${workout.Exercise}</a></h2>
-                <p><strong>Sets:</strong> <input type="number" id="sets-${index}" value="${getSavedValue(index, 'sets') || workout["Working Sets"] || ''}" /></p>
-                <p><strong>Reps:</strong> <input type="text" id="reps-${index}" value="${getSavedValue(index, 'reps') || workout.Reps || ''}" /></p>
-                <p><strong>Load:</strong> <input type="text" id="load-${index}" placeholder="Enter weight" value="${getSavedValue(index, 'load') || ''}" /></p>
-                <p><strong>Rest:</strong> ${workout.Rest || 'N/A'}</p>
-                <p><strong>Notes:</strong> ${workout.Notes || 'No notes available'}</p>
-                <p><strong>Substitution 1:</strong> <a href="${workout["Substitution Option 1 Link"] || '#'}" target="_blank">${workout["Substitution Option 1"] || 'N/A'}</a></p>
-                <p><strong>Substitution 2:</strong> <a href="${workout["Substitution Option 2 Link"] || '#'}" target="_blank">${workout["Substitution Option 2"] || 'N/A'}</a></p>
-                <button id="save-btn-${index}">Save</button>
-            `;
-            div.querySelector(`#save-btn-${index}`).addEventListener("click", () => saveProgress(index));
-            return div;
-        }
-
-        function saveProgress(index) {
-            const sets = document.getElementById(`sets-${index}`).value;
-            const reps = document.getElementById(`reps-${index}`).value;
-            const load = document.getElementById(`load-${index}`).value;
-            localStorage.setItem(`workout-${index}`, JSON.stringify({ sets, reps, load }));
-            alert("Workout saved!");
-        }
-
-        function getSavedValue(index, key) {
-            const savedData = localStorage.getItem(`workout-${index}`);
-            return savedData ? JSON.parse(savedData)[key] : null;
-        }
-
         window.onload = function() {
-            document.getElementById("phase-selector").value = localStorage.getItem("selectedPhase") || "workout_plan_phase_1_with_links.json";
             loadWorkout();
         };
     </script>
