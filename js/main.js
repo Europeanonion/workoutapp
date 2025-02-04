@@ -5,12 +5,13 @@
    * Initialize the Application
    */
   function init() {
-    console.log("Initializing application.");
+    console.log("[Main] Initializing application.");
     populatePhaseSelector();
     bindUIEvents();
     loadSavedTheme();
     loadSavedPhase();
     initializeTooltips();
+    console.log("[Main] Application initialized successfully.");
   }
 
   /**
@@ -19,7 +20,7 @@
   function populatePhaseSelector() {
     const phaseSelector = document.getElementById("phase-selector");
     if (!window.PHASE_OPTIONS) {
-      console.error("PHASE_OPTIONS is not defined.");
+      console.error("[Main] PHASE_OPTIONS is not defined.");
       showToast("Failed to load workout phases.", "danger");
       return;
     }
@@ -28,7 +29,7 @@
       optionEl.value = opt.value;
       optionEl.textContent = opt.label;
       phaseSelector.appendChild(optionEl);
-      console.log(`Phase option added: ${opt.label}`);
+      console.log(`[Main] Phase option added: ${opt.label}`);
     });
   }
 
@@ -36,17 +37,17 @@
    * Bind UI Events
    */
   function bindUIEvents() {
-    console.log("Binding UI events.");
+    console.log("[Main] Binding UI events.");
     document.getElementById("phase-selector").addEventListener("change", handlePhaseChange);
     document.getElementById("reset-data-btn").addEventListener("click", resetAllData);
     document.getElementById("export-csv-btn").addEventListener("click", exportCSV);
-    document.getElementById("filter-exercise").addEventListener("input", updateHistoryTable);
+    document.getElementById("filter-exercise").addEventListener("input", debounce(updateHistoryTable, 300));
     document.getElementById("sort-select").addEventListener("change", updateHistoryTable);
     document.getElementById("prev-page").addEventListener("click", () => {
       if (currentPage > 1) {
         currentPage--;
         updateHistoryTable();
-        console.log(`Navigated to previous page: ${currentPage}`);
+        console.log(`[Main] Navigated to previous page: ${currentPage}`);
       }
     });
     document.getElementById("next-page").addEventListener("click", () => {
@@ -54,7 +55,7 @@
       if (currentPage < totalPages) {
         currentPage++;
         updateHistoryTable();
-        console.log(`Navigated to next page: ${currentPage}`);
+        console.log(`[Main] Navigated to next page: ${currentPage}`);
       }
     });
     document.getElementById("theme-switch").addEventListener("change", toggleTheme);
@@ -62,19 +63,19 @@
     // Initialize history modal content when it's about to be shown
     var historyModal = document.getElementById('historyModal');
     historyModal.addEventListener('show.bs.modal', updateHistoryTable);
-    console.log("UI events bound successfully.");
+    console.log("[Main] UI events bound successfully.");
   }
 
   /**
    * Initialize Bootstrap Tooltips
    */
   function initializeTooltips() {
-    console.log("Initializing Bootstrap tooltips.");
+    console.log("[Main] Initializing Bootstrap tooltips.");
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl)
     })
-    console.log("Bootstrap tooltips initialized.");
+    console.log("[Main] Bootstrap tooltips initialized.");
   }
 
   /**
@@ -86,9 +87,9 @@
     if (savedTheme === 'dark') {
       document.documentElement.classList.add('dark');
       themeSwitch.checked = true;
-      console.log("Dark theme loaded from localStorage.");
+      console.log("[Main] Dark theme loaded from localStorage.");
     } else {
-      console.log("Light theme loaded from localStorage or default.");
+      console.log("[Main] Light theme loaded from localStorage or default.");
     }
   }
 
@@ -100,11 +101,11 @@
     if (themeSwitch.checked) {
       document.documentElement.classList.add('dark');
       saveTheme('dark');
-      console.log("Dark theme activated.");
+      console.log("[Main] Dark theme activated.");
     } else {
       document.documentElement.classList.remove('dark');
       saveTheme('light');
-      console.log("Light theme activated.");
+      console.log("[Main] Light theme activated.");
     }
   }
 
@@ -115,7 +116,7 @@
     const savedPhase = getSelectedPhase() || window.PHASE_OPTIONS[0].value;
     const phaseSelector = document.getElementById("phase-selector");
     phaseSelector.value = savedPhase;
-    console.log(`Loading saved phase: ${savedPhase}`);
+    console.log(`[Main] Loading saved phase: ${savedPhase}`);
     window.loadWorkout(savedPhase);
   }
 
@@ -125,7 +126,7 @@
   function handlePhaseChange() {
     const selectedPhase = document.getElementById("phase-selector").value;
     saveSelectedPhase(selectedPhase);
-    console.log(`Phase changed to: ${selectedPhase}`);
+    console.log(`[Main] Phase changed to: ${selectedPhase}`);
     window.loadWorkout(selectedPhase);
   }
 
@@ -135,7 +136,7 @@
    * @param {string} exerciseName - The name of the exercise
    */
   function saveProgress(index, exerciseName) {
-    console.log(`Saving progress for exercise '${exerciseName}' at index ${index}.`);
+    console.log(`[Main] Saving progress for exercise '${exerciseName}' at index ${index}.`);
     const setsInput = document.getElementById(`sets-${index}`);
     const repsInput = document.getElementById(`reps-${index}`);
     const loadInput = document.getElementById(`load-${index}`);
@@ -149,7 +150,7 @@
     if (!validateNumber(sets)) {
       validateInput(setsInput, false);
       isValid = false;
-      console.warn(`Invalid sets input for exercise '${exerciseName}': ${sets}`);
+      console.warn(`[Main] Invalid sets input for exercise '${exerciseName}': ${sets}`);
     } else {
       validateInput(setsInput, true);
     }
@@ -157,7 +158,7 @@
     if (!validateNumber(reps)) {
       validateInput(repsInput, false);
       isValid = false;
-      console.warn(`Invalid reps input for exercise '${exerciseName}': ${reps}`);
+      console.warn(`[Main] Invalid reps input for exercise '${exerciseName}': ${reps}`);
     } else {
       validateInput(repsInput, true);
     }
@@ -165,7 +166,7 @@
     if (!validateNumber(load)) {
       validateInput(loadInput, false);
       isValid = false;
-      console.warn(`Invalid load input for exercise '${exerciseName}': ${load}`);
+      console.warn(`[Main] Invalid load input for exercise '${exerciseName}': ${load}`);
     } else {
       validateInput(loadInput, true);
     }
@@ -177,7 +178,7 @@
 
     // Save to localStorage
     saveWorkoutData(index, { sets, reps, load });
-    console.log(`Workout data saved for exercise '${exerciseName}': Sets=${sets}, Reps=${reps}, Load=${load}`);
+    console.log(`[Main] Workout data saved for exercise '${exerciseName}': Sets=${sets}, Reps=${reps}, Load=${load}`);
 
     // Log to history
     saveWorkoutHistory({
@@ -187,7 +188,7 @@
       reps: Number(reps),
       load: Number(load)
     });
-    console.log(`Workout history updated for exercise '${exerciseName}'.`);
+    console.log(`[Main] Workout history updated for exercise '${exerciseName}'.`);
 
     // Provide feedback
     showToast("Workout data saved successfully!", 'success');
@@ -211,11 +212,11 @@
     if (isValid) {
       inputElement.classList.remove('input-error');
       inputElement.classList.add('input-success');
-      console.log(`Input validation passed for element ID: ${inputElement.id}`);
+      console.log(`[Main] Input validation passed for element ID: ${inputElement.id}`);
     } else {
       inputElement.classList.remove('input-success');
       inputElement.classList.add('input-error');
-      console.warn(`Input validation failed for element ID: ${inputElement.id}`);
+      console.warn(`[Main] Input validation failed for element ID: ${inputElement.id}`);
     }
   }
 
@@ -223,11 +224,11 @@
    * Export Workout History as CSV
    */
   function exportCSV() {
-    console.log("Exporting workout history as CSV.");
+    console.log("[Main] Exporting workout history as CSV.");
     const historyData = getWorkoutHistory();
     if (!historyData.length) {
       showToast("No history data to export.", 'warning');
-      console.warn("No workout history data available for export.");
+      console.warn("[Main] No workout history data available for export.");
       return;
     }
 
@@ -249,24 +250,24 @@
     URL.revokeObjectURL(url);
 
     showToast("Workout history exported as CSV.", 'success');
-    console.log("Workout history exported successfully.");
+    console.log("[Main] Workout history exported successfully.");
   }
 
   /**
    * Reset All Workout Data
    */
   function resetAllData() {
-    console.log("Resetting all workout data.");
+    console.log("[Main] Resetting all workout data.");
     if (!confirm("Are you sure you want to clear ALL workout data?")) return;
 
     clearWorkoutData();
     showToast("All saved workout data has been cleared.", 'success');
-    console.log("All workout data cleared.");
+    console.log("[Main] All workout data cleared.");
 
     // Reload current phase
     const currentPhase = document.getElementById("phase-selector").value;
     window.loadWorkout(currentPhase);
-    console.log(`Reloaded workout data for phase: ${currentPhase}`);
+    console.log(`[Main] Reloaded workout data for phase: ${currentPhase}`);
   }
 
   /**
@@ -275,7 +276,7 @@
    * @param {string} type - The type of toast ('success', 'danger', 'warning')
    */
   function showToast(message, type = 'success') {
-    console.log(`Displaying toast: [${type.toUpperCase()}] ${message}`);
+    console.log(`[Main] Displaying toast: [${type.toUpperCase()}] ${message}`);
     const toastContainer = document.getElementById('toast-container');
     
     // Create Toast Element
@@ -303,7 +304,7 @@
     // Remove Toast after hidden
     toastEl.addEventListener('hidden.bs.toast', () => {
       toastEl.remove();
-      console.log("Toast removed from DOM.");
+      console.log("[Main] Toast removed from DOM.");
     });
   }
 
@@ -320,7 +321,7 @@
     const hours = String(d.getHours()).padStart(2, "0");
     const mins = String(d.getMinutes()).padStart(2, "0");
     const formattedDate = `${year}-${month}-${day} ${hours}:${mins}`;
-    console.log(`Formatted date: ${formattedDate}`);
+    console.log(`[Main] Formatted date: ${formattedDate}`);
     return formattedDate;
   }
 
@@ -328,18 +329,19 @@
    * Update History Table with Sorting and Filtering
    */
   function updateHistoryTable() {
-    console.log("Updating workout history table.");
+    console.log("[Main] Updating workout history table.");
     const historyData = getFilteredData().sort(getSortFunction());
 
     // Calculate Pagination
     const totalPages = Math.ceil(historyData.length / entriesPerPage);
     currentPage = Math.min(currentPage, totalPages) || 1;
+    console.log(`[Main] Total pages: ${totalPages}, Current page: ${currentPage}`);
 
     // Slice Data for Current Page
     const start = (currentPage - 1) * entriesPerPage;
     const end = start + entriesPerPage;
     const paginatedData = historyData.slice(start, end);
-    console.log(`Displaying page ${currentPage} of ${totalPages}.`);
+    console.log(`[Main] Displaying records ${start + 1} to ${end} of ${historyData.length}.`);
 
     // Render Table
     const tableBody = document.querySelector("#history-table tbody");
@@ -365,22 +367,22 @@
         <td>${volume}</td>
       `;
       tableBody.appendChild(row);
-      console.log(`History entry added: ${entry.exercise}, Volume: ${volume}`);
+      console.log(`[Main] History entry added: ${entry.exercise}, Volume: ${volume}`);
     });
 
     // Update stats
     const statsEl = document.getElementById("history-stats");
     statsEl.textContent = `Showing ${paginatedData.length} of ${historyData.length} Entries | Cumulative Volume: ${totalVolume}`;
-    console.log(`History stats updated: ${paginatedData.length} entries, Total Volume: ${totalVolume}`);
+    console.log(`[Main] History stats updated: ${paginatedData.length} entries, Total Volume: ${totalVolume}`);
 
     // Update Pagination Controls
     document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
     document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages || totalPages === 0);
-    console.log("Pagination controls updated.");
+    console.log("[Main] Pagination controls updated.");
 
     // Update Chart
     updateChart(historyData);
-    console.log("Volume chart updated.");
+    console.log("[Main] Volume chart updated.");
   }
 
   /**
@@ -392,7 +394,9 @@
     const filterValue = document.getElementById('filter-exercise').value.trim().toLowerCase();
     if (filterValue) {
       historyData = historyData.filter(entry => entry.exercise.toLowerCase().includes(filterValue));
-      console.log(`Filtered history data with keyword: ${filterValue}`);
+      console.log(`[Main] History data filtered with keyword: ${filterValue}`);
+    } else {
+      console.log("[Main] No filter applied to history data.");
     }
     return historyData;
   }
@@ -403,7 +407,7 @@
    */
   function getSortFunction() {
     const sortValue = document.getElementById('sort-select').value;
-    console.log(`Sorting history data by: ${sortValue}`);
+    console.log(`[Main] Sorting history data by: ${sortValue}`);
     switch(sortValue) {
       case 'date_desc':
         return (a, b) => new Date(b.date) - new Date(a.date);
@@ -414,6 +418,7 @@
       case 'volume_asc':
         return (a, b) => (a.sets * a.reps * a.load) - (b.sets * b.reps * b.load);
       default:
+        console.warn(`[Main] Unknown sort option selected: ${sortValue}`);
         return () => 0;
     }
   }
@@ -423,7 +428,7 @@
    * @param {Array} historyData - The workout history data
    */
   function updateChart(historyData) {
-    console.log("Updating volume chart.");
+    console.log("[Main] Updating volume chart.");
     // Aggregate Volume by Date
     const volumeByDate = {};
     historyData.forEach(entry => {
@@ -437,7 +442,7 @@
     // Destroy previous chart if exists
     if (window.volumeChart) {
       window.volumeChart.destroy();
-      console.log("Previous volume chart destroyed.");
+      console.log("[Main] Previous volume chart destroyed.");
     }
 
     const ctx = document.getElementById('volume-chart').getContext('2d');
@@ -470,7 +475,23 @@
         }
       }
     });
-    console.log("Volume chart created successfully.");
+    console.log("[Main] Volume chart created successfully.");
+  }
+
+  /**
+   * Debounce Function to Limit Function Execution Rate
+   * @param {Function} func - The function to debounce
+   * @param {number} delay - Delay in milliseconds
+   * @returns {Function}
+   */
+  function debounce(func, delay) {
+    let debounceTimer;
+    return function() {
+      const context = this;
+      const args = arguments;
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => func.apply(context, args), delay);
+    };
   }
 
   /**
