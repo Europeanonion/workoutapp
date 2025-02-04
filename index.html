@@ -415,78 +415,76 @@ const PHASE_OPTIONS = [
         const container = document.getElementById("workout-container");
         container.innerHTML = "";
 
-        const fragment = document.createDocumentFragment();
-        let currentPhase = "";
-        let currentWeek = "";
+        let exerciseIndex = 0; // To track the index of each exercise
 
-        data.forEach((workout, index) => {
-          if (workout.Phase !== currentPhase) {
-            currentPhase = workout.Phase;
-            const phaseHeader = document.createElement("div");
-            phaseHeader.classList.add("phase", "d-flex", "align-items-center", "mt-4", "mb-2");
-            phaseHeader.innerHTML = `<i class="fas fa-dumbbell me-2"></i> ${currentPhase}`;
-            fragment.appendChild(phaseHeader);
-          }
+        data.weeks.forEach((weekObj) => {
+          // Add week-level heading
+          const weekHeader = document.createElement("div");
+          weekHeader.classList.add("week", "d-flex", "align-items-center", "mt-4", "mb-2");
+          weekHeader.innerHTML = `<i class="fas fa-calendar-alt me-2"></i> Week ${weekObj.week}`;
+          container.appendChild(weekHeader);
 
-          if (workout.Week !== currentWeek) {
-            currentWeek = workout.Week;
-            const weekHeader = document.createElement("div");
-            weekHeader.classList.add("week", "d-flex", "align-items-center", "mb-2");
-            weekHeader.innerHTML = `<i class="fas fa-calendar-alt me-2"></i> Week ${currentWeek}`;
-            fragment.appendChild(weekHeader);
-          }
+          weekObj.workouts.forEach((workoutDay) => {
+            // Add day-level heading
+            const dayHeader = document.createElement("div");
+            dayHeader.classList.add("day", "d-flex", "align-items-center", "mb-2");
+            dayHeader.innerHTML = `<i class="fas fa-dumbbell me-2"></i> ${workoutDay.day}`;
+            container.appendChild(dayHeader);
 
-          fragment.appendChild(createExerciseElement(workout, index));
+            workoutDay.exercises.forEach((exercise) => {
+              // Render each exercise
+              container.appendChild(createExerciseElement(exercise, exerciseIndex));
+              exerciseIndex++;
+            });
+          });
         });
-
-        container.appendChild(fragment);
       }
 
       // Create Exercise Element
-      function createExerciseElement(workout, index) {
+      function createExerciseElement(exercise, index) {
         const exerciseDiv = document.createElement("div");
         exerciseDiv.classList.add("exercise");
 
-        const setsValue = getSavedValue(index, "sets") || workout["Working Sets"] || "";
-        const repsValue = getSavedValue(index, "reps") || workout.Reps || "";
+        const setsValue = getSavedValue(index, "sets") || exercise["Working Sets"] || "";
+        const repsValue = getSavedValue(index, "reps") || exercise.Reps || "";
         const loadValue = getSavedValue(index, "load") || "";
 
         exerciseDiv.innerHTML = `
           <h2>
-            <a href="${sanitize(workout.ExerciseLink || '#')}" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-external-link-alt me-2"></i> ${sanitize(workout.Exercise || 'Untitled Exercise')}
+            <a href="${sanitize(exercise.ExerciseLink || '#')}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise.Exercise || 'Untitled Exercise')}
             </a>
           </h2>
           <div class="row">
             <div class="col-md-4 mb-3">
               <label for="sets-${index}" class="form-label">Sets</label>
-              <input type="number" min="0" class="form-control" aria-label="Sets for ${sanitize(workout.Exercise)}"
+              <input type="number" min="0" class="form-control" aria-label="Sets for ${sanitize(exercise.Exercise)}"
                      id="sets-${index}" value="${setsValue}" placeholder="e.g., 3" required />
             </div>
             <div class="col-md-4 mb-3">
               <label for="reps-${index}" class="form-label">Reps</label>
-              <input type="number" min="0" class="form-control" aria-label="Reps for ${sanitize(workout.Exercise)}"
+              <input type="number" min="0" class="form-control" aria-label="Reps for ${sanitize(exercise.Exercise)}"
                      id="reps-${index}" value="${repsValue}" placeholder="e.g., 10" required />
             </div>
             <div class="col-md-4 mb-3">
               <label for="load-${index}" class="form-label">Load (kg)</label>
-              <input type="number" min="0" class="form-control" aria-label="Load for ${sanitize(workout.Exercise)}"
+              <input type="number" min="0" class="form-control" aria-label="Load for ${sanitize(exercise.Exercise)}"
                      id="load-${index}" placeholder="Weight" value="${loadValue}" required />
             </div>
           </div>
-          <p class="mb-2"><strong>Rest:</strong> ${sanitize(workout.Rest || 'N/A')}</p>
-          <p class="mb-2"><strong>Notes:</strong> ${sanitize(workout.Notes || 'No notes available')}</p>
+          <p class="mb-2"><strong>Rest:</strong> ${sanitize(exercise.Rest || 'N/A')}</p>
+          <p class="mb-2"><strong>Notes:</strong> ${sanitize(exercise.Notes || 'No notes available')}</p>
           <p class="mb-2"><strong>Substitution 1:</strong>
-            <a href="${sanitize(workout["Substitution Option 1 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-external-link-alt me-2"></i> ${sanitize(workout["Substitution Option 1"] || 'N/A')}
+            <a href="${sanitize(exercise["Substitution Option 1 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise["Substitution Option 1"] || 'N/A')}
             </a>
           </p>
           <p class="mb-2"><strong>Substitution 2:</strong>
-            <a href="${sanitize(workout["Substitution Option 2 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-external-link-alt me-2"></i> ${sanitize(workout["Substitution Option 2"] || 'N/A')}
+            <a href="${sanitize(exercise["Substitution Option 2 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise["Substitution Option 2"] || 'N/A')}
             </a>
           </p>
-          <button class="btn btn-primary mt-2" aria-label="Save workout data for ${sanitize(workout.Exercise)}"
+          <button class="btn btn-primary mt-2" aria-label="Save workout data for ${sanitize(exercise.Exercise)}"
                   id="save-btn-${index}">
             <i class="fas fa-save me-2"></i> Save
           </button>
@@ -494,7 +492,7 @@ const PHASE_OPTIONS = [
 
         // Add SAVE button event
         exerciseDiv.querySelector(`#save-btn-${index}`).addEventListener("click", () => {
-          saveProgress(index, workout.Exercise);
+          saveProgress(index, exercise.Exercise);
         });
 
         return exerciseDiv;
