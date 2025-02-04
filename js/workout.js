@@ -1,45 +1,62 @@
 // js/workout.js
 
 // Constants and Configuration
-const BASE_URL = "https://europeanonion.github.io/workoutapp";
 
 const PHASE_OPTIONS = [
-  { value: `${BASE_URL}/data/workout_plan_phase_1_with_links.json`, label: "Phase 1 - Base Hypertrophy" },
-  { value: `${BASE_URL}/data/workout_plan_phase_2_with_links.json`, label: "Phase 2 - Maximum Effort" },
-  { value: `${BASE_URL}/data/workout_plan_phase_3_with_links.json`, label: "Phase 3 - Hypertrophy & Endurance" }
+  { value: "data/workout_plan_phase_1_with_links.json", label: "Phase 1 - Base Hypertrophy" },
+  { value: "data/workout_plan_phase_2_with_links.json", label: "Phase 2 - Maximum Effort" },
+  { value: "data/workout_plan_phase_3_with_links.json", label: "Phase 3 - Hypertrophy & Endurance" }
 ];
 
-let currentPage = 1;
-const entriesPerPage = 10;
-let volumeChart; // To hold the Chart instance
+/**
+ * Fetch Workout Data Based on Selected Phase
+ * @param {string} phaseUrl - The URL of the selected workout phase JSON file
+ * @returns {Promise<Object>} - The workout data JSON
+ */
+async function fetchWorkoutData(phaseUrl) {
+  try {
+    const response = await fetch(phaseUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    showToast("Error loading workout data. Please try again later.", "danger");
+    throw error; // Re-throw to allow further handling if needed
+  }
+}
 
 /**
- * Display workout data on the page
- * @param {object} data - The workout data JSON
+ * Display Workout Data on the Page
+ * @param {Object} data - The workout data JSON
  */
 function displayWorkout(data) {
   const container = document.getElementById("workout-container");
-  container.innerHTML = "";
+  container.innerHTML = ""; // Clear existing content
 
-  let exerciseIndex = 0; // To track the index of each exercise
+  let exerciseIndex = 0; // To uniquely identify exercises
 
   data.weeks.forEach((weekObj) => {
-    // Add week-level heading
+    // Create Week Header
     const weekHeader = document.createElement("div");
     weekHeader.classList.add("week", "d-flex", "align-items-center", "mt-4", "mb-2");
     weekHeader.innerHTML = `<i class="fas fa-calendar-alt me-2"></i> Week ${weekObj.week}`;
     container.appendChild(weekHeader);
 
+    // Iterate through each workout day
     weekObj.workouts.forEach((workoutDay) => {
-      // Add day-level heading
+      // Create Day Header
       const dayHeader = document.createElement("div");
       dayHeader.classList.add("day", "d-flex", "align-items-center", "mb-2");
       dayHeader.innerHTML = `<i class="fas fa-dumbbell me-2"></i> ${workoutDay.day}`;
       container.appendChild(dayHeader);
 
+      // Iterate through each exercise
       workoutDay.exercises.forEach((exercise) => {
-        // Render each exercise
-        container.appendChild(createExerciseElement(exercise, exerciseIndex));
+        const exerciseElement = createExerciseElement(exercise, exerciseIndex);
+        container.appendChild(exerciseElement);
         exerciseIndex++;
       });
     });
@@ -47,18 +64,20 @@ function displayWorkout(data) {
 }
 
 /**
- * Create a DOM element for an exercise
- * @param {object} exercise - The exercise data
- * @param {number} index - The index of the exercise
+ * Create a DOM Element for an Exercise
+ * @param {Object} exercise - The exercise data
+ * @param {number} index - The unique index of the exercise
  * @returns {HTMLElement} - The exercise DOM element
  */
 function createExerciseElement(exercise, index) {
   const exerciseDiv = document.createElement("div");
   exerciseDiv.classList.add("exercise");
 
-  const setsValue = getWorkoutData(index)?.sets || exercise["Working Sets"] || "";
-  const repsValue = getWorkoutData(index)?.reps || exercise.Reps || "";
-  const loadValue = getWorkoutData(index)?.load || "";
+  // Retrieve saved data if available
+  const savedData = getWorkoutData(index);
+  const setsValue = savedData?.sets || exercise["Working Sets"] || "";
+  const repsValue = savedData?.reps || exercise.Reps || "";
+  const loadValue = savedData?.load || "";
 
   exerciseDiv.innerHTML = `
     <h2>
@@ -101,7 +120,7 @@ function createExerciseElement(exercise, index) {
     </button>
   `;
 
-  // Add SAVE button event
+  // Add SAVE button event listener
   exerciseDiv.querySelector(`#save-btn-${index}`).addEventListener("click", () => {
     saveProgress(index, exercise.Exercise);
   });
@@ -110,7 +129,7 @@ function createExerciseElement(exercise, index) {
 }
 
 /**
- * Sanitize input to prevent XSS
+ * Sanitize Input to Prevent XSS
  * @param {string} str - The string to sanitize
  * @returns {string} - The sanitized string
  */
@@ -120,36 +139,3 @@ function sanitize(str) {
   temp.textContent = str;
   return temp.innerHTML;
 }
-
-/**
- * Initialize the workout by loading data
- * @param {string} selectedPhase - The URL of the selected workout phase
- */
-async function loadWorkout(selectedPhase, retryCount = 3) {
-  const spinner = document.getElementById("loading-spinner");
-  spinner.classList.add("active");
-
-  const url = selectedPhase; // Relative path to JSON file
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-
-    const data = await response.json();
-    if (!Array.isArray(data) || data.length === 0) {
-      throw new Error("Invalid or empty JSON data");
-    }
-    displayWorkout(data);
-    showToast("Workout data loaded successfully!", 'success');
-  } catch (error) {
-    console.error("Error fetching JSON:", error);
-    if (retryCount > 0) {
-      console.log(`Retrying... Attempts left: ${retryCount}`);
-      loadWorkout(selectedPhase, retryCount - 1);
-    } else {
-      showToast("Failed to load workout data. Please try again later.", 'danger');
-    }
-  } finally {
-    spinner.classList.remove("active");
-  }
-}
-
