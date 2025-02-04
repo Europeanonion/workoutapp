@@ -35,7 +35,6 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+ZqlOmhE5D/Z8K+z4Qq2bQ8h5LYe3"
     crossorigin="anonymous"
-    defer
   ></script>
 
   <!-- Custom CSS -->
@@ -503,9 +502,24 @@ const PHASE_OPTIONS = [
 
       // Sanitize Input to Prevent XSS
       function sanitize(str) {
-        const temp = document.createElement('div');
+        if (typeof str !== "string") return "";
+        const temp = document.createElement("div");
         temp.textContent = str;
         return temp.innerHTML;
+      }
+
+      async function loadWorkout(selectedPhase) {
+        console.log(`Fetching: ${selectedPhase}`);
+        try {
+          const response = await fetch(selectedPhase);
+          if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+          const data = await response.json();
+          console.log("Workout Data:", data);
+          displayWorkout(data);
+        } catch (error) {
+          console.error("Error fetching JSON:", error);
+          alert(`Failed to load workout data: ${error.message}`);
+        }
       }
 
       // Save Progress
