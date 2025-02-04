@@ -19,7 +19,8 @@
 </head>
 <body>
     <h1>Workout Plan</h1>
-    <select id="phase-selector" onchange="loadWorkout()">
+    <label for="phase-selector">Select Workout Phase:</label>
+    <select id="phase-selector" title="Select Workout Phase">
         <option value="workout_plan_phase_1_with_links.json">Phase 1 - Base Hypertrophy</option>
         <option value="workout_plan_phase_2_with_links.json">Phase 2 - Maximum Effort</option>
         <option value="workout_plan_phase_3_with_links.json">Phase 3 - Hypertrophy & Endurance</option>
@@ -27,18 +28,22 @@
     <div class="workout-container" id="workout-container"></div>
 
     <script>
-        async function loadWorkout() {
-            const basePath = "https://europeanonion.github.io/workoutapp/"; // Updated to user's GitHub username
-            const selectedPhase = document.getElementById('phase-selector').value;
-            console.log("Fetching JSON from:", basePath + selectedPhase); // Debugging log
+        const basePath = "https://europeanonion.github.io/workoutapp/";
+
+        document.getElementById("phase-selector").addEventListener("change", () => {
+            const selectedPhase = document.getElementById("phase-selector").value;
+            localStorage.setItem("selectedPhase", selectedPhase);
+            loadWorkout(selectedPhase);
+        });
+
+        async function loadWorkout(selectedPhase = localStorage.getItem("selectedPhase") || "workout_plan_phase_1_with_links.json") {
+            console.log("Fetching JSON from:", basePath + selectedPhase);
 
             try {
                 const response = await fetch(basePath + selectedPhase);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 const data = await response.json();
-                console.log("Loaded JSON data:", data); // Debugging log
+                if (!Array.isArray(data) || data.length === 0) throw new Error("Invalid or empty JSON data");
                 displayWorkout(data);
             } catch (error) {
                 console.error("Error fetching JSON:", error);
@@ -47,7 +52,7 @@
         }
 
         function displayWorkout(data) {
-            const container = document.getElementById('workout-container');
+            const container = document.getElementById("workout-container");
             container.innerHTML = "";
             
             let currentPhase = "";
@@ -56,35 +61,40 @@
             data.forEach((workout, index) => {
                 if (workout.Phase !== currentPhase) {
                     currentPhase = workout.Phase;
-                    const phaseHeader = document.createElement('div');
-                    phaseHeader.classList.add('phase');
+                    const phaseHeader = document.createElement("div");
+                    phaseHeader.classList.add("phase");
                     phaseHeader.textContent = currentPhase;
                     container.appendChild(phaseHeader);
                 }
                 
                 if (workout.Week !== currentWeek) {
                     currentWeek = workout.Week;
-                    const weekHeader = document.createElement('div');
-                    weekHeader.classList.add('week');
+                    const weekHeader = document.createElement("div");
+                    weekHeader.classList.add("week");
                     weekHeader.textContent = `Week ${currentWeek}`;
                     container.appendChild(weekHeader);
                 }
                 
-                const div = document.createElement('div');
-                div.classList.add('exercise');
-                div.innerHTML = `
-                    <h2><a href="${workout.ExerciseLink || '#'}" target="_blank">${workout.Exercise}</a></h2>
-                    <p><strong>Sets:</strong> <input type="number" id="sets-${index}" value="${workout["Working Sets"] || ''}" /></p>
-                    <p><strong>Reps:</strong> <input type="text" id="reps-${index}" value="${workout.Reps || ''}" /></p>
-                    <p><strong>Load:</strong> <input type="text" id="load-${index}" placeholder="Enter weight" /></p>
-                    <p><strong>Rest:</strong> ${workout.Rest || 'N/A'}</p>
-                    <p><strong>Notes:</strong> ${workout.Notes || 'No notes available'}</p>
-                    <p><strong>Substitution 1:</strong> <a href="${workout["Substitution Option 1 Link"] || '#'}" target="_blank">${workout["Substitution Option 1"] || 'N/A'}</a></p>
-                    <p><strong>Substitution 2:</strong> <a href="${workout["Substitution Option 2 Link"] || '#'}" target="_blank">${workout["Substitution Option 2"] || 'N/A'}</a></p>
-                    <button onclick="saveProgress(${index})">Save</button>
-                `;
-                container.appendChild(div);
+                container.appendChild(createExerciseElement(workout, index));
             });
+        }
+
+        function createExerciseElement(workout, index) {
+            const div = document.createElement("div");
+            div.classList.add("exercise");
+            div.innerHTML = `
+                <h2><a href="${workout.ExerciseLink || '#'}" target="_blank">${workout.Exercise}</a></h2>
+                <p><strong>Sets:</strong> <input type="number" id="sets-${index}" value="${getSavedValue(index, 'sets') || workout["Working Sets"] || ''}" /></p>
+                <p><strong>Reps:</strong> <input type="text" id="reps-${index}" value="${getSavedValue(index, 'reps') || workout.Reps || ''}" /></p>
+                <p><strong>Load:</strong> <input type="text" id="load-${index}" placeholder="Enter weight" value="${getSavedValue(index, 'load') || ''}" /></p>
+                <p><strong>Rest:</strong> ${workout.Rest || 'N/A'}</p>
+                <p><strong>Notes:</strong> ${workout.Notes || 'No notes available'}</p>
+                <p><strong>Substitution 1:</strong> <a href="${workout["Substitution Option 1 Link"] || '#'}" target="_blank">${workout["Substitution Option 1"] || 'N/A'}</a></p>
+                <p><strong>Substitution 2:</strong> <a href="${workout["Substitution Option 2 Link"] || '#'}" target="_blank">${workout["Substitution Option 2"] || 'N/A'}</a></p>
+                <button id="save-btn-${index}">Save</button>
+            `;
+            div.querySelector(`#save-btn-${index}`).addEventListener("click", () => saveProgress(index));
+            return div;
         }
 
         function saveProgress(index) {
@@ -92,10 +102,16 @@
             const reps = document.getElementById(`reps-${index}`).value;
             const load = document.getElementById(`load-${index}`).value;
             localStorage.setItem(`workout-${index}`, JSON.stringify({ sets, reps, load }));
-            alert('Workout saved!');
+            alert("Workout saved!");
+        }
+
+        function getSavedValue(index, key) {
+            const savedData = localStorage.getItem(`workout-${index}`);
+            return savedData ? JSON.parse(savedData)[key] : null;
         }
 
         window.onload = function() {
+            document.getElementById("phase-selector").value = localStorage.getItem("selectedPhase") || "workout_plan_phase_1_with_links.json";
             loadWorkout();
         };
     </script>
