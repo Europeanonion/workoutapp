@@ -17,7 +17,12 @@
    */
   function populatePhaseSelector() {
     const phaseSelector = document.getElementById("phase-selector");
-    PHASE_OPTIONS.forEach(opt => {
+    if (!window.PHASE_OPTIONS) {
+      console.error("PHASE_OPTIONS is not defined.");
+      showToast("Failed to load workout phases.", "danger");
+      return;
+    }
+    window.PHASE_OPTIONS.forEach(opt => {
       const optionEl = document.createElement("option");
       optionEl.value = opt.value;
       optionEl.textContent = opt.label;
@@ -94,10 +99,10 @@
    * Load Saved Workout Phase from localStorage
    */
   function loadSavedPhase() {
-    const savedPhase = getSelectedPhase() || PHASE_OPTIONS[0].value;
+    const savedPhase = getSelectedPhase() || window.PHASE_OPTIONS[0].value;
     const phaseSelector = document.getElementById("phase-selector");
     phaseSelector.value = savedPhase;
-    loadWorkout(savedPhase);
+    window.loadWorkout(savedPhase);
   }
 
   /**
@@ -106,7 +111,7 @@
   function handlePhaseChange() {
     const selectedPhase = document.getElementById("phase-selector").value;
     saveSelectedPhase(selectedPhase);
-    loadWorkout(selectedPhase);
+    window.loadWorkout(selectedPhase);
   }
 
   /**
@@ -232,7 +237,7 @@
 
     // Reload current phase
     const currentPhase = document.getElementById("phase-selector").value;
-    loadWorkout(currentPhase);
+    window.loadWorkout(currentPhase);
   }
 
   /**
@@ -388,12 +393,12 @@
     const data = labels.map(date => volumeByDate[date]);
 
     // Destroy previous chart if exists
-    if (volumeChart) {
-      volumeChart.destroy();
+    if (window.volumeChart) {
+      window.volumeChart.destroy();
     }
 
     const ctx = document.getElementById('volume-chart').getContext('2d');
-    volumeChart = new Chart(ctx, {
+    window.volumeChart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels,
