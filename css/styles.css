@@ -1,98 +1,96 @@
-  <style>
-    /* CSS Variables for Theming */
-    :root {
-      --color-primary: #343a40; /* Dark Gray */
-      --color-secondary: #007bff; /* Blue */
-      --color-success: #28a745; /* Green */
-      --color-danger: #dc3545; /* Red */
-      --color-background: #f8f9fa; /* Light Gray */
-      --color-text: #212529; /* Dark Text */
-    }
+/* CSS Variables for Theming */
+:root {
+  --color-primary: #343a40; /* Dark Gray */
+  --color-secondary: #007bff; /* Blue */
+  --color-success: #28a745; /* Green */
+  --color-danger: #dc3545; /* Red */
+  --color-background: #f8f9fa; /* Light Gray */
+  --color-text: #212529; /* Dark Text */
+}
 
-    /* Dark Theme Variables */
-    :root.dark {
-      --color-primary: #212529;
-      --color-secondary: #17a2b8;
-      --color-success: #28a745;
-      --color-danger: #dc3545;
-      --color-background: #212529;
-      --color-text: #f8f9fa;
-    }
+/* Dark Theme Variables */
+:root.dark {
+  --color-primary: #212529;
+  --color-secondary: #17a2b8;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-background: #212529;
+  --color-text: #f8f9fa;
+}
 
-    /* Basic Reset & Body */
-    body {
-      background-color: var(--color-background);
-      color: var(--color-text);
-      font-family: 'Roboto', sans-serif;
-      transition: background-color 0.3s, color 0.3s;
-    }
+/* Basic Reset & Body */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Roboto', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
 
-    /* Header Styles */
-    header {
-      background-color: var(--color-primary);
-      color: #ffffff;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+/* Header Styles */
+header {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
 
-    /* Theme Toggle Switch */
-    .form-switch .form-check-input {
-      cursor: pointer;
-    }
+/* Theme Toggle Switch */
+.form-switch .form-check-input {
+  cursor: pointer;
+}
 
-    /* Exercise Card Styles */
-    .exercise {
-      background-color: #ffffff;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
+/* Exercise Card Styles */
+.exercise {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
 
-    .exercise:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      transform: translateY(-2px);
-    }
+.exercise:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
 
-    /* Button Styles */
-    .btn {
-      transition: background-color 0.3s, transform 0.2s;
-    }
+/* Button Styles */
+.btn {
+  transition: background-color 0.3s, transform 0.2s;
+}
 
-    .btn:hover {
-      transform: translateY(-1px);
-    }
+.btn:hover {
+  transform: translateY(-1px);
+}
 
-    /* Loading Spinner Styles */
-    #loading-spinner {
-      display: none;
-    }
+/* Loading Spinner Styles */
+#loading-spinner {
+  display: none;
+}
 
-    #loading-spinner.active {
-      display: block;
-    }
+#loading-spinner.active {
+  display: block;
+}
 
-    /* Input Error Styles */
-    .input-error {
-      border-color: var(--color-danger);
-      background-color: #f8d7da;
-    }
+/* Input Error Styles */
+.input-error {
+  border-color: var(--color-danger);
+  background-color: #f8d7da;
+}
 
-    .input-success {
-      border-color: var(--color-success);
-      background-color: #d4edda;
-    }
+.input-success {
+  border-color: var(--color-success);
+  background-color: #d4edda;
+}
 
-    /* Toast Styles */
-    .toast-container .toast {
-      min-width: 250px;
-    }
-  </style>
+/* Toast Styles */
+.toast-container .toast {
+  min-width: 250px;
+}
