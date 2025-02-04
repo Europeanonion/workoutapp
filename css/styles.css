@@ -1,58 +1,10 @@
-/* CSS Variables for Theming */
-:root {
-  --color-primary: #343a40; /* Dark Gray */
-  --color-secondary: #007bff; /* Blue */
-  --color-success: #28a745; /* Green */
-  --color-danger: #dc3545; /* Red */
-  --color-background: #f8f9fa; /* Light Gray */
-  --color-text: #212529; /* Dark Text */
-}
-
-/* Dark Theme Variables */
-:root.dark {
-  --color-primary: #212529;
-  --color-secondary: #17a2b8;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-background: #212529;
-  --color-text: #f8f9fa;
-}
-
-/* Basic Reset & Body */
-body {
-  background-color: var(--color-background);
-  color: var(--color-text);
-  font-family: 'Roboto', sans-serif;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Header Styles */
-header {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Theme Toggle Switch */
-.form-switch .form-check-input {
-  cursor: pointer;
-}
-
-/* Exercise Card Styles */
+/* Exercise Card */
 .exercise {
   background-color: #ffffff;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   transition: box-shadow 0.3s, transform 0.3s;
 }
 
@@ -61,36 +13,67 @@ header h1 {
   transform: translateY(-2px);
 }
 
-/* Button Styles */
+/* Improve input field layout */
+.exercise .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.exercise input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Improve section styling */
+.week, .day {
+  background-color: #212529;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+}
+
+.day {
+  background-color: #343a40;
+  font-weight: bold;
+}
+
+/* Adjust headers for better visibility */
+h2 a {
+  color: #6a0dad;
+  text-decoration: none;
+}
+
+h2 a:hover {
+  text-decoration: underline;
+  color: #8a2be2;
+}
+
+/* Improve button styling */
 .btn {
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 .btn:hover {
   transform: translateY(-1px);
 }
 
-/* Loading Spinner Styles */
-#loading-spinner {
-  display: none;
+/* Lighten text for dark mode */
+body.dark-mode {
+  background-color: #212529;
+  color: #f8f9fa;
 }
 
-#loading-spinner.active {
-  display: block;
+.dark-mode .exercise {
+  background-color: #2c2f33;
+  border: 1px solid #444;
 }
 
-/* Input Error Styles */
-.input-error {
-  border-color: var(--color-danger);
-  background-color: #f8d7da;
-}
-
-.input-success {
-  border-color: var(--color-success);
-  background-color: #d4edda;
-}
-
-/* Toast Styles */
-.toast-container .toast {
-  min-width: 250px;
+.dark-mode .week, .dark-mode .day {
+  background-color: #1c1f22;
+  color: #ffffff;
 }
