@@ -13,6 +13,7 @@
   transform: translateY(-2px);
 }
 
+
 /* Improve input field layout */
 .exercise .row {
   display: flex;
@@ -28,6 +29,7 @@
   font-size: 16px;
 }
 
+
 /* Improve section styling */
 .week, .day {
   background-color: #212529;
@@ -41,6 +43,7 @@
   background-color: #343a40;
   font-weight: bold;
 }
+
 
 /* Adjust headers for better visibility */
 h2 a {
