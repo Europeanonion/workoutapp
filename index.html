@@ -1,107 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout Plan</title>
-    <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; text-align: center; }
-        .workout-container { max-width: 800px; margin: auto; }
-        .phase { font-size: 24px; font-weight: bold; margin-top: 20px; }
-        .week { font-size: 20px; font-weight: bold; margin-top: 10px; }
-        .exercise { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); text-align: left; }
-        h2 { color: #333; }
-        label { display: block; margin-top: 5px; }
-        input { width: 100px; padding: 5px; margin-top: 5px; }
-        button { background: #007BFF; color: white; border: none; padding: 8px 12px; border-radius: 5px; transition: 0.3s; }
-        button:hover { background: #0056b3; cursor: pointer; }
-        a { color: blue; text-decoration: none; }
-        #dark-mode-toggle { margin: 15px; padding: 10px 15px; background: #333; color: white; border-radius: 5px; cursor: pointer; }
-        .dark-mode { background-color: #121212; color: #f1f1f1; }
-        .dark-mode .exercise { background: #222; color: white; }
-        #search-bar { width: 80%; padding: 10px; margin: 10px 0; }
-        .tab { overflow: hidden; border-bottom: 2px solid #007BFF; display: flex; justify-content: center; margin-bottom: 20px; }
-        .tab button { background: none; border: none; padding: 10px 20px; cursor: pointer; font-size: 16px; transition: 0.3s; }
-        .tab button:hover { background: #007BFF; color: white; }
-        .tabcontent { display: none; padding: 20px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workout Plan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    main {
+      padding: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .reset-btn {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+    .reset-btn:hover {
+      background: #c0392b;
+    }
+    .phase {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .week {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      text-align: left;
+    }
+    .exercise {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 1rem;
+      margin: 1rem 0;
+      text-align: left;
+    }
+    .exercise h2 {
+      color: #2c3e50;
+      margin: 0 0 0.5rem 0;
+    }
+    .exercise a {
+      text-decoration: none;
+      color: #2980b9;
+    }
+    .exercise a:hover {
+      text-decoration: underline;
+    }
+    .exercise input {
+      width: 80px;
+      padding: 0.3rem;
+      margin-top: 0.3rem;
+    }
+    .exercise p {
+      margin: 0.5rem 0;
+    }
+    .save-btn {
+      background: #2980b9;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .save-btn:hover {
+      background: #1a6390;
+    }
+  </style>
 </head>
 <body>
+  <header>
     <h1>Workout Plan</h1>
-    <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
-    <input type="text" id="search-bar" placeholder="Search exercises...">
-    <div class="tab">
-        <button class="tablinks" onclick="openWeek(event, 'Week1')">Week 1</button>
-        <button class="tablinks" onclick="openWeek(event, 'Week2')">Week 2</button>
-        <button class="tablinks" onclick="openWeek(event, 'Week3')">Week 3</button>
-    </div>
-    <div id="Week1" class="tabcontent"></div>
-    <div id="Week2" class="tabcontent"></div>
-    <div id="Week3" class="tabcontent"></div>
-    <div class="workout-container" id="workout-container"></div>
+  </header>
 
-    <script>
-        const basePath = "https://europeanonion.github.io/workoutapp/";
+  <main>
+    <label for="phase-selector">Select Workout Phase:</label>
+    <select id="phase-selector" title="Select Workout Phase" aria-label="Workout Phase"></select>
+    <button class="reset-btn" id="reset-data-btn" aria-label="Reset all saved workout data">
+      Reset All Data
+    </button>
 
-        document.getElementById("dark-mode-toggle").addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-            localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
-        });
+    <div id="workout-container"></div>
+  </main>
 
-        if (localStorage.getItem("dark-mode") === "true") {
-            document.body.classList.add("dark-mode");
+  <script>
+    const basePath = "https://europeanonion.github.io/workoutapp/";
+    const PHASE_OPTIONS = [
+      { value: "workout_plan_phase_1_with_links.json", label: "Phase 1 - Base Hypertrophy" },
+      { value: "workout_plan_phase_2_with_links.json", label: "Phase 2 - Maximum Effort" },
+      { value: "workout_plan_phase_3_with_links.json", label: "Phase 3 - Hypertrophy & Endurance" }
+    ];
+
+    function init() {
+      // Populate the select dropdown
+      const phaseSelector = document.getElementById("phase-selector");
+      PHASE_OPTIONS.forEach(opt => {
+        const optionEl = document.createElement("option");
+        optionEl.value = opt.value;
+        optionEl.textContent = opt.label;
+        phaseSelector.appendChild(optionEl);
+      });
+
+      // Restore saved phase or default
+      const savedPhase = localStorage.getItem("selectedPhase") || PHASE_OPTIONS[0].value;
+      phaseSelector.value = savedPhase;
+
+      // Event listeners
+      phaseSelector.addEventListener("change", handlePhaseChange);
+      document.getElementById("reset-data-btn").addEventListener("click", resetAllData);
+
+      // Load workout data
+      loadWorkout(savedPhase);
+    }
+
+    function handlePhaseChange() {
+      const phaseSelector = document.getElementById("phase-selector");
+      const selectedPhase = phaseSelector.value;
+      localStorage.setItem("selectedPhase", selectedPhase);
+      loadWorkout(selectedPhase);
+    }
+
+    async function loadWorkout(selectedPhase) {
+      console.log("Fetching JSON from:", basePath + selectedPhase);
+
+      try {
+        const response = await fetch(basePath + selectedPhase);
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+        const data = await response.json();
+        if (!Array.isArray(data) || data.length === 0) {
+          throw new Error("Invalid or empty JSON data");
+        }
+        displayWorkout(data);
+      } catch (error) {
+        console.error("Error fetching JSON:", error);
+        alert("Failed to load workout data. Check console for errors.");
+      }
+    }
+
+    function displayWorkout(data) {
+      const container = document.getElementById("workout-container");
+      container.innerHTML = "";
+
+      let currentPhase = "";
+      let currentWeek = "";
+
+      data.forEach((workout, index) => {
+        if (workout.Phase !== currentPhase) {
+          currentPhase = workout.Phase;
+          const phaseHeader = document.createElement("div");
+          phaseHeader.classList.add("phase");
+          phaseHeader.textContent = currentPhase;
+          container.appendChild(phaseHeader);
         }
 
-        document.getElementById("search-bar").addEventListener("input", function () {
-            const query = this.value.toLowerCase();
-            document.querySelectorAll(".exercise").forEach(exercise => {
-                exercise.style.display = exercise.innerText.toLowerCase().includes(query) ? "block" : "none";
-            });
-        });
-
-        function openWeek(evt, weekName) {
-            document.querySelectorAll(".tabcontent").forEach(tab => tab.style.display = "none");
-            document.getElementById(weekName).style.display = "block";
+        if (workout.Week !== currentWeek) {
+          currentWeek = workout.Week;
+          const weekHeader = document.createElement("div");
+          weekHeader.classList.add("week");
+          weekHeader.textContent = `Week ${currentWeek}`;
+          container.appendChild(weekHeader);
         }
 
-        async function loadWorkout() {
-            const selectedPhase = localStorage.getItem("selectedPhase") || "workout_plan_phase_1_with_links.json";
-            console.log("Fetching JSON from:", basePath + selectedPhase);
+        container.appendChild(createExerciseElement(workout, index));
+      });
+    }
 
-            try {
-                const response = await fetch(basePath + selectedPhase);
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                const data = await response.json();
-                if (!Array.isArray(data) || data.length === 0) throw new Error("Invalid or empty JSON data");
-                displayWorkout(data);
-            } catch (error) {
-                console.error("Error fetching JSON:", error);
-                alert("Failed to load workout data. Check console for errors.");
-            }
+    function createExerciseElement(workout, index) {
+      const exerciseDiv = document.createElement("div");
+      exerciseDiv.classList.add("exercise");
+
+      const setsValue = getSavedValue(index, "sets") || workout["Working Sets"] || "";
+      const repsValue = getSavedValue(index, "reps") || workout.Reps || "";
+      const loadValue = getSavedValue(index, "load") || "";
+
+      exerciseDiv.innerHTML = `
+        <h2>
+          <a href="${workout.ExerciseLink || '#'}" target="_blank">
+            ${workout.Exercise || 'Untitled Exercise'}
+          </a>
+        </h2>
+        <p><strong>Sets:</strong>
+          <input type="number" aria-label="Sets for ${workout.Exercise}" id="sets-${index}" value="${setsValue}" />
+        </p>
+        <p><strong>Reps:</strong>
+          <input type="text" aria-label="Reps for ${workout.Exercise}" id="reps-${index}" value="${repsValue}" />
+        </p>
+        <p><strong>Load:</strong>
+          <input type="text" aria-label="Load for ${workout.Exercise}" id="load-${index}" placeholder="Enter weight" value="${loadValue}" />
+        </p>
+        <p><strong>Rest:</strong> ${workout.Rest || 'N/A'}</p>
+        <p><strong>Notes:</strong> ${workout.Notes || 'No notes available'}</p>
+        <p><strong>Substitution 1:</strong>
+          <a href="${workout["Substitution Option 1 Link"] || '#'}" target="_blank">
+            ${workout["Substitution Option 1"] || 'N/A'}
+          </a>
+        </p>
+        <p><strong>Substitution 2:</strong>
+          <a href="${workout["Substitution Option 2 Link"] || '#'}" target="_blank">
+            ${workout["Substitution Option 2"] || 'N/A'}
+          </a>
+        </p>
+        <button class="save-btn" aria-label="Save workout data for ${workout.Exercise}" id="save-btn-${index}">
+          Save
+        </button>
+      `;
+
+      // Add a click listener for Save
+      exerciseDiv.querySelector(`#save-btn-${index}`).addEventListener("click", () => {
+        saveProgress(index, workout.Exercise);
+      });
+      return exerciseDiv;
+    }
+
+    function saveProgress(index, exerciseName) {
+      const sets = document.getElementById(`sets-${index}`).value.trim();
+      const reps = document.getElementById(`reps-${index}`).value.trim();
+      const load = document.getElementById(`load-${index}`).value.trim();
+
+      // Basic numeric validation for sets and reps
+      if (!validateNumber(sets) || !validateNumber(reps)) {
+        alert(`Please enter numeric values for sets and reps (Exercise: ${exerciseName}).`);
+        return;
+      }
+
+      localStorage.setItem(`workout-${index}`, JSON.stringify({ sets, reps, load }));
+      showSaveConfirmation(index);
+    }
+
+    function validateNumber(value) {
+      // Allow empty or digits only
+      // If you want strictly required numbers, remove the '|| value===""' check
+      return value === "" || /^[0-9]+$/.test(value);
+    }
+
+    function showSaveConfirmation(index) {
+      const saveBtn = document.getElementById(`save-btn-${index}`);
+      const originalText = saveBtn.textContent;
+      saveBtn.textContent = "Saved!";
+      saveBtn.disabled = true;
+      setTimeout(() => {
+        saveBtn.textContent = originalText;
+        saveBtn.disabled = false;
+      }, 1500);
+    }
+
+    function getSavedValue(index, key) {
+      const savedData = localStorage.getItem(`workout-${index}`);
+      return savedData ? JSON.parse(savedData)[key] : null;
+    }
+
+    function resetAllData() {
+      if (!confirm("Are you sure you want to clear all saved workout data?")) return;
+      Object.keys(localStorage).forEach(key => {
+        if (key.startsWith("workout-")) {
+          localStorage.removeItem(key);
         }
+      });
+      alert("All saved workout data has been cleared.");
+      // Reload the current phase so cleared data is reflected in inputs
+      const currentPhase = document.getElementById("phase-selector").value;
+      loadWorkout(currentPhase);
+    }
 
-        function displayWorkout(data) {
-            const container = document.getElementById("workout-container");
-            container.innerHTML = "";
-            data.forEach(workout => {
-                const div = document.createElement("div");
-                div.classList.add("exercise");
-                div.innerHTML = `
-                    <h2><a href="${workout.ExerciseLink || '#'}" target="_blank">${workout.Exercise}</a></h2>
-                    <p><strong>Sets:</strong> ${workout["Working Sets"] || 'N/A'}</p>
-                    <p><strong>Reps:</strong> ${workout.Reps || 'N/A'}</p>
-                    <p><strong>Rest:</strong> ${workout.Rest || 'N/A'}</p>
-                    <p><strong>Notes:</strong> ${workout.Notes || 'No notes available'}</p>
-                    <p><strong>Substitution 1:</strong> <a href="${workout["Substitution Option 1 Link"] || '#'}" target="_blank">${workout["Substitution Option 1"] || 'N/A'}</a></p>
-                    <p><strong>Substitution 2:</strong> <a href="${workout["Substitution Option 2 Link"] || '#'}" target="_blank">${workout["Substitution Option 2"] || 'N/A'}</a></p>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        window.onload = function() {
-            loadWorkout();
-        };
-    </script>
+    // Initialize app on page load
+    window.addEventListener("load", init);
+  </script>
 </body>
 </html>
