@@ -14,15 +14,17 @@
    * @returns {Promise<Object>} - The workout data JSON
    */
   async function fetchWorkoutData(phaseUrl) {
+    console.log(`Fetching workout data from: ${phaseUrl}`);
     try {
       const response = await fetch(phaseUrl);
       if (!response.ok) {
         throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
       }
       const data = await response.json();
+      console.log("Workout data fetched successfully.");
       return data;
     } catch (error) {
-      console.error(error);
+      console.error("Error in fetchWorkoutData:", error);
       showToast("Error loading workout data. Please try again later.", "danger");
       throw error; // Re-throw to allow further handling if needed
     }
@@ -33,6 +35,7 @@
    * @param {Object} data - The workout data JSON
    */
   function displayWorkout(data) {
+    console.log("Displaying workout data.");
     const container = document.getElementById("workout-container");
     container.innerHTML = ""; // Clear existing content
 
@@ -44,6 +47,7 @@
       weekHeader.classList.add("week", "d-flex", "align-items-center", "mt-4", "mb-2");
       weekHeader.innerHTML = `<i class="fas fa-calendar-alt me-2"></i> Week ${weekObj.week}`;
       container.appendChild(weekHeader);
+      console.log(`Week ${weekObj.week} added.`);
 
       // Iterate through each workout day
       weekObj.workouts.forEach((workoutDay) => {
@@ -52,11 +56,13 @@
         dayHeader.classList.add("day", "d-flex", "align-items-center", "mb-2");
         dayHeader.innerHTML = `<i class="fas fa-dumbbell me-2"></i> ${workoutDay.day}`;
         container.appendChild(dayHeader);
+        console.log(`Workout day '${workoutDay.day}' added.`);
 
         // Iterate through each exercise
         workoutDay.exercises.forEach((exercise) => {
           const exerciseElement = createExerciseElement(exercise, exerciseIndex);
           container.appendChild(exerciseElement);
+          console.log(`Exercise '${exercise.Exercise}' added at index ${exerciseIndex}.`);
           exerciseIndex++;
         });
       });
@@ -70,6 +76,7 @@
    * @returns {HTMLElement} - The exercise DOM element
    */
   function createExerciseElement(exercise, index) {
+    console.log(`Creating DOM element for exercise at index ${index}.`);
     const exerciseDiv = document.createElement("div");
     exerciseDiv.classList.add("exercise");
 
@@ -122,6 +129,7 @@
 
     // Add SAVE button event listener
     exerciseDiv.querySelector(`#save-btn-${index}`).addEventListener("click", () => {
+      console.log(`Save button clicked for exercise '${exercise.Exercise}' at index ${index}.`);
       saveProgress(index, exercise.Exercise);
     });
 
@@ -145,4 +153,20 @@
    */
   window.PHASE_OPTIONS = PHASE_OPTIONS;
   window.loadWorkout = loadWorkout;
+
+  /**
+   * Define the loadWorkout function and attach it to the window object
+   * (Assuming it was missing in the previous implementation)
+   */
+  async function loadWorkout(phaseUrl) {
+    console.log(`loadWorkout called with URL: ${phaseUrl}`);
+    try {
+      const data = await fetchWorkoutData(phaseUrl);
+      displayWorkout(data);
+      console.log("Workout data displayed successfully.");
+    } catch (error) {
+      console.error("Error in loadWorkout:", error);
+      showToast("Failed to load workout data.", "danger");
+    }
+  }
 })();
