@@ -75,66 +75,55 @@
    * @param {number} index - The unique index of the exercise
    * @returns {HTMLElement} - The exercise DOM element
    */
-  function createExerciseElement(exercise, index) {
-    console.log(`Creating DOM element for exercise at index ${index}.`);
+   function createExerciseElement(exercise, index) {
     const exerciseDiv = document.createElement("div");
-    exerciseDiv.classList.add("exercise");
-
-    // Retrieve saved data if available
-    const savedData = getWorkoutData(index);
-    const setsValue = savedData?.sets || exercise["Working Sets"] || "";
-    const repsValue = savedData?.reps || exercise.Reps || "";
-    const loadValue = savedData?.load || "";
-
+    exerciseDiv.classList.add("exercise", "col-md-6", "mb-4"); // Uses Bootstrap grid system
+  
+    const setsValue = getSavedValue(index, "sets") || exercise["Working Sets"] || "";
+    const repsValue = getSavedValue(index, "reps") || exercise.Reps || "";
+    const loadValue = getSavedValue(index, "load") || "";
+  
     exerciseDiv.innerHTML = `
-      <h2>
-        <a href="${sanitize(exercise.ExerciseLink || '#')}" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise.Exercise || 'Untitled Exercise')}
-        </a>
-      </h2>
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <label for="sets-${index}" class="form-label">Sets</label>
-          <input type="number" min="0" class="form-control" aria-label="Sets for ${sanitize(exercise.Exercise)}"
-                 id="sets-${index}" value="${setsValue}" placeholder="e.g., 3" required />
+      <div class="card shadow-sm p-3">
+        <h2>
+          <a href="${sanitize(exercise.ExerciseLink || '#')}" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise.Exercise || 'Untitled Exercise')}
+          </a>
+        </h2>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="sets-${index}" class="form-label">Sets</label>
+            <input type="number" min="0" class="form-control" id="sets-${index}" value="${setsValue}" placeholder="e.g., 3" required />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="reps-${index}" class="form-label">Reps</label>
+            <input type="number" min="0" class="form-control" id="reps-${index}" value="${repsValue}" placeholder="e.g., 10" required />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="load-${index}" class="form-label">Load (kg)</label>
+            <input type="number" min="0" class="form-control" id="load-${index}" value="${loadValue}" placeholder="Weight" required />
+          </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <label for="reps-${index}" class="form-label">Reps</label>
-          <input type="number" min="0" class="form-control" aria-label="Reps for ${sanitize(exercise.Exercise)}"
-                 id="reps-${index}" value="${repsValue}" placeholder="e.g., 10" required />
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="load-${index}" class="form-label">Load (kg)</label>
-          <input type="number" min="0" class="form-control" aria-label="Load for ${sanitize(exercise.Exercise)}"
-                 id="load-${index}" placeholder="Weight" value="${loadValue}" required />
-        </div>
+        <p class="mb-2"><strong>Rest:</strong> ${sanitize(exercise.Rest || 'N/A')}</p>
+        <p class="mb-2"><strong>Notes:</strong> ${sanitize(exercise.Notes || 'No notes available')}</p>
+        <p class="mb-2"><strong>Substitution 1:</strong>
+          <a href="${sanitize(exercise["Substitution Option 1 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise["Substitution Option 1"] || 'N/A')}
+          </a>
+        </p>
+        <p class="mb-2"><strong>Substitution 2:</strong>
+          <a href="${sanitize(exercise["Substitution Option 2 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise["Substitution Option 2"] || 'N/A')}
+          </a>
+        </p>
+        <button class="btn btn-primary mt-2" id="save-btn-${index}">
+          <i class="fas fa-save me-2"></i> Save
+        </button>
       </div>
-      <p class="mb-2"><strong>Rest:</strong> ${sanitize(exercise.Rest || 'N/A')}</p>
-      <p class="mb-2"><strong>Notes:</strong> ${sanitize(exercise.Notes || 'No notes available')}</p>
-      <p class="mb-2"><strong>Substitution 1:</strong>
-        <a href="${sanitize(exercise["Substitution Option 1 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise["Substitution Option 1"] || 'N/A')}
-        </a>
-      </p>
-      <p class="mb-2"><strong>Substitution 2:</strong>
-        <a href="${sanitize(exercise["Substitution Option 2 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise["Substitution Option 2"] || 'N/A')}
-        </a>
-      </p>
-      <button class="btn btn-primary mt-2" aria-label="Save workout data for ${sanitize(exercise.Exercise)}"
-              id="save-btn-${index}">
-        <i class="fas fa-save me-2"></i> Save
-      </button>
     `;
-
-    // Add SAVE button event listener
-    exerciseDiv.querySelector(`#save-btn-${index}`).addEventListener("click", () => {
-      console.log(`Save button clicked for exercise '${exercise.Exercise}' at index ${index}.`);
-      saveProgress(index, exercise.Exercise);
-    });
-
+  
     return exerciseDiv;
-  }
+  }  
 
   /**
    * Sanitize Input to Prevent XSS
