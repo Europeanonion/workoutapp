@@ -1,3 +1,21 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 /* Exercise Card */
 .exercise {
   background-color: #ffffff;
@@ -13,7 +31,6 @@
   transform: translateY(-2px);
 }
 
-
 /* Improve input field layout */
 .exercise .row {
   display: flex;
@@ -27,8 +44,8 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  margin-bottom: 1rem;
 }
-
 
 /* Improve section styling */
 .week, .day {
@@ -43,7 +60,6 @@
   background-color: #343a40;
   font-weight: bold;
 }
-
 
 /* Adjust headers for better visibility */
 h2 a {
@@ -79,4 +95,23 @@ body.dark-mode {
 .dark-mode .week, .dark-mode .day {
   background-color: #1c1f22;
   color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .exercise {
+    padding: 1rem;
+  }
+
+  .exercise .row {
+    flex-direction: column;
+  }
+
+  .exercise input {
+    margin-bottom: 0.5rem;
+  }
+
+  .week, .day {
+    padding: 8px;
+  }
 }
