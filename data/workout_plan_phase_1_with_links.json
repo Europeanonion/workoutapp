@@ -13,7 +13,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "3-5",
-                            "load": "",
+                            "MinReps": 3,
+                            "MaxReps": 5,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -34,7 +36,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -59,8 +63,10 @@
                             "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
                             "warmup_sets": 0,
                             "Working Sets": 4,
-                            "reps": 10,
-                            "load": "See Notes",
+                            "reps": "10-12",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -81,7 +87,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "10-12",
-                            "load": "",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -107,7 +115,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "2-4",
-                            "load": "",
+                            "MinReps": 2,
+                            "MaxReps": 4,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -128,7 +138,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -137,7 +149,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -159,7 +171,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "3-5",
-                            "load": "",
+                            "MinReps": 3,
+                            "MaxReps": 5,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -180,7 +194,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -205,8 +221,10 @@
                             "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
                             "warmup_sets": 0,
                             "Working Sets": 4,
-                            "reps": 10,
-                            "load": "See Notes",
+                            "reps": "10-12",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -227,7 +245,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "10-12",
-                            "load": "",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -253,7 +273,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "2-4",
-                            "load": "",
+                            "MinReps": 2,
+                            "MaxReps": 4,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -274,7 +296,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -283,7 +307,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -305,7 +329,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "3-5",
-                            "load": "",
+                            "MinReps": 3,
+                            "MaxReps": 5,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -326,7 +352,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -351,8 +379,10 @@
                             "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
                             "warmup_sets": 0,
                             "Working Sets": 4,
-                            "reps": 10,
-                            "load": "See Notes",
+                            "reps": "10-12",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -373,7 +403,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "10-12",
-                            "load": "",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -399,7 +431,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "2-4",
-                            "load": "",
+                            "MinReps": 2,
+                            "MaxReps": 4,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -420,7 +454,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -429,7 +465,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -451,7 +487,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "3-5",
-                            "load": "",
+                            "MinReps": 3,
+                            "MaxReps": 5,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -472,7 +510,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -497,8 +537,10 @@
                             "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
                             "warmup_sets": 0,
                             "Working Sets": 4,
-                            "reps": 10,
-                            "load": "See Notes",
+                            "reps": "10-12",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -519,7 +561,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "10-12",
-                            "load": "",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -545,7 +589,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "2-4",
-                            "load": "",
+                            "MinReps": 2,
+                            "MaxReps": 4,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -566,7 +612,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -575,7 +623,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -597,7 +645,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "3-5",
-                            "load": "",
+                            "MinReps": 3,
+                            "MaxReps": 5,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -618,7 +668,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -643,8 +695,10 @@
                             "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
                             "warmup_sets": 0,
                             "Working Sets": 4,
-                            "reps": 10,
-                            "load": "See Notes",
+                            "reps": "10-12",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -665,7 +719,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "10-12",
-                            "load": "",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -691,7 +747,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "2-4",
-                            "load": "",
+                            "MinReps": 2,
+                            "MaxReps": 4,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -712,7 +770,9 @@
                             "warmup_sets": 2,
                             "Working Sets": 3,
                             "reps": "8-10",
-                            "load": "",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "8-9",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -721,7 +781,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -743,7 +803,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "3-5",
-                            "load": "",
+                            "MinReps": 3,
+                            "MaxReps": 5,
+                            "load": 0,
                             "RPE": "7",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -763,8 +825,10 @@
                             "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
                             "warmup_sets": 2,
                             "Working Sets": 3,
-                            "reps": "8-8",
-                            "load": "",
+                            "reps": "8-10",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "7",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -789,8 +853,10 @@
                             "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
                             "warmup_sets": 0,
                             "Working Sets": 4,
-                            "reps": 10,
-                            "load": "See Notes",
+                            "reps": "10-12",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "7",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -810,8 +876,10 @@
                             "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
                             "warmup_sets": 2,
                             "Working Sets": 3,
-                            "reps": "8-12",
-                            "load": "",
+                            "reps": "10-12",
+                            "MinReps": 10,
+                            "MaxReps": 12,
+                            "load": 0,
                             "RPE": "7",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -837,7 +905,9 @@
                             "warmup_sets": "3-4",
                             "Working Sets": 1,
                             "reps": "2-4",
-                            "load": "",
+                            "MinReps": 2,
+                            "MaxReps": 4,
+                            "load": 0,
                             "RPE": "7",
                             "rest": "~3-4 min",
                             "substitutions": [
@@ -857,8 +927,10 @@
                             "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
                             "warmup_sets": 2,
                             "Working Sets": 3,
-                            "reps": "8-8",
-                            "load": "",
+                            "reps": "8-10",
+                            "MinReps": 8,
+                            "MaxReps": 10,
+                            "load": 0,
                             "RPE": "7",
                             "rest": "~2-3 min",
                             "substitutions": [
@@ -867,7 +939,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
