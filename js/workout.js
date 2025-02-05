@@ -38,86 +38,91 @@
     }
   }
 
-  /**
+   /**
    * Display Workout Data
    * @param {object} data - The workout data
    */
-  function displayWorkout(data) {
+   function displayWorkout(data) {
     console.log("[Workout] JSON Data Received:", data);
 
-    data.weeks.forEach((weekObj, weekIndex) => {
+    data.weeks.forEach((weekObj) => {
       console.log(`[Workout] Processing Week ${weekObj.week}`);
-      weekObj.workouts.forEach((workoutDay, workoutIndex) => {
+      weekObj.workouts.forEach((workoutDay) => {
         console.log(`[Workout] Processing Workout Day: ${workoutDay.day}`);
 
-        workoutDay.exercises.forEach((exercise, exerciseIdx) => {
-          console.log(`[Workout] Loading Exercise ${exerciseIdx + 1}:`, exercise);
-          const exerciseElement = createExerciseElement(exercise, exerciseIdx);
+        workoutDay.exercises.forEach((exercise, index) => {
+          console.log(`[Workout] Loading Exercise ${index + 1}:`, exercise);
+
+          if (!exercise.Exercise) {
+            console.warn(`[WARNING] Exercise ${index + 1} is missing a name!`);
+          }
+          if (!exercise.Reps) {
+            console.warn(`[WARNING] Exercise "${exercise.Exercise}" is missing Reps!`);
+          }
+          if (!exercise.Load) {
+            console.warn(`[WARNING] Exercise "${exercise.Exercise}" is missing Load!`);
+          }
+
+          const exerciseElement = createExerciseElement(exercise, index);
           document.getElementById('workout-container').appendChild(exerciseElement);
         });
       });
     });
   }
 
-  /**
+ /**
    * Create Exercise Element
    * @param {object} exercise - The exercise data
    * @param {number} index - The index of the exercise
    * @returns {HTMLElement} - The created exercise element
    */
-  function createExerciseElement(exercise, index) {
-    console.log(`[Workout] Creating Exercise Card for: ${exercise.Exercise || "Untitled"}`);
+ function createExerciseElement(exercise, index) {
+  console.log(`[Workout] Creating Exercise: ${exercise.Exercise || "Untitled"}`);
 
-    if (!exercise.Exercise) {
-      console.warn(`[Warning] Exercise ${index} is missing a name!`);
-    }
+  // Ensure correct property mapping
+  const exerciseName = exercise.Exercise || exercise.name || "Unnamed Exercise";
+  const exerciseLink = exercise.ExerciseLink || exercise.link || "#";
+  const setsValue = getSavedValue(`sets_${index}`, exercise["Working Sets"] || exercise.working_sets || 3);
+  const repsValue = getSavedValue(`reps_${index}`, exercise.Reps || exercise.reps || 10);
+  const loadValue = getSavedValue(`load_${index}`, exercise.Load || exercise.load || 0);
 
-    const weightKey = `weight_${index}`; // Unique key for local storage
-    const savedWeight = getSavedValue(weightKey, 0); // Default to 0 if not found
+  console.log(`[Workout] Exercise: ${exerciseName}, Sets: ${setsValue}, Reps: ${repsValue}, Load: ${loadValue}`);
 
-    const exerciseName = exercise.Exercise || 'Untitled Exercise'; // Assign default name if missing
-    console.log(`[Workout] Exercise: ${exerciseName}, Weight: ${savedWeight}`);
+  // Create Exercise Card
+  const exerciseDiv = document.createElement("div");
+  exerciseDiv.classList.add("exercise", "col-md-6", "mb-4");
 
-    // Example of saving a default value
-    if (savedWeight === 0) {
-      saveValue(weightKey, 10); // Set default weight to 10kg
-    }
-
-    // Create Exercise Card
-    const exerciseDiv = document.createElement("div");
-    exerciseDiv.classList.add("exercise", "col-md-6", "mb-4");
-
-    exerciseDiv.innerHTML = `
-      <div class="card shadow-sm p-3">
-        <h2>
-          <a href="${sanitize(exercise.ExerciseLink || '#')}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exerciseName)}
-          </a>
-        </h2>
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <label for="sets-${index}" class="form-label">Sets</label>
-            <input type="number" min="0" class="form-control" id="sets-${index}" value="${getSavedValue(`sets_${index}`, 3)}" placeholder="e.g., 3" required />
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="reps-${index}" class="form-label">Reps</label>
-            <input type="number" min="0" class="form-control" id="reps-${index}" value="${getSavedValue(`reps_${index}`, 10)}" placeholder="e.g., 10" required />
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="load-${index}" class="form-label">Load (kg)</label>
-            <input type="number" min="0" class="form-control" id="load-${index}" value="${savedWeight}" placeholder="Weight" required />
-          </div>
+  exerciseDiv.innerHTML = `
+    <div class="card shadow-sm p-3">
+      <h2>
+        <a href="${sanitize(exerciseLink)}" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exerciseName)}
+        </a>
+      </h2>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="sets-${index}" class="form-label">Sets</label>
+          <input type="number" min="0" class="form-control" id="sets-${index}" value="${setsValue}" placeholder="e.g., 3" required />
         </div>
-        <p class="mb-2"><strong>Rest:</strong> ${sanitize(exercise.Rest || 'N/A')}</p>
-        <p class="mb-2"><strong>Notes:</strong> ${sanitize(exercise.Notes || 'No notes available')}</p>
-        <button class="btn btn-primary mt-2" id="save-btn-${index}">
-          <i class="fas fa-save me-2"></i> Save
-        </button>
+        <div class="col-md-4 mb-3">
+          <label for="reps-${index}" class="form-label">Reps</label>
+          <input type="number" min="0" class="form-control" id="reps-${index}" value="${repsValue}" placeholder="e.g., 10" required />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="load-${index}" class="form-label">Load (kg)</label>
+          <input type="number" min="0" class="form-control" id="load-${index}" value="${loadValue}" placeholder="Weight" required />
+        </div>
       </div>
-    `;
+      <p class="mb-2"><strong>Rest:</strong> ${sanitize(exercise.Rest || 'N/A')}</p>
+      <p class="mb-2"><strong>Notes:</strong> ${sanitize(exercise.Notes || 'No notes available')}</p>
+      <button class="btn btn-primary mt-2" id="save-btn-${index}">
+        <i class="fas fa-save me-2"></i> Save
+      </button>
+    </div>
+  `;
 
-    return exerciseDiv;
-  }
+  return exerciseDiv;
+}
 
   // Expose functions globally if needed
   window.createExerciseElement = createExerciseElement;
