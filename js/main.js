@@ -1,5 +1,3 @@
-// js/main.js
-
 (() => {
   /**
    * Initialize the Application
@@ -19,6 +17,10 @@
    */
   function populatePhaseSelector() {
     const phaseSelector = document.getElementById("phase-selector");
+    if (!phaseSelector) {
+      console.error("[Main] Phase selector element not found.");
+      return;
+    }
     if (!window.PHASE_OPTIONS) {
       console.error("[Main] PHASE_OPTIONS is not defined.");
       showToast("Failed to load workout phases.", "danger");
@@ -277,11 +279,20 @@
    */
   function showToast(message, type = 'success') {
     console.log(`[Main] Displaying toast: [${type.toUpperCase()}] ${message}`);
-    const toastContainer = document.getElementById('toast-container');
-    
-    // Create Toast Element
+
+    // Ensure toast container exists
+    let toastContainer = document.getElementById('toast-container');
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.id = 'toast-container';
+        toastContainer.classList.add('position-fixed', 'bottom-0', 'end-0', 'p-3');
+        toastContainer.style.zIndex = "1100"; // Ensure it's always visible
+        document.body.appendChild(toastContainer);
+    }
+
+    // Create toast element
     const toastEl = document.createElement('div');
-    toastEl.classList.add('toast', `text-bg-${type}`, 'border-0');
+    toastEl.classList.add('toast', `text-bg-${type}`, 'border-0', 'show');
     toastEl.setAttribute('role', 'alert');
     toastEl.setAttribute('aria-live', 'assertive');
     toastEl.setAttribute('aria-atomic', 'true');
@@ -294,19 +305,22 @@
       </div>
     `;
 
-    // Append to Container
+    // Append toast to container
     toastContainer.appendChild(toastEl);
 
-    // Initialize and Show Toast
+    // Ensure Bootstrap toast initializes correctly
     const toast = new bootstrap.Toast(toastEl);
     toast.show();
 
-    // Remove Toast after hidden
-    toastEl.addEventListener('hidden.bs.toast', () => {
-      toastEl.remove();
-      console.log("[Main] Toast removed from DOM.");
-    });
-  }
+    // Auto-remove toast after display
+    setTimeout(() => {
+        toastEl.classList.remove('show');
+        setTimeout(() => {
+            toastEl.remove();
+            console.log("[Main] Toast removed from DOM.");
+        }, 500); // Allow fade-out effect
+    }, 3000);
+}
 
   /**
    * Format Date String
@@ -331,33 +345,37 @@
   function updateHistoryTable() {
     console.log("[Main] Updating workout history table.");
     const historyData = getFilteredData().sort(getSortFunction());
-
+  
     // Calculate Pagination
     const totalPages = Math.ceil(historyData.length / entriesPerPage);
     currentPage = Math.min(currentPage, totalPages) || 1;
     console.log(`[Main] Total pages: ${totalPages}, Current page: ${currentPage}`);
-
+  
     // Slice Data for Current Page
     const start = (currentPage - 1) * entriesPerPage;
     const end = start + entriesPerPage;
     const paginatedData = historyData.slice(start, end);
     console.log(`[Main] Displaying records ${start + 1} to ${end} of ${historyData.length}.`);
-
+  
     // Render Table
     const tableBody = document.querySelector("#history-table tbody");
+    if (!tableBody) {
+      console.error("[Main] History table body element not found.");
+      return;
+    }
     tableBody.innerHTML = "";
-
+  
     let totalVolume = 0;
     const volumeByDate = {};
-
+  
     paginatedData.forEach(entry => {
       const row = document.createElement("tr");
       const volume = entry.sets * entry.reps * entry.load;
       totalVolume += volume;
-
+  
       const dateKey = formatDate(entry.date).split(' ')[0];
       volumeByDate[dateKey] = (volumeByDate[dateKey] || 0) + volume;
-
+  
       row.innerHTML = `
         <td>${formatDate(entry.date)}</td>
         <td>${sanitize(entry.exercise)}</td>
@@ -369,17 +387,27 @@
       tableBody.appendChild(row);
       console.log(`[Main] History entry added: ${entry.exercise}, Volume: ${volume}`);
     });
-
+  
     // Update stats
     const statsEl = document.getElementById("history-stats");
-    statsEl.textContent = `Showing ${paginatedData.length} of ${historyData.length} Entries | Cumulative Volume: ${totalVolume}`;
-    console.log(`[Main] History stats updated: ${paginatedData.length} entries, Total Volume: ${totalVolume}`);
-
+    if (statsEl) {
+      statsEl.textContent = `Showing ${paginatedData.length} of ${historyData.length} Entries | Cumulative Volume: ${totalVolume}`;
+      console.log(`[Main] History stats updated: ${paginatedData.length} entries, Total Volume: ${totalVolume}`);
+    } else {
+      console.error("[Main] History stats element not found.");
+    }
+  
     // Update Pagination Controls
-    document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
-    document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages || totalPages === 0);
-    console.log("[Main] Pagination controls updated.");
-
+    const prevPageBtn = document.getElementById('prev-page');
+    const nextPageBtn = document.getElementById('next-page');
+    if (prevPageBtn && nextPageBtn) {
+      prevPageBtn.classList.toggle('disabled', currentPage === 1);
+      nextPageBtn.classList.toggle('disabled', currentPage === totalPages || totalPages === 0);
+      console.log("[Main] Pagination controls updated.");
+    } else {
+      console.error("[Main] Pagination control elements not found.");
+    }
+  
     // Update Chart
     updateChart(historyData);
     console.log("[Main] Volume chart updated.");
