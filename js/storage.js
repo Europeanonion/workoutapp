@@ -47,6 +47,35 @@ function getWorkoutData(index) {
 }
 
 /**
+ * Retrieves a value from local storage.
+ * @param {string} key - The key to look up in local storage.
+ * @param {any} defaultValue - The default value to return if the key is not found.
+ * @returns {any} The value from local storage or the default value.
+ */
+function getSavedValue(key, defaultValue = null) {
+  try {
+    const storedValue = localStorage.getItem(key);
+    return storedValue === null ? defaultValue : JSON.parse(storedValue);
+  } catch (error) {
+    console.error(`Error getting value for key '${key}' from localStorage:`, error);
+    return defaultValue;
+  }
+}
+
+/**
+ * Saves a value to local storage.
+ * @param {string} key - The key to store the value under.
+ * @param {any} value - The value to store.
+ */
+function saveValue(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    console.error(`Error saving value for key '${key}' to localStorage:`, error);
+  }
+}
+
+/**
  * Save workout history to localStorage
  * @param {object} entry - The workout history entry
  */
@@ -166,3 +195,5 @@ window.getSelectedPhase = getSelectedPhase;
 window.saveTheme = saveTheme;
 window.getTheme = getTheme;
 window.clearWorkoutData = clearWorkoutData;
+window.getSavedValue = getSavedValue;
+window.saveValue = saveValue;

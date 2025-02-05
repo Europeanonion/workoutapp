@@ -72,19 +72,26 @@
   }  
 
   /**
-   * Create a DOM Element for an Exercise
-   * @param {Object} exercise - The exercise data
-   * @param {number} index - The unique index of the exercise
-   * @returns {HTMLElement} - The exercise DOM element
+   * Create Exercise Element
+   * @param {object} exercise - The exercise data
+   * @param {number} index - The index of the exercise
+   * @returns {HTMLElement} - The created exercise element
    */
-   function createExerciseElement(exercise, index) {
+  function createExerciseElement(exercise, index) {
+    const weightKey = `weight_${index}`; // Unique key for local storage
+    const savedWeight = getSavedValue(weightKey, 0); // Default to 0 if not found
+
+    console.log(`[Workout] Exercise: ${exercise.Exercise}, Weight: ${savedWeight}`);
+
+    // Example of saving a default value
+    if (savedWeight === 0) {
+      saveValue(weightKey, 10); // Set default weight to 10kg
+    }
+
+    // Create Exercise Card
     const exerciseDiv = document.createElement("div");
-    exerciseDiv.classList.add("exercise", "col-md-6", "mb-4"); // Uses Bootstrap grid system
-  
-    const setsValue = getSavedValue(index, "sets") || exercise["Working Sets"] || "";
-    const repsValue = getSavedValue(index, "reps") || exercise.Reps || "";
-    const loadValue = getSavedValue(index, "load") || "";
-  
+    exerciseDiv.classList.add("exercise", "col-md-6", "mb-4");
+
     exerciseDiv.innerHTML = `
       <div class="card shadow-sm p-3">
         <h2>
@@ -95,15 +102,15 @@
         <div class="row">
           <div class="col-md-4 mb-3">
             <label for="sets-${index}" class="form-label">Sets</label>
-            <input type="number" min="0" class="form-control" id="sets-${index}" value="${setsValue}" placeholder="e.g., 3" required />
+            <input type="number" min="0" class="form-control" id="sets-${index}" value="${getSavedValue(`sets_${index}`, 3)}" placeholder="e.g., 3" required />
           </div>
           <div class="col-md-4 mb-3">
             <label for="reps-${index}" class="form-label">Reps</label>
-            <input type="number" min="0" class="form-control" id="reps-${index}" value="${repsValue}" placeholder="e.g., 10" required />
+            <input type="number" min="0" class="form-control" id="reps-${index}" value="${getSavedValue(`reps_${index}`, 10)}" placeholder="e.g., 10" required />
           </div>
           <div class="col-md-4 mb-3">
             <label for="load-${index}" class="form-label">Load (kg)</label>
-            <input type="number" min="0" class="form-control" id="load-${index}" value="${loadValue}" placeholder="Weight" required />
+            <input type="number" min="0" class="form-control" id="load-${index}" value="${savedWeight}" placeholder="Weight" required />
           </div>
         </div>
         <p class="mb-2"><strong>Rest:</strong> ${sanitize(exercise.Rest || 'N/A')}</p>
@@ -123,9 +130,9 @@
         </button>
       </div>
     `;
-  
+
     return exerciseDiv;
-  }  
+  }
 
   /**
    * Sanitize Input to Prevent XSS
@@ -159,4 +166,7 @@
       showToast("Failed to load workout data.", "danger");
     }
   }
+
+  // Expose functions globally if needed
+  window.createExerciseElement = createExerciseElement;
 })();
