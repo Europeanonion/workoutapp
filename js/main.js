@@ -1,9 +1,23 @@
 (() => {
+  let entriesPerPage = 10;
+  let currentPage = 1;
+
   /**
    * Initialize the Application
    */
   function init() {
     console.log("[Main] Initializing application.");
+
+    // Ensure PHASE_OPTIONS is defined
+    if (!window.PHASE_OPTIONS) {
+      window.PHASE_OPTIONS = [
+        { value: "data/workout_plan_phase_1_with_links.json", label: "Phase 1 - Base Hypertrophy" },
+        { value: "data/workout_plan_phase_2_with_links.json", label: "Phase 2 - Maximum Effort" },
+        { value: "data/workout_plan_phase_3_with_links.json", label: "Phase 3 - Hypertrophy & Endurance" }
+      ];
+      console.log("[Main] PHASE_OPTIONS was not defined. Default options have been set.");
+    }
+
     populatePhaseSelector();
     bindUIEvents();
     loadSavedTheme();

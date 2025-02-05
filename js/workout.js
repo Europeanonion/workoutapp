@@ -8,6 +8,9 @@
     { value: "data/workout_plan_phase_3_with_links.json", label: "Phase 3 - Hypertrophy & Endurance" }
   ];
 
+  // Expose PHASE_OPTIONS to the global scope
+  window.PHASE_OPTIONS = PHASE_OPTIONS;
+
   /**
    * Fetch Workout Data Based on Selected Phase
    * @param {string} phaseUrl - The URL of the selected workout phase JSON file
@@ -139,7 +142,6 @@
   /**
    * Expose necessary functions and variables to the global scope
    */
-  window.PHASE_OPTIONS = PHASE_OPTIONS;
   window.loadWorkout = loadWorkout;
 
   /**
