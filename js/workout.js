@@ -17,59 +17,47 @@
    * @returns {Promise<Object>} - The workout data JSON
    */
   async function fetchWorkoutData(phaseUrl) {
-    console.log(`Fetching workout data from: ${phaseUrl}`);
+    console.log(`[Workout] Fetching workout data from: ${phaseUrl}`);
+
     try {
-      const response = await fetch(phaseUrl);
-      if (!response.ok) {
-        throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
-      }
-      const data = await response.json();
-      console.log("Workout data fetched successfully.");
-      return data;
+        const response = await fetch(phaseUrl);
+        console.log("[Workout] Response Status:", response.status);
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        console.log("[Workout] Workout Data:", data);
+
+        return data;
     } catch (error) {
-      console.error("Error in fetchWorkoutData:", error);
-      showToast("Error loading workout data. Please try again later.", "danger");
-      throw error; // Re-throw to allow further handling if needed
+        console.error("[Workout] JSON Load Error:", error);
+        showToast("Error loading workout data. Please try again later.", "danger");
+        throw error; // Re-throw to allow further handling if needed
     }
   }
 
   /**
-   * Display Workout Data on the Page
-   * @param {Object} data - The workout data JSON
+   * Display Workout Data
+   * @param {object} data - The workout data
    */
-   function displayWorkout(data) {
-    const container = document.getElementById("workout-container");
-    container.innerHTML = ""; // Clear previous data
-  
-    let exerciseIndex = 0; // To track the index of each exercise
-  
-    data.weeks.forEach((weekObj) => {
-      // Add week-level heading
-      const weekHeader = document.createElement("div");
-      weekHeader.classList.add("week", "d-flex", "align-items-center", "mt-4", "mb-2", "p-2");
-      weekHeader.innerHTML = `<i class="fas fa-calendar-alt me-2"></i> Week ${weekObj.week}`;
-      container.appendChild(weekHeader);
-  
-      weekObj.workouts.forEach((workoutDay) => {
-        // Add day-level heading
-        const dayHeader = document.createElement("div");
-        dayHeader.classList.add("day", "d-flex", "align-items-center", "mb-3", "p-2", "bg-dark", "text-white");
-        dayHeader.innerHTML = `<i class="fas fa-dumbbell me-2"></i> ${workoutDay.day}`;
-        container.appendChild(dayHeader);
-  
-        // Create a row for exercises
-        const rowDiv = document.createElement("div");
-        rowDiv.classList.add("row", "gx-3"); // Bootstrap grid row
-  
-        workoutDay.exercises.forEach((exercise) => {
-          rowDiv.appendChild(createExerciseElement(exercise, exerciseIndex));
-          exerciseIndex++;
+  function displayWorkout(data) {
+    console.log("[Workout] JSON Data Received:", data);
+
+    data.weeks.forEach((weekObj, weekIndex) => {
+      console.log(`[Workout] Processing Week ${weekObj.week}`);
+      weekObj.workouts.forEach((workoutDay, workoutIndex) => {
+        console.log(`[Workout] Processing Workout Day: ${workoutDay.day}`);
+
+        workoutDay.exercises.forEach((exercise, exerciseIdx) => {
+          console.log(`[Workout] Loading Exercise ${exerciseIdx + 1}:`, exercise);
+          const exerciseElement = createExerciseElement(exercise, exerciseIdx);
+          document.getElementById('workout-container').appendChild(exerciseElement);
         });
-  
-        container.appendChild(rowDiv);
       });
     });
-  }  
+  }
 
   /**
    * Create Exercise Element
@@ -78,10 +66,17 @@
    * @returns {HTMLElement} - The created exercise element
    */
   function createExerciseElement(exercise, index) {
+    console.log(`[Workout] Creating Exercise Card for: ${exercise.Exercise || "Untitled"}`);
+
+    if (!exercise.Exercise) {
+      console.warn(`[Warning] Exercise ${index} is missing a name!`);
+    }
+
     const weightKey = `weight_${index}`; // Unique key for local storage
     const savedWeight = getSavedValue(weightKey, 0); // Default to 0 if not found
 
-    console.log(`[Workout] Exercise: ${exercise.Exercise}, Weight: ${savedWeight}`);
+    const exerciseName = exercise.Exercise || 'Untitled Exercise'; // Assign default name if missing
+    console.log(`[Workout] Exercise: ${exerciseName}, Weight: ${savedWeight}`);
 
     // Example of saving a default value
     if (savedWeight === 0) {
@@ -96,7 +91,7 @@
       <div class="card shadow-sm p-3">
         <h2>
           <a href="${sanitize(exercise.ExerciseLink || '#')}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise.Exercise || 'Untitled Exercise')}
+            <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exerciseName)}
           </a>
         </h2>
         <div class="row">
@@ -115,16 +110,6 @@
         </div>
         <p class="mb-2"><strong>Rest:</strong> ${sanitize(exercise.Rest || 'N/A')}</p>
         <p class="mb-2"><strong>Notes:</strong> ${sanitize(exercise.Notes || 'No notes available')}</p>
-        <p class="mb-2"><strong>Substitution 1:</strong>
-          <a href="${sanitize(exercise["Substitution Option 1 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise["Substitution Option 1"] || 'N/A')}
-          </a>
-        </p>
-        <p class="mb-2"><strong>Substitution 2:</strong>
-          <a href="${sanitize(exercise["Substitution Option 2 Link"] || '#')}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exercise["Substitution Option 2"] || 'N/A')}
-          </a>
-        </p>
         <button class="btn btn-primary mt-2" id="save-btn-${index}">
           <i class="fas fa-save me-2"></i> Save
         </button>
@@ -133,6 +118,10 @@
 
     return exerciseDiv;
   }
+
+  // Expose functions globally if needed
+  window.createExerciseElement = createExerciseElement;
+  window.displayWorkout = displayWorkout;
 
   /**
    * Sanitize Input to Prevent XSS
@@ -167,6 +156,4 @@
     }
   }
 
-  // Expose functions globally if needed
-  window.createExerciseElement = createExerciseElement;
 })();
