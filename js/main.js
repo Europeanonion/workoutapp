@@ -33,6 +33,7 @@
     loadSavedTheme();
     loadSavedPhase();
     initializeTooltips();
+    initializeGestures();
     console.log("[Main] Application initialized successfully.");
   }
 
@@ -689,6 +690,20 @@
       </div>
     `;
 
+    // Add validation attributes to inputs
+    const inputs = exerciseDiv.querySelectorAll('input[type="number"]');
+    inputs.forEach(input => {
+      input.addEventListener('input', (event) => {
+        const result = validateWorkoutInput(event.target);
+        if (!result.isValid) {
+          event.target.classList.add('is-invalid');
+          showToast(result.message, 'warning');
+        } else {
+          event.target.classList.remove('is-invalid');
+        }
+      });
+    });
+
     return exerciseDiv;
   }
 
@@ -726,11 +741,77 @@
       }
       await displayWorkout(data);
     } catch (error) {
-      console.error("[Main] Failed to load workout:", error);
-      showToast("Error loading workout plan", "danger");
+      handleError(error, 'Workout Loading');
     } finally {
       spinner.style.display = "none";
     }
+  }
+
+  /**
+   * Validate Workout Input
+   * @param {HTMLInputElement} input - The input element to validate
+   * @returns {Object} - Validation result with isValid and message properties
+   */
+  function validateWorkoutInput(input) {
+    const value = parseInt(input.value);
+    const min = parseInt(input.getAttribute('min')) || 0;
+    const max = parseInt(input.getAttribute('max')) || 999;
+    
+    return {
+      isValid: value >= min && value <= max,
+      message: `Value must be between ${min} and ${max}`
+    };
+  }
+
+  /**
+   * Handle Errors with Context
+   * @param {Error} error - The error object
+   * @param {string} context - The context where the error occurred
+   */
+  function handleError(error, context) {
+    console.error(`[${context}] Error:`, error);
+    
+    if (!navigator.onLine) {
+      showToast("You're offline. Data will be saved locally.", "warning");
+      return;
+    }
+    
+    showToast("An error occurred. Please try again.", "danger");
+  }
+
+  /**
+   * Initialize Gesture Support
+   */
+  function initializeGestures() {
+    if (typeof Hammer === 'undefined') {
+      console.warn('[Main] Hammer.js not loaded, skipping gesture support');
+      return;
+    }
+
+    const hammer = new Hammer(document.body);
+    hammer.on('swipe', (ev) => {
+      if (ev.direction === Hammer.DIRECTION_RIGHT) {
+        navigateToPreviousDay();
+      } else if (ev.direction === Hammer.DIRECTION_LEFT) {
+        navigateToNextDay();
+      }
+    });
+  }
+
+  /**
+   * Navigate to Previous Day
+   */
+  function navigateToPreviousDay() {
+    console.log('[Main] Navigating to previous day');
+    // Implementation will depend on your day navigation logic
+  }
+
+  /**
+   * Navigate to Next Day
+   */
+  function navigateToNextDay() {
+    console.log('[Main] Navigating to next day');
+    // Implementation will depend on your day navigation logic
   }
 
   /**

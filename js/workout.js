@@ -51,29 +51,14 @@
         throw new Error("Invalid workout data format");
       }
   
-      // Clear existing content
       container.innerHTML = '';
   
       data.weeks.forEach((weekObj) => {
-        console.log(`[Workout] Processing Week ${weekObj.week}`);
         weekObj.workouts.forEach((workoutDay) => {
-          console.log(`[Workout] Processing Workout Day: ${workoutDay.day}`);
-  
           workoutDay.exercises.forEach((exercise, index) => {
-            console.log(`[Workout] Loading Exercise ${index + 1}:`, exercise);
-  
-            if (!exercise.Exercise) {
-              console.warn(`[WARNING] Exercise ${index + 1} is missing a name!`);
-            }
-            if (!exercise.Reps) {
-              console.warn(`[WARNING] Exercise "${exercise.Exercise}" is missing Reps!`);
-            }
-            if (!exercise.Load) {
-              console.warn(`[WARNING] Exercise "${exercise.Exercise}" is missing Load!`);
-            }
-  
-            const exerciseElement = createExerciseElement(exercise, index);
-            container.appendChild(exerciseElement);
+            const placeholder = createExercisePlaceholder(exercise, index);
+            container.appendChild(placeholder);
+            lazyLoadExercises(placeholder, exercise, index);
           });
         });
       });
@@ -185,6 +170,32 @@
       rest: exercise.Rest || "~2-3 min",
       notes: exercise.Notes || "No notes available"
     };
+  }
+
+  function createExercisePlaceholder(exercise, index) {
+    const div = document.createElement('div');
+    div.classList.add('exercise', 'col-md-6', 'mb-4', 'exercise-placeholder');
+    div.dataset.exerciseIndex = index;
+    div.dataset.exerciseData = JSON.stringify(exercise);
+    div.innerHTML = '<div class="card shadow-sm p-3"><div class="placeholder-glow"><span class="placeholder col-12"></span></div></div>';
+    return div;
+  }
+
+  function lazyLoadExercises(element, exercise, index) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const exerciseElement = createExerciseElement(exercise, index);
+          entry.target.replaceWith(exerciseElement);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '50px',
+      threshold: 0.1
+    });
+
+    observer.observe(element);
   }
 
 })();
