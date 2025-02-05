@@ -8,6 +8,12 @@ const STORAGE_KEYS = {
   THEME: 'theme'
 };
 
+// Ensure showToast function is defined or imported
+function showToast(message, type = 'success') {
+  console.log(`[Storage] Displaying toast: [${type.toUpperCase()}] ${message}`);
+  // Implementation of showToast function
+}
+
 /**
  * Save workout data to localStorage
  * @param {number} index - The index of the workout exercise
