@@ -42,32 +42,46 @@
    * Display Workout Data
    * @param {object} data - The workout data
    */
-   function displayWorkout(data) {
+  function displayWorkout(data) {
     console.log("[Workout] JSON Data Received:", data);
-
-    data.weeks.forEach((weekObj) => {
-      console.log(`[Workout] Processing Week ${weekObj.week}`);
-      weekObj.workouts.forEach((workoutDay) => {
-        console.log(`[Workout] Processing Workout Day: ${workoutDay.day}`);
-
-        workoutDay.exercises.forEach((exercise, index) => {
-          console.log(`[Workout] Loading Exercise ${index + 1}:`, exercise);
-
-          if (!exercise.Exercise) {
-            console.warn(`[WARNING] Exercise ${index + 1} is missing a name!`);
-          }
-          if (!exercise.Reps) {
-            console.warn(`[WARNING] Exercise "${exercise.Exercise}" is missing Reps!`);
-          }
-          if (!exercise.Load) {
-            console.warn(`[WARNING] Exercise "${exercise.Exercise}" is missing Load!`);
-          }
-
-          const exerciseElement = createExerciseElement(exercise, index);
-          document.getElementById('workout-container').appendChild(exerciseElement);
+    const container = document.getElementById('workout-container');
+    
+    try {
+      if (!data || !data.weeks) {
+        throw new Error("Invalid workout data format");
+      }
+  
+      // Clear existing content
+      container.innerHTML = '';
+  
+      data.weeks.forEach((weekObj) => {
+        console.log(`[Workout] Processing Week ${weekObj.week}`);
+        weekObj.workouts.forEach((workoutDay) => {
+          console.log(`[Workout] Processing Workout Day: ${workoutDay.day}`);
+  
+          workoutDay.exercises.forEach((exercise, index) => {
+            console.log(`[Workout] Loading Exercise ${index + 1}:`, exercise);
+  
+            if (!exercise.Exercise) {
+              console.warn(`[WARNING] Exercise ${index + 1} is missing a name!`);
+            }
+            if (!exercise.Reps) {
+              console.warn(`[WARNING] Exercise "${exercise.Exercise}" is missing Reps!`);
+            }
+            if (!exercise.Load) {
+              console.warn(`[WARNING] Exercise "${exercise.Exercise}" is missing Load!`);
+            }
+  
+            const exerciseElement = createExerciseElement(exercise, index);
+            container.appendChild(exerciseElement);
+          });
         });
       });
-    });
+    } catch (error) {
+      console.error("[Workout] Display error:", error);
+      container.innerHTML = '<div class="alert alert-danger">Failed to display workout data</div>';
+      showToast("Error displaying workout data", "danger");
+    }
   }
 
  /**
@@ -82,7 +96,7 @@
   // Ensure correct property mapping
   const exerciseName = exercise.Exercise || exercise.name || "Unnamed Exercise";
   const exerciseLink = exercise.ExerciseLink || exercise.link || "#";
-  const setsValue = getSavedValue(`sets_${index}`, exercise["Working Sets"] || exercise.working_sets || 3);
+  const setsValue = getSavedValue(`sets_${index}`, exercise["Working Sets"] || exercise.WorkingSets || exercise.working_sets || 3);
   const repsValue = getSavedValue(`reps_${index}`, exercise.Reps || exercise.reps || 10);
   const loadValue = getSavedValue(`load_${index}`, exercise.Load || exercise.load || 0);
 
@@ -159,6 +173,18 @@
       console.error("Error in loadWorkout:", error);
       showToast("Failed to load workout data.", "danger");
     }
+  }
+
+  // Add property normalization
+  function normalizeExerciseData(exercise) {
+    return {
+      name: exercise.Exercise || exercise.name || "Unnamed Exercise",
+      link: exercise.ExerciseLink || exercise.link || "#",
+      workingSets: exercise["Working Sets"] || exercise.WorkingSets || 3,
+      reps: exercise.Reps || exercise.reps || "10-12",
+      rest: exercise.Rest || "~2-3 min",
+      notes: exercise.Notes || "No notes available"
+    };
   }
 
 })();

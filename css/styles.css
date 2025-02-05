@@ -115,3 +115,22 @@ body.dark-mode {
     padding: 8px;
   }
 }
+
+/* Loading Spinner and Alert Styles */
+#loading-spinner {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}

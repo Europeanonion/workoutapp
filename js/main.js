@@ -162,6 +162,13 @@
    * @param {string} exerciseName - The name of the exercise
    */
   function saveProgress(index, exerciseName) {
+    // Add validation for reps range
+    function validateReps(value, exercise) {
+      const min = exercise.MinReps || parseInt(exercise.Reps) || 0;
+      const max = exercise.MaxReps || parseInt(exercise.Reps) || 999;
+      const reps = parseInt(value);
+      return reps >= min && reps <= max;
+    }
     console.log(`[Main] Saving progress for exercise '${exerciseName}' at index ${index}.`);
     const setsInput = document.getElementById(`sets-${index}`);
     const repsInput = document.getElementById(`reps-${index}`);
@@ -368,18 +375,33 @@
    */
   function updateHistoryTable() {
     console.log("[Main] Updating workout history table.");
-    const historyData = getFilteredData().sort(getSortFunction());
+    const historyData = getFilteredData();
+  
+    if (!historyData || !historyData.length) {
+      console.log("[Main] No workout history data available");
+      document.querySelector("#history-table tbody").innerHTML = 
+        '<tr><td colspan="6" class="text-center">No workout history available</td></tr>';
+      
+      // Update stats to show zero entries
+      const statsEl = document.getElementById("history-stats");
+      if (statsEl) {
+        statsEl.textContent = "Showing 0 Entries | Cumulative Volume: 0";
+      }
+      return;
+    }
+  
+    const sortedData = historyData.sort(getSortFunction());
   
     // Calculate Pagination
-    const totalPages = Math.ceil(historyData.length / entriesPerPage);
+    const totalPages = Math.ceil(sortedData.length / entriesPerPage);
     currentPage = Math.min(currentPage, totalPages) || 1;
     console.log(`[Main] Total pages: ${totalPages}, Current page: ${currentPage}`);
   
     // Slice Data for Current Page
     const start = (currentPage - 1) * entriesPerPage;
     const end = start + entriesPerPage;
-    const paginatedData = historyData.slice(start, end);
-    console.log(`[Main] Displaying records ${start + 1} to ${end} of ${historyData.length}.`);
+    const paginatedData = sortedData.slice(start, end);
+    console.log(`[Main] Displaying records ${start + 1} to ${end} of ${sortedData.length}.`);
   
     // Render Table
     const tableBody = document.querySelector("#history-table tbody");
@@ -415,7 +437,7 @@
     // Update stats
     const statsEl = document.getElementById("history-stats");
     if (statsEl) {
-      statsEl.textContent = `Showing ${paginatedData.length} of ${historyData.length} Entries | Cumulative Volume: ${totalVolume}`;
+      statsEl.textContent = `Showing ${paginatedData.length} of ${sortedData.length} Entries | Cumulative Volume: ${totalVolume}`;
       console.log(`[Main] History stats updated: ${paginatedData.length} entries, Total Volume: ${totalVolume}`);
     } else {
       console.error("[Main] History stats element not found.");
@@ -433,7 +455,7 @@
     }
   
     // Update Chart
-    updateChart(historyData);
+    updateChart(sortedData);
     console.log("[Main] Volume chart updated.");
   }
 
@@ -480,54 +502,62 @@
    * @param {Array} historyData - The workout history data
    */
   function updateChart(historyData) {
-    console.log("[Main] Updating volume chart.");
-    // Aggregate Volume by Date
+    try {
+      if (!historyData?.length) {
+        throw new Error('No history data available');
+      }
+      const ctx = document.getElementById('volume-chart').getContext('2d');
+      const chartData = prepareChartData(historyData);
+      
+      if (window.volumeChart) {
+        window.volumeChart.destroy();
+      }
+      
+      window.volumeChart = new Chart(ctx, {
+        type: 'line',
+        data: chartData,
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'Volume (weight × reps)'
+              }
+            }
+          }
+        }
+      });
+    } catch (error) {
+      console.error('[Chart] Initialization failed:', error);
+      showToast('Failed to display workout history chart', 'danger');
+    }
+  }
+
+  function prepareChartData(historyData) {
+    // Group data by date
     const volumeByDate = {};
     historyData.forEach(entry => {
       const dateKey = formatDate(entry.date).split(' ')[0];
       volumeByDate[dateKey] = (volumeByDate[dateKey] || 0) + (entry.sets * entry.reps * entry.load);
     });
 
+    // Sort dates and prepare chart data
     const labels = Object.keys(volumeByDate).sort();
-    const data = labels.map(date => volumeByDate[date]);
+    const volumes = labels.map(date => volumeByDate[date]);
 
-    // Destroy previous chart if exists
-    if (window.volumeChart) {
-      window.volumeChart.destroy();
-      console.log("[Main] Previous volume chart destroyed.");
-    }
-
-    const ctx = document.getElementById('volume-chart').getContext('2d');
-    window.volumeChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels,
-        datasets: [{
-          label: 'Volume (kg)',
-          data,
-          backgroundColor: 'rgba(40, 167, 69, 0.6)', // Bootstrap success color with opacity
-          borderColor: 'rgba(40, 167, 69, 1)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: { beginAtZero: true }
-        },
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: function(context) {
-                return `Volume: ${context.parsed.y} kg`;
-              }
-            }
-          }
-        }
-      }
-    });
-    console.log("[Main] Volume chart created successfully.");
+    return {
+      labels,
+      datasets: [{
+        label: 'Daily Volume',
+        data: volumes,
+        borderColor: 'rgb(40, 167, 69)',
+        backgroundColor: 'rgba(40, 167, 69, 0.1)',
+        fill: true,
+        tension: 0.4
+      }]
+    };
   }
 
   /**
@@ -684,14 +714,22 @@
    * (Assuming it was missing in the previous implementation)
    */
   async function loadWorkout(phaseUrl) {
-    console.log(`loadWorkout called with URL: ${phaseUrl}`);
+    const spinner = document.getElementById("loading-spinner");
+    spinner.style.display = "block";
+    
     try {
-      const data = await fetchWorkoutData(phaseUrl);
-      displayWorkout(data);
-      console.log("Workout data displayed successfully.");
+      const response = await fetch(phaseUrl);
+      if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+      const data = await response.json();
+      if (!validateWorkoutData(data)) {
+        throw new Error('Invalid workout data structure');
+      }
+      await displayWorkout(data);
     } catch (error) {
-      console.error("Error in loadWorkout:", error);
-      showToast("Failed to load workout data.", "danger");
+      console.error("[Main] Failed to load workout:", error);
+      showToast("Error loading workout plan", "danger");
+    } finally {
+      spinner.style.display = "none";
     }
   }
 

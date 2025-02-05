@@ -8,6 +8,13 @@ const STORAGE_KEYS = {
   THEME: 'theme'
 };
 
+function validateWorkoutData(data) {
+  if (!data?.Phase || !Array.isArray(data?.Weeks)) return false;
+  return data.Weeks.every(week => 
+    week.Week && Array.isArray(week.Workouts)
+  );
+}
+
 // Ensure showToast function is defined or imported
 function showToast(message, type = 'success') {
   console.log(`[Storage] Displaying toast: [${type.toUpperCase()}] ${message}`);
@@ -21,6 +28,9 @@ function showToast(message, type = 'success') {
  */
 function saveWorkoutData(index, data) {
   try {
+    if (!validateWorkoutData(data)) {
+      throw new Error('Invalid workout data format');
+    }
     localStorage.setItem(`${STORAGE_KEYS.WORKOUT_PREFIX}${index}`, JSON.stringify(data));
     console.log(`[Storage] Workout data saved for index ${index}:`, data);
   } catch (error) {
@@ -84,6 +94,7 @@ function saveWorkoutHistory(entry) {
     const history = JSON.parse(localStorage.getItem(STORAGE_KEYS.WORKOUT_HISTORY)) || [];
     history.push(entry);
     localStorage.setItem(STORAGE_KEYS.WORKOUT_HISTORY, JSON.stringify(history));
+    cleanupStorage(); // Add this line
     console.log(`[Storage] Workout history updated:`, entry);
   } catch (error) {
     console.error(`[Storage] Error saving workout history:`, error);
@@ -182,6 +193,20 @@ function clearWorkoutData() {
   } catch (error) {
     console.error("[Storage] Error clearing workout data:", error);
     showToast("Failed to clear workout data.", "danger");
+  }
+}
+
+function cleanupStorage() {
+  const MAX_HISTORY_ITEMS = 1000;
+  try {
+    const history = getWorkoutHistory();
+    if (history.length > MAX_HISTORY_ITEMS) {
+      const trimmedHistory = history.slice(-MAX_HISTORY_ITEMS);
+      localStorage.setItem(STORAGE_KEYS.WORKOUT_HISTORY, JSON.stringify(trimmedHistory));
+      console.log(`[Storage] Cleaned up history to ${MAX_HISTORY_ITEMS} items`);
+    }
+  } catch (error) {
+    console.error('[Storage] Cleanup failed:', error);
   }
 }
 
