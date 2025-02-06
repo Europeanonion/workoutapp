@@ -11,16 +11,24 @@
             {
               "Exercise": "Bench Press",
               "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-              "Warmup Sets": "3-4",
-              "Working Sets": "1",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
               "Reps": "3-5",
+              "MinReps": 3,
+              "MaxReps": 5,
               "RPE": "8-9",
               "Rest": "~3-4 min",
               "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
-              "Substitution Option 1": "DB Bench Press",
-              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
-              "Substitution Option 2": "Machine Chest Press",
-              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+              "Substitutions": [
+                {
+                  "Exercise": "DB Bench Press",
+                  "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
+                },
+                {
+                  "Exercise": "Machine Chest Press",
+                  "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
+                }
+              ]
             },
             {
               "Exercise": "Standing Dumbbell Arnold Press",
@@ -160,16 +168,24 @@
             {
               "Exercise": "Bench Press",
               "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-              "Warmup Sets": "3-4",
-              "Working Sets": "1",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
               "Reps": "3-5",
+              "MinReps": 3,
+              "MaxReps": 5,
               "RPE": "8-9",
               "Rest": "~3-4 min",
               "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
-              "Substitution Option 1": "DB Bench Press",
-              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
-              "Substitution Option 2": "Machine Chest Press",
-              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+              "Substitutions": [
+                {
+                  "Exercise": "DB Bench Press",
+                  "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
+                },
+                {
+                  "Exercise": "Machine Chest Press",
+                  "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
+                }
+              ]
             },
             {
               "Exercise": "Standing Dumbbell Arnold Press",
@@ -309,16 +325,24 @@
             {
               "Exercise": "Bench Press",
               "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-              "Warmup Sets": "3-4",
-              "Working Sets": "1",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
               "Reps": "3-5",
+              "MinReps": 3,
+              "MaxReps": 5,
               "RPE": "8-9",
               "Rest": "~3-4 min",
               "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
-              "Substitution Option 1": "DB Bench Press",
-              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
-              "Substitution Option 2": "Machine Chest Press",
-              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+              "Substitutions": [
+                {
+                  "Exercise": "DB Bench Press",
+                  "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
+                },
+                {
+                  "Exercise": "Machine Chest Press",
+                  "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
+                }
+              ]
             },
             {
               "Exercise": "Standing Dumbbell Arnold Press",
@@ -458,16 +482,24 @@
             {
               "Exercise": "Bench Press",
               "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-              "Warmup Sets": "3-4",
-              "Working Sets": "1",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
               "Reps": "3-5",
+              "MinReps": 3,
+              "MaxReps": 5,
               "RPE": "8-9",
               "Rest": "~3-4 min",
               "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
-              "Substitution Option 1": "DB Bench Press",
-              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
-              "Substitution Option 2": "Machine Chest Press",
-              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+              "Substitutions": [
+                {
+                  "Exercise": "DB Bench Press",
+                  "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
+                },
+                {
+                  "Exercise": "Machine Chest Press",
+                  "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
+                }
+              ]
             },
             {
               "Exercise": "Standing Dumbbell Arnold Press",
@@ -607,16 +639,24 @@
             {
               "Exercise": "Bench Press",
               "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-              "Warmup Sets": "3-4",
-              "Working Sets": "1",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
               "Reps": "3-5",
+              "MinReps": 3,
+              "MaxReps": 5,
               "RPE": "8-9",
               "Rest": "~3-4 min",
               "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
-              "Substitution Option 1": "DB Bench Press",
-              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
-              "Substitution Option 2": "Machine Chest Press",
-              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+              "Substitutions": [
+                {
+                  "Exercise": "DB Bench Press",
+                  "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
+                },
+                {
+                  "Exercise": "Machine Chest Press",
+                  "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
+                }
+              ]
             },
             {
               "Exercise": "Standing Dumbbell Arnold Press",
@@ -756,16 +796,24 @@
             {
               "Exercise": "Bench Press",
               "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-              "Warmup Sets": "3-4",
-              "Working Sets": "1",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
               "Reps": "3-5",
+              "MinReps": 3,
+              "MaxReps": 5,
               "RPE": "7",
               "Rest": "~3-4 min",
               "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
-              "Substitution Option 1": "DB Bench Press",
-              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
-              "Substitution Option 2": "Machine Chest Press",
-              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+              "Substitutions": [
+                {
+                  "Exercise": "DB Bench Press",
+                  "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
+                },
+                {
+                  "Exercise": "Machine Chest Press",
+                  "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
+                }
+              ]
             },
             {
               "Exercise": "Standing Dumbbell Arnold Press",
