@@ -1,5 +1,6 @@
 {
-    "Phase": "Supercompensation (High Volume, Moderate Intensity)",
+    "Phase": "Supercompensation",
+    "Description": "High Volume, Moderate Intensity",
     "Weeks": [
         {
             "Week": 1,
@@ -10,8 +11,8 @@
                         {
                             "Exercise": "Low Incline DB Press",
                             "ExerciseLink": "https://youtu.be/6-PFsU1q1kU",
-                            "Warmup Sets": 2,
-                            "Working Sets": 3,
+                            "WarmupSets": 2,
+                            "WorkingSets": 3,
                             "Reps": 20,
                             "MinReps": 20,
                             "MaxReps": 20,
@@ -33,12 +34,15 @@
                         {
                             "Exercise": "Machine Shoulder Press",
                             "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8",
-                            "Warmup Sets": 2,
-                            "Working Sets": 3,
+                            "WarmupSets": 2,
+                            "WorkingSets": 3,
                             "Reps": 15,
+                            "MinReps": 15,
+                            "MaxReps": 15,
                             "Load": 0,
                             "RPE": "9",
                             "Rest": "~2-3 min",
+                            "Notes": "Don't stop between reps, keep smooth and controlled tension on the delts.",
                             "Substitutions": [
                                 {
                                     "Exercise": "DB Shoulder Press",
@@ -48,8 +52,30 @@
                                     "Exercise": "Standing DB Arnold Press",
                                     "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc"
                                 }
-                            ],
-                            "Notes": "Don't stop in between reps, keep smooth and controlled tension on the delts."
+                            ]
+                        },
+                        {
+                            "Exercise": "Cable Crossover Ladder",
+                            "ExerciseLink": "https://youtu.be/NsEbXsTwas8?t=285",
+                            "WarmupSets": 1,
+                            "WorkingSets": 3,
+                            "Reps": 20,
+                            "MinReps": 20,
+                            "MaxReps": 20,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~1-2 min",
+                            "Notes": "Do one set with low cable position, one set with medium-height cable position, and one set with high cable position.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "Flat-To-Incline DB Flye",
+                                    "ExerciseLink": "https://youtu.be/2SCEhuAyKmo"
+                                },
+                                {
+                                    "Exercise": "Pec Deck",
+                                    "ExerciseLink": "https://youtu.be/-EIhKMDSjBY?t=151"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -59,12 +85,15 @@
                         {
                             "Exercise": "1-Arm Half Kneeling Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/B0W4DQeo1tE",
-                            "Warmup Sets": 1,
-                            "Working Sets": 2,
+                            "WarmupSets": 1,
+                            "WorkingSets": 2,
                             "Reps": 20,
+                            "MinReps": 20,
+                            "MaxReps": 20,
                             "Load": 0,
                             "RPE": "9",
                             "Rest": "~1-2 min",
+                            "Notes": "Keep chest tall, keep elbow tucked in, focus on squeezing your lat.",
                             "Substitutions": [
                                 {
                                     "Exercise": "1-Arm Lat Pull-In",
@@ -74,18 +103,20 @@
                                     "Exercise": "Cable Lat Pullover",
                                     "ExerciseLink": "https://youtu.be/Vf7wf6bZODQ"
                                 }
-                            ],
-                            "Notes": "Keep chest tall, keep elbow tucked in, focus on squeezing your lat."
+                            ]
                         },
                         {
                             "Exercise": "Omni-Grip Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/qVek72z3F1U?t=927",
-                            "Warmup Sets": 1,
-                            "Working Sets": 3,
+                            "WarmupSets": 1,
+                            "WorkingSets": 3,
                             "Reps": 20,
+                            "MinReps": 20,
+                            "MaxReps": 20,
                             "Load": 0,
                             "RPE": "9",
                             "Rest": "~2-3 min",
+                            "Notes": "One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand).",
                             "Substitutions": [
                                 {
                                     "Exercise": "Omni-Grip Pull-Up",
@@ -95,8 +126,7 @@
                                     "Exercise": "Chin-Up",
                                     "ExerciseLink": "https://youtu.be/-d2Uui6MtRk"
                                 }
-                            ],
-                            "Notes": "One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand)."
+                            ]
                         }
                     ]
                 },
@@ -106,12 +136,15 @@
                         {
                             "Exercise": "Front Squat",
                             "ExerciseLink": "https://youtu.be/v-mQm_droHg?t=135",
-                            "Warmup Sets": "2-3",
-                            "Working Sets": 3,
+                            "WarmupSets": "2-3",
+                            "WorkingSets": 3,
                             "Reps": 15,
+                            "MinReps": 15,
+                            "MaxReps": 15,
                             "Load": 0,
                             "RPE": "7-8",
                             "Rest": "~2-3 min",
+                            "Notes": "Push but stay controlled. Focus on keeping your torso upright.",
                             "Substitutions": [
                                 {
                                     "Exercise": "High-Bar Box Squat",
@@ -121,18 +154,20 @@
                                     "Exercise": "Goblet Squat",
                                     "ExerciseLink": "https://youtu.be/v-mQm_droHg?t=489"
                                 }
-                            ],
-                            "Notes": "Push but stay controlled. Focus on keeping your torso upright."
+                            ]
                         },
                         {
                             "Exercise": "Dumbbell RDL",
                             "ExerciseLink": "https://youtu.be/V5u2AP9wBwE",
-                            "Warmup Sets": 1,
-                            "Working Sets": 3,
+                            "WarmupSets": 1,
+                            "WorkingSets": 3,
                             "Reps": 20,
+                            "MinReps": 20,
+                            "MaxReps": 20,
                             "Load": 0,
                             "RPE": "9",
                             "Rest": "~2-3 min",
+                            "Notes": "Emphasize the stretch in your hamstrings, prevent your lower back from rounding.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Barbell RDL",
@@ -142,8 +177,7 @@
                                     "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
-                            ],
-                            "Notes": "Emphasize the stretch in your hamstrings, prevent your lower back from rounding."
+                            ]
                         }
                     ]
                 }
@@ -158,12 +192,15 @@
                         {
                             "Exercise": "Low Incline DB Press",
                             "ExerciseLink": "https://youtu.be/6-PFsU1q1kU",
-                            "Warmup Sets": 2,
-                            "Working Sets": 3,
+                            "WarmupSets": 2,
+                            "WorkingSets": 3,
                             "Reps": 20,
+                            "MinReps": 20,
+                            "MaxReps": 20,
                             "Load": 0,
                             "RPE": "9",
                             "Rest": "~2-3 min",
+                            "Notes": "15° bench angle, tuck your elbows on the negative, flare as you press.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Low Incline Machine Press",
@@ -173,18 +210,20 @@
                                     "Exercise": "Low Incline Smith Machine Press",
                                     "ExerciseLink": "https://youtu.be/Kx53V2h3sqU"
                                 }
-                            ],
-                            "Notes": "15° bench angle, tuck your elbows on the negative, flare as you press."
+                            ]
                         },
                         {
                             "Exercise": "Machine Shoulder Press",
                             "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8",
-                            "Warmup Sets": 2,
-                            "Working Sets": 3,
+                            "WarmupSets": 2,
+                            "WorkingSets": 3,
                             "Reps": 15,
+                            "MinReps": 15,
+                            "MaxReps": 15,
                             "Load": 0,
                             "RPE": "9",
                             "Rest": "~2-3 min",
+                            "Notes": "Don't stop between reps, keep smooth and controlled tension on the delts.",
                             "Substitutions": [
                                 {
                                     "Exercise": "DB Shoulder Press",
@@ -194,8 +233,7 @@
                                     "Exercise": "Standing DB Arnold Press",
                                     "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc"
                                 }
-                            ],
-                            "Notes": "Don't stop in between reps, keep smooth and controlled tension on the delts."
+                            ]
                         }
                     ]
                 },
@@ -205,12 +243,15 @@
                         {
                             "Exercise": "1-Arm Half Kneeling Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/B0W4DQeo1tE",
-                            "Warmup Sets": 1,
-                            "Working Sets": 2,
+                            "WarmupSets": 1,
+                            "WorkingSets": 2,
                             "Reps": 20,
+                            "MinReps": 20,
+                            "MaxReps": 20,
                             "Load": 0,
                             "RPE": "9",
                             "Rest": "~1-2 min",
+                            "Notes": "Keep chest tall, keep elbow tucked in, focus on squeezing your lat.",
                             "Substitutions": [
                                 {
                                     "Exercise": "1-Arm Lat Pull-In",
@@ -220,18 +261,20 @@
                                     "Exercise": "Cable Lat Pullover",
                                     "ExerciseLink": "https://youtu.be/Vf7wf6bZODQ"
                                 }
-                            ],
-                            "Notes": "Keep chest tall, keep elbow tucked in, focus on squeezing your lat."
+                            ]
                         },
                         {
                             "Exercise": "Omni-Grip Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/qVek72z3F1U?t=927",
-                            "Warmup Sets": 1,
-                            "Working Sets": 3,
+                            "WarmupSets": 1,
+                            "WorkingSets": 3,
                             "Reps": 20,
+                            "MinReps": 20,
+                            "MaxReps": 20,
                             "Load": 0,
                             "RPE": "9",
                             "Rest": "~2-3 min",
+                            "Notes": "One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand).",
                             "Substitutions": [
                                 {
                                     "Exercise": "Omni-Grip Pull-Up",
@@ -241,8 +284,7 @@
                                     "Exercise": "Chin-Up",
                                     "ExerciseLink": "https://youtu.be/-d2Uui6MtRk"
                                 }
-                            ],
-                            "Notes": "One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand)."
+                            ]
                         }
                     ]
                 },
@@ -252,12 +294,15 @@
                         {
                             "Exercise": "Front Squat",
                             "ExerciseLink": "https://youtu.be/v-mQm_droHg?t=135",
-                            "Warmup Sets": "2-3",
-                            "Working Sets": 3,
+                            "WarmupSets": "2-3",
+                            "WorkingSets": 3,
                             "Reps": 15,
+                            "MinReps": 15,
+                            "MaxReps": 15,
                             "Load": 0,
                             "RPE": "7-8",
                             "Rest": "~2-3 min",
+                            "Notes": "Push but stay controlled. Focus on keeping your torso upright.",
                             "Substitutions": [
                                 {
                                     "Exercise": "High-Bar Box Squat",
@@ -267,18 +312,20 @@
                                     "Exercise": "Goblet Squat",
                                     "ExerciseLink": "https://youtu.be/v-mQm_droHg?t=489"
                                 }
-                            ],
-                            "Notes": "Push but stay controlled. Focus on keeping your torso upright."
+                            ]
                         },
                         {
                             "Exercise": "Dumbbell RDL",
                             "ExerciseLink": "https://youtu.be/V5u2AP9wBwE",
-                            "Warmup Sets": 1,
-                            "Working Sets": 3,
+                            "WarmupSets": 1,
+                            "WorkingSets": 3,
                             "Reps": 20,
+                            "MinReps": 20,
+                            "MaxReps": 20,
                             "Load": 0,
                             "RPE": "9",
                             "Rest": "~2-3 min",
+                            "Notes": "Emphasize the stretch in your hamstrings, prevent your lower back from rounding.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Barbell RDL",
@@ -288,8 +335,7 @@
                                     "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
-                            ],
-                            "Notes": "Emphasize the stretch in your hamstrings, prevent your lower back from rounding."
+                            ]
                         }
                     ]
                 }
@@ -304,12 +350,15 @@
                         {
                             "Exercise": "Low Incline DB Press",
                             "ExerciseLink": "https://youtu.be/6-PFsU1q1kU",
-                            "Warmup Sets": 2,
-                            "Working Sets": 3,
+                            "WarmupSets": 2,
+                            "WorkingSets": 3,
                             "Reps": 16,
+                            "MinReps": 16,
+                            "MaxReps": 16,
                             "Load": 0,
                             "RPE": "6",
                             "Rest": "~2-3 min",
+                            "Notes": "15° bench angle, tuck your elbows on the negative, flare as you press.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Low Incline Machine Press",
@@ -319,18 +368,20 @@
                                     "Exercise": "Low Incline Smith Machine Press",
                                     "ExerciseLink": "https://youtu.be/Kx53V2h3sqU"
                                 }
-                            ],
-                            "Notes": "15° bench angle, tuck your elbows on the negative, flare as you press."
+                            ]
                         },
                         {
                             "Exercise": "Machine Shoulder Press",
                             "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8",
-                            "Warmup Sets": 2,
-                            "Working Sets": 3,
+                            "WarmupSets": 2,
+                            "WorkingSets": 3,
                             "Reps": 12,
+                            "MinReps": 12,
+                            "MaxReps": 12,
                             "Load": 0,
                             "RPE": "6",
                             "Rest": "~2-3 min",
+                            "Notes": "Don't stop between reps, keep smooth and controlled tension on the delts.",
                             "Substitutions": [
                                 {
                                     "Exercise": "DB Shoulder Press",
@@ -340,8 +391,7 @@
                                     "Exercise": "Standing DB Arnold Press",
                                     "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc"
                                 }
-                            ],
-                            "Notes": "Don't stop in between reps, keep smooth and controlled tension on the delts."
+                            ]
                         }
                     ]
                 },
@@ -351,12 +401,15 @@
                         {
                             "Exercise": "1-Arm Half Kneeling Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/B0W4DQeo1tE",
-                            "Warmup Sets": 1,
-                            "Working Sets": 2,
+                            "WarmupSets": 1,
+                            "WorkingSets": 2,
                             "Reps": 16,
+                            "MinReps": 16,
+                            "MaxReps": 16,
                             "Load": 0,
                             "RPE": "6",
                             "Rest": "~1-2 min",
+                            "Notes": "Keep chest tall, keep elbow tucked in, focus on squeezing your lat.",
                             "Substitutions": [
                                 {
                                     "Exercise": "1-Arm Lat Pull-In",
@@ -366,18 +419,20 @@
                                     "Exercise": "Cable Lat Pullover",
                                     "ExerciseLink": "https://youtu.be/Vf7wf6bZODQ"
                                 }
-                            ],
-                            "Notes": "Keep chest tall, keep elbow tucked in, focus on squeezing your lat."
+                            ]
                         },
                         {
                             "Exercise": "Omni-Grip Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/qVek72z3F1U?t=927",
-                            "Warmup Sets": 1,
-                            "Working Sets": 3,
+                            "WarmupSets": 1,
+                            "WorkingSets": 3,
                             "Reps": 16,
+                            "MinReps": 16,
+                            "MaxReps": 16,
                             "Load": 0,
                             "RPE": "6",
                             "Rest": "~2-3 min",
+                            "Notes": "One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand).",
                             "Substitutions": [
                                 {
                                     "Exercise": "Omni-Grip Pull-Up",
@@ -387,8 +442,7 @@
                                     "Exercise": "Chin-Up",
                                     "ExerciseLink": "https://youtu.be/-d2Uui6MtRk"
                                 }
-                            ],
-                            "Notes": "One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand)."
+                            ]
                         }
                     ]
                 },
@@ -398,12 +452,15 @@
                         {
                             "Exercise": "Front Squat",
                             "ExerciseLink": "https://youtu.be/v-mQm_droHg?t=135",
-                            "Warmup Sets": "2-3",
-                            "Working Sets": 3,
+                            "WarmupSets": "2-3",
+                            "WorkingSets": 3,
                             "Reps": 12,
+                            "MinReps": 12,
+                            "MaxReps": 12,
                             "Load": 0,
                             "RPE": "6",
                             "Rest": "~2-3 min",
+                            "Notes": "Push but stay controlled. Focus on keeping your torso upright.",
                             "Substitutions": [
                                 {
                                     "Exercise": "High-Bar Box Squat",
@@ -413,18 +470,20 @@
                                     "Exercise": "Goblet Squat",
                                     "ExerciseLink": "https://youtu.be/v-mQm_droHg?t=489"
                                 }
-                            ],
-                            "Notes": "Push but stay controlled. Focus on keeping your torso upright."
+                            ]
                         },
                         {
                             "Exercise": "Dumbbell RDL",
                             "ExerciseLink": "https://youtu.be/V5u2AP9wBwE",
-                            "Warmup Sets": 1,
-                            "Working Sets": 3,
+                            "WarmupSets": 1,
+                            "WorkingSets": 3,
                             "Reps": 16,
+                            "MinReps": 16,
+                            "MaxReps": 16,
                             "Load": 0,
                             "RPE": "6",
                             "Rest": "~2-3 min",
+                            "Notes": "Emphasize the stretch in your hamstrings, prevent your lower back from rounding.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Barbell RDL",
@@ -434,8 +493,7 @@
                                     "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
-                            ],
-                            "Notes": "Emphasize the stretch in your hamstrings, prevent your lower back from rounding."
+                            ]
                         }
                     ]
                 }

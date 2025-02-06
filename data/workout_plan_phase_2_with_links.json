@@ -10,10 +10,10 @@
                         {
                             "Exercise": "Bench Press",
                             "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
-                            "Reps": 5,
-                            "MinReps": 5,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
+                            "Reps": "3-5",
+                            "MinReps": 3,
                             "MaxReps": 5,
                             "Load": 0,
                             "RPE": "8-9",
@@ -33,12 +33,15 @@
                         {
                             "Exercise": "High-Incline Smith Machine Press",
                             "ExerciseLink": "https://youtu.be/egBQ9Svdnok",
-                            "Warmup Sets": 2,
-                            "Working Sets": 2,
-                            "Reps": 6,
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
                             "Load": 0,
                             "RPE": "10",
                             "Rest": "~3-4 min",
+                            "Notes": "Set the bench at a 45-60° incline, touch the bar to your upper chest with control.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Incline DB Press",
@@ -48,8 +51,76 @@
                                     "Exercise": "Incline Machine Press",
                                     "ExerciseLink": "https://youtu.be/b8fYnZ-usP0"
                                 }
-                            ],
-                            "Notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                            ]
+                        },
+                        {
+                            "Exercise": "Egyptian Cable Lateral Raise",
+                            "ExerciseLink": "https://youtu.be/SJqInYJcg5k?t=653",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean away from the cable. Focus on squeezing your delts.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/v_ZkxWzYnMc?t=215"
+                                },
+                                {
+                                    "Exercise": "Machine Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/-9QsrJ542ao"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Overhead Cable Triceps Extension",
+                            "ExerciseLink": "https://youtu.be/qIW3z-ydg-M",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Do both arms at once, resist the negative.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Floor Skull Crusher",
+                                    "ExerciseLink": "https://youtu.be/_IlI2plHp9g"
+                                },
+                                {
+                                    "Exercise": "DB French Press",
+                                    "ExerciseLink": "https://youtu.be/K4E8CXajqfQ"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Cable Triceps Kickback",
+                            "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=327",
+                            "WarmupSets": 1,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean slightly forward, lock your elbow behind your torso (shoulder hyperextension).",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Triceps Kickback",
+                                    "ExerciseLink": "https://youtu.be/C6UcPm7mdE4"
+                                },
+                                {
+                                    "Exercise": "Triceps Pressdown",
+                                    "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=106"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -59,8 +130,8 @@
                         {
                             "Exercise": "Neutral-Grip Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/12xHxUnBEiI?t=240",
-                            "Warmup Sets": 3,
-                            "Working Sets": 3,
+                            "WarmupSets": 3,
+                            "WorkingSets": 3,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -80,8 +151,8 @@
                         {
                             "Exercise": "Pendlay Row",
                             "ExerciseLink": "https://youtu.be/axoeDmW0oAY?t=185",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -106,8 +177,8 @@
                         {
                             "Exercise": "Squat or Machine Squat",
                             "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
                             "Reps": 5,
                             "Load": 0,
                             "RPE": "8-9",
@@ -127,8 +198,8 @@
                         {
                             "Exercise": "Barbell RDL",
                             "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -139,7 +210,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -158,12 +229,15 @@
                         {
                             "Exercise": "Bench Press",
                             "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
-                            "Reps": 5,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
+                            "Reps": "3-5",
+                            "MinReps": 3,
+                            "MaxReps": 5,
                             "Load": 0,
                             "RPE": "8-9",
                             "Rest": "~3-5 min",
+                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
                             "Substitutions": [
                                 {
                                     "Exercise": "DB Bench Press",
@@ -173,18 +247,20 @@
                                     "Exercise": "Machine Chest Press",
                                     "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
                                 }
-                            ],
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                            ]
                         },
                         {
                             "Exercise": "High-Incline Smith Machine Press",
                             "ExerciseLink": "https://youtu.be/egBQ9Svdnok",
-                            "Warmup Sets": 2,
-                            "Working Sets": 2,
-                            "Reps": 6,
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
                             "Load": 0,
                             "RPE": "10",
                             "Rest": "~3-4 min",
+                            "Notes": "Set the bench at a 45-60° incline, touch the bar to your upper chest with control.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Incline DB Press",
@@ -194,8 +270,76 @@
                                     "Exercise": "Incline Machine Press",
                                     "ExerciseLink": "https://youtu.be/b8fYnZ-usP0"
                                 }
-                            ],
-                            "Notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                            ]
+                        },
+                        {
+                            "Exercise": "Egyptian Cable Lateral Raise",
+                            "ExerciseLink": "https://youtu.be/SJqInYJcg5k?t=653",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean away from the cable. Focus on squeezing your delts.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/v_ZkxWzYnMc?t=215"
+                                },
+                                {
+                                    "Exercise": "Machine Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/-9QsrJ542ao"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Overhead Cable Triceps Extension",
+                            "ExerciseLink": "https://youtu.be/qIW3z-ydg-M",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Do both arms at once, resist the negative.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Floor Skull Crusher",
+                                    "ExerciseLink": "https://youtu.be/_IlI2plHp9g"
+                                },
+                                {
+                                    "Exercise": "DB French Press",
+                                    "ExerciseLink": "https://youtu.be/K4E8CXajqfQ"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Cable Triceps Kickback",
+                            "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=327",
+                            "WarmupSets": 1,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean slightly forward, lock your elbow behind your torso (shoulder hyperextension).",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Triceps Kickback",
+                                    "ExerciseLink": "https://youtu.be/C6UcPm7mdE4"
+                                },
+                                {
+                                    "Exercise": "Triceps Pressdown",
+                                    "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=106"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -205,8 +349,8 @@
                         {
                             "Exercise": "Neutral-Grip Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/12xHxUnBEiI?t=240",
-                            "Warmup Sets": 3,
-                            "Working Sets": 3,
+                            "WarmupSets": 3,
+                            "WorkingSets": 3,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -226,8 +370,8 @@
                         {
                             "Exercise": "Pendlay Row",
                             "ExerciseLink": "https://youtu.be/axoeDmW0oAY?t=185",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -252,8 +396,8 @@
                         {
                             "Exercise": "Squat or Machine Squat",
                             "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
                             "Reps": 5,
                             "Load": 0,
                             "RPE": "8-9",
@@ -273,8 +417,8 @@
                         {
                             "Exercise": "Barbell RDL",
                             "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -285,7 +429,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -304,12 +448,15 @@
                         {
                             "Exercise": "Bench Press",
                             "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
-                            "Reps": 5,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
+                            "Reps": "3-5",
+                            "MinReps": 3,
+                            "MaxReps": 5,
                             "Load": 0,
                             "RPE": "8-9",
                             "Rest": "~3-5 min",
+                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
                             "Substitutions": [
                                 {
                                     "Exercise": "DB Bench Press",
@@ -319,18 +466,20 @@
                                     "Exercise": "Machine Chest Press",
                                     "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
                                 }
-                            ],
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                            ]
                         },
                         {
                             "Exercise": "High-Incline Smith Machine Press",
                             "ExerciseLink": "https://youtu.be/egBQ9Svdnok",
-                            "Warmup Sets": 2,
-                            "Working Sets": 2,
-                            "Reps": 6,
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
                             "Load": 0,
                             "RPE": "10",
                             "Rest": "~3-4 min",
+                            "Notes": "Set the bench at a 45-60° incline, touch the bar to your upper chest with control.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Incline DB Press",
@@ -340,8 +489,76 @@
                                     "Exercise": "Incline Machine Press",
                                     "ExerciseLink": "https://youtu.be/b8fYnZ-usP0"
                                 }
-                            ],
-                            "Notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                            ]
+                        },
+                        {
+                            "Exercise": "Egyptian Cable Lateral Raise",
+                            "ExerciseLink": "https://youtu.be/SJqInYJcg5k?t=653",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean away from the cable. Focus on squeezing your delts.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/v_ZkxWzYnMc?t=215"
+                                },
+                                {
+                                    "Exercise": "Machine Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/-9QsrJ542ao"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Overhead Cable Triceps Extension",
+                            "ExerciseLink": "https://youtu.be/qIW3z-ydg-M",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Do both arms at once, resist the negative.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Floor Skull Crusher",
+                                    "ExerciseLink": "https://youtu.be/_IlI2plHp9g"
+                                },
+                                {
+                                    "Exercise": "DB French Press",
+                                    "ExerciseLink": "https://youtu.be/K4E8CXajqfQ"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Cable Triceps Kickback",
+                            "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=327",
+                            "WarmupSets": 1,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean slightly forward, lock your elbow behind your torso (shoulder hyperextension).",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Triceps Kickback",
+                                    "ExerciseLink": "https://youtu.be/C6UcPm7mdE4"
+                                },
+                                {
+                                    "Exercise": "Triceps Pressdown",
+                                    "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=106"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -351,8 +568,8 @@
                         {
                             "Exercise": "Neutral-Grip Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/12xHxUnBEiI?t=240",
-                            "Warmup Sets": 3,
-                            "Working Sets": 3,
+                            "WarmupSets": 3,
+                            "WorkingSets": 3,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -372,8 +589,8 @@
                         {
                             "Exercise": "Pendlay Row",
                             "ExerciseLink": "https://youtu.be/axoeDmW0oAY?t=185",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -398,8 +615,8 @@
                         {
                             "Exercise": "Squat or Machine Squat",
                             "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
                             "Reps": 5,
                             "Load": 0,
                             "RPE": "8-9",
@@ -419,8 +636,8 @@
                         {
                             "Exercise": "Barbell RDL",
                             "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -431,7 +648,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -450,12 +667,15 @@
                         {
                             "Exercise": "Bench Press",
                             "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
-                            "Reps": 5,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
+                            "Reps": "3-5",
+                            "MinReps": 3,
+                            "MaxReps": 5,
                             "Load": 0,
                             "RPE": "8-9",
                             "Rest": "~3-5 min",
+                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
                             "Substitutions": [
                                 {
                                     "Exercise": "DB Bench Press",
@@ -465,18 +685,20 @@
                                     "Exercise": "Machine Chest Press",
                                     "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
                                 }
-                            ],
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                            ]
                         },
                         {
                             "Exercise": "High-Incline Smith Machine Press",
                             "ExerciseLink": "https://youtu.be/egBQ9Svdnok",
-                            "Warmup Sets": 2,
-                            "Working Sets": 2,
-                            "Reps": 6,
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
                             "Load": 0,
                             "RPE": "10",
                             "Rest": "~3-4 min",
+                            "Notes": "Set the bench at a 45-60° incline, touch the bar to your upper chest with control.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Incline DB Press",
@@ -486,8 +708,76 @@
                                     "Exercise": "Incline Machine Press",
                                     "ExerciseLink": "https://youtu.be/b8fYnZ-usP0"
                                 }
-                            ],
-                            "Notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                            ]
+                        },
+                        {
+                            "Exercise": "Egyptian Cable Lateral Raise",
+                            "ExerciseLink": "https://youtu.be/SJqInYJcg5k?t=653",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean away from the cable. Focus on squeezing your delts.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/v_ZkxWzYnMc?t=215"
+                                },
+                                {
+                                    "Exercise": "Machine Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/-9QsrJ542ao"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Overhead Cable Triceps Extension",
+                            "ExerciseLink": "https://youtu.be/qIW3z-ydg-M",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Do both arms at once, resist the negative.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Floor Skull Crusher",
+                                    "ExerciseLink": "https://youtu.be/_IlI2plHp9g"
+                                },
+                                {
+                                    "Exercise": "DB French Press",
+                                    "ExerciseLink": "https://youtu.be/K4E8CXajqfQ"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Cable Triceps Kickback",
+                            "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=327",
+                            "WarmupSets": 1,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean slightly forward, lock your elbow behind your torso (shoulder hyperextension).",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Triceps Kickback",
+                                    "ExerciseLink": "https://youtu.be/C6UcPm7mdE4"
+                                },
+                                {
+                                    "Exercise": "Triceps Pressdown",
+                                    "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=106"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -497,8 +787,8 @@
                         {
                             "Exercise": "Neutral-Grip Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/12xHxUnBEiI?t=240",
-                            "Warmup Sets": 3,
-                            "Working Sets": 3,
+                            "WarmupSets": 3,
+                            "WorkingSets": 3,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -518,8 +808,8 @@
                         {
                             "Exercise": "Pendlay Row",
                             "ExerciseLink": "https://youtu.be/axoeDmW0oAY?t=185",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -544,8 +834,8 @@
                         {
                             "Exercise": "Squat or Machine Squat",
                             "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
                             "Reps": 5,
                             "Load": 0,
                             "RPE": "8-9",
@@ -565,8 +855,8 @@
                         {
                             "Exercise": "Barbell RDL",
                             "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -577,7 +867,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -596,12 +886,15 @@
                         {
                             "Exercise": "Bench Press",
                             "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
-                            "Reps": 5,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
+                            "Reps": "3-5",
+                            "MinReps": 3,
+                            "MaxReps": 5,
                             "Load": 0,
                             "RPE": "8-9",
                             "Rest": "~3-5 min",
+                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
                             "Substitutions": [
                                 {
                                     "Exercise": "DB Bench Press",
@@ -611,18 +904,20 @@
                                     "Exercise": "Machine Chest Press",
                                     "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
                                 }
-                            ],
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                            ]
                         },
                         {
                             "Exercise": "High-Incline Smith Machine Press",
                             "ExerciseLink": "https://youtu.be/egBQ9Svdnok",
-                            "Warmup Sets": 2,
-                            "Working Sets": 2,
-                            "Reps": 6,
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
                             "Load": 0,
                             "RPE": "10",
                             "Rest": "~3-4 min",
+                            "Notes": "Set the bench at a 45-60° incline, touch the bar to your upper chest with control.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Incline DB Press",
@@ -632,8 +927,76 @@
                                     "Exercise": "Incline Machine Press",
                                     "ExerciseLink": "https://youtu.be/b8fYnZ-usP0"
                                 }
-                            ],
-                            "Notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                            ]
+                        },
+                        {
+                            "Exercise": "Egyptian Cable Lateral Raise",
+                            "ExerciseLink": "https://youtu.be/SJqInYJcg5k?t=653",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean away from the cable. Focus on squeezing your delts.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/v_ZkxWzYnMc?t=215"
+                                },
+                                {
+                                    "Exercise": "Machine Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/-9QsrJ542ao"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Overhead Cable Triceps Extension",
+                            "ExerciseLink": "https://youtu.be/qIW3z-ydg-M",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Do both arms at once, resist the negative.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Floor Skull Crusher",
+                                    "ExerciseLink": "https://youtu.be/_IlI2plHp9g"
+                                },
+                                {
+                                    "Exercise": "DB French Press",
+                                    "ExerciseLink": "https://youtu.be/K4E8CXajqfQ"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Cable Triceps Kickback",
+                            "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=327",
+                            "WarmupSets": 1,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "10",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean slightly forward, lock your elbow behind your torso (shoulder hyperextension).",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Triceps Kickback",
+                                    "ExerciseLink": "https://youtu.be/C6UcPm7mdE4"
+                                },
+                                {
+                                    "Exercise": "Triceps Pressdown",
+                                    "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=106"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -643,8 +1006,8 @@
                         {
                             "Exercise": "Neutral-Grip Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/12xHxUnBEiI?t=240",
-                            "Warmup Sets": 3,
-                            "Working Sets": 3,
+                            "WarmupSets": 3,
+                            "WorkingSets": 3,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -664,8 +1027,8 @@
                         {
                             "Exercise": "Pendlay Row",
                             "ExerciseLink": "https://youtu.be/axoeDmW0oAY?t=185",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -690,8 +1053,8 @@
                         {
                             "Exercise": "Squat or Machine Squat",
                             "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
                             "Reps": 5,
                             "Load": 0,
                             "RPE": "8-9",
@@ -711,8 +1074,8 @@
                         {
                             "Exercise": "Barbell RDL",
                             "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "10",
@@ -723,7 +1086,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],
@@ -742,12 +1105,15 @@
                         {
                             "Exercise": "Bench Press",
                             "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
-                            "Reps": 5,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
+                            "Reps": "3-5",
+                            "MinReps": 3,
+                            "MaxReps": 5,
                             "Load": 0,
                             "RPE": "7",
                             "Rest": "~3-5 min",
+                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
                             "Substitutions": [
                                 {
                                     "Exercise": "DB Bench Press",
@@ -757,18 +1123,20 @@
                                     "Exercise": "Machine Chest Press",
                                     "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
                                 }
-                            ],
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up."
+                            ]
                         },
                         {
                             "Exercise": "High-Incline Smith Machine Press",
                             "ExerciseLink": "https://youtu.be/egBQ9Svdnok",
-                            "Warmup Sets": 2,
-                            "Working Sets": 2,
-                            "Reps": 6,
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
                             "Load": 0,
                             "RPE": "8",
                             "Rest": "~3-4 min",
+                            "Notes": "Set the bench at a 45-60° incline, touch the bar to your upper chest with control.",
                             "Substitutions": [
                                 {
                                     "Exercise": "Incline DB Press",
@@ -778,8 +1146,76 @@
                                     "Exercise": "Incline Machine Press",
                                     "ExerciseLink": "https://youtu.be/b8fYnZ-usP0"
                                 }
-                            ],
-                            "Notes": "Set the bench at a 45-60\u00b0 incline, touch the bar to your upper chest with control."
+                            ]
+                        },
+                        {
+                            "Exercise": "Egyptian Cable Lateral Raise",
+                            "ExerciseLink": "https://youtu.be/SJqInYJcg5k?t=653",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "8",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean away from the cable. Focus on squeezing your delts.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/v_ZkxWzYnMc?t=215"
+                                },
+                                {
+                                    "Exercise": "Machine Lateral Raise",
+                                    "ExerciseLink": "https://youtu.be/-9QsrJ542ao"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Overhead Cable Triceps Extension",
+                            "ExerciseLink": "https://youtu.be/qIW3z-ydg-M",
+                            "WarmupSets": 2,
+                            "WorkingSets": 2,
+                            "Reps": "4-6",
+                            "MinReps": 4,
+                            "MaxReps": 6,
+                            "Load": 0,
+                            "RPE": "8",
+                            "Rest": "~2-3 min",
+                            "Notes": "Do both arms at once, resist the negative.",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Floor Skull Crusher",
+                                    "ExerciseLink": "https://youtu.be/_IlI2plHp9g"
+                                },
+                                {
+                                    "Exercise": "DB French Press",
+                                    "ExerciseLink": "https://youtu.be/K4E8CXajqfQ"
+                                }
+                            ]
+                        },
+                        {
+                            "Exercise": "Cable Triceps Kickback",
+                            "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=327",
+                            "WarmupSets": 1,
+                            "WorkingSets": 2,
+                            "Reps": "6-8",
+                            "MinReps": 6,
+                            "MaxReps": 8,
+                            "Load": 0,
+                            "RPE": "8",
+                            "Rest": "~2-3 min",
+                            "Notes": "Lean slightly forward, lock your elbow behind your torso (shoulder hyperextension).",
+                            "Substitutions": [
+                                {
+                                    "Exercise": "DB Triceps Kickback",
+                                    "ExerciseLink": "https://youtu.be/C6UcPm7mdE4"
+                                },
+                                {
+                                    "Exercise": "Triceps Pressdown",
+                                    "ExerciseLink": "https://youtu.be/94DXwlcX8Po?t=106"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -789,8 +1225,8 @@
                         {
                             "Exercise": "Neutral-Grip Lat Pulldown",
                             "ExerciseLink": "https://youtu.be/12xHxUnBEiI?t=240",
-                            "Warmup Sets": 3,
-                            "Working Sets": 3,
+                            "WarmupSets": 3,
+                            "WorkingSets": 3,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "8",
@@ -810,8 +1246,8 @@
                         {
                             "Exercise": "Pendlay Row",
                             "ExerciseLink": "https://youtu.be/axoeDmW0oAY?t=185",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "8",
@@ -836,8 +1272,8 @@
                         {
                             "Exercise": "Squat or Machine Squat",
                             "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "Warmup Sets": "3-4",
-                            "Working Sets": 1,
+                            "WarmupSets": "3-4",
+                            "WorkingSets": 1,
                             "Reps": 5,
                             "Load": 0,
                             "RPE": "7",
@@ -857,8 +1293,8 @@
                         {
                             "Exercise": "Barbell RDL",
                             "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "Warmup Sets": 3,
-                            "Working Sets": 2,
+                            "WarmupSets": 3,
+                            "WorkingSets": 2,
                             "Reps": 6,
                             "Load": 0,
                             "RPE": "8",
@@ -869,7 +1305,7 @@
                                     "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                                 },
                                 {
-                                    "Exercise": "45\u00b0 Hyperextension",
+                                    "Exercise": "45° Hyperextension",
                                     "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                                 }
                             ],

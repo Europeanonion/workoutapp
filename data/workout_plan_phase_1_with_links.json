@@ -1,953 +1,900 @@
 {
-    "Phase": "Base Hypertrophy",
-    "Weeks": [
+  "Phase": "Phase 1 - Base Hypertrophy",
+  "Description": "Moderate Volume, Moderate Intensity",
+  "Weeks": [
+    {
+      "Week": 1,
+      "Workouts": [
         {
-            "Week": 1,
-            "Workouts": [
+          "Day": "Push #1",
+          "Exercises": [
+            {
+              "Exercise": "Bench Press",
+              "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
+              "Warmup Sets": "3-4",
+              "Working Sets": "1",
+              "Reps": "3-5",
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
+              "Substitution Option 1": "DB Bench Press",
+              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
+              "Substitution Option 2": "Machine Chest Press",
+              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+            },
+            {
+              "Exercise": "Standing Dumbbell Arnold Press",
+              "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
+              "Substitutions": [
                 {
-                    "Day": "Push #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Bench Press",
-                            "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "3-5",
-                            "MinReps": 3,
-                            "MaxReps": 5,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB Bench Press",
-                                    "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
-                                },
-                                {
-                                    "Exercise": "Machine Chest Press",
-                                    "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Standing Dumbbell Arnold Press",
-                            "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Seated DB Shoulder Press",
-                                    "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
-                                },
-                                {
-                                    "Exercise": "Machine Shoulder Press",
-                                    "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
-                                }
-                            ]
-                        }
-                    ]
+                  "Exercise": "Seated DB Shoulder Press",
+                  "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
                 },
                 {
-                    "Day": "Pull #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Lat Pulldown (Feeder Sets)",
-                            "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
-                            "WarmupSets": 0,
-                            "WorkingSets": 4,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "",
-                            "Rest": "~2-3 min",
-                            "Notes": "Gradually increase weight over sets, last set to failure.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Machine Pulldown",
-                                    "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
-                                },
-                                {
-                                    "Exercise": "Pull-Up",
-                                    "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Omni-Grip Machine Chest-Supported Row",
-                            "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Use 3 different grips, going from wider to closer.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Incline Chest-Supported DB Row",
-                                    "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
-                                },
-                                {
-                                    "Exercise": "Cable Seated Row",
-                                    "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Day": "Legs #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Squat",
-                            "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "2-4",
-                            "MinReps": 2,
-                            "MaxReps": 4,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Sit back and down, keep upper back tight.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Hack Squat",
-                                    "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
-                                },
-                                {
-                                    "Exercise": "DB Bulgarian Split Squat",
-                                    "ExerciseLink": "https://youtu.be/htDXu61MPio"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Barbell RDL",
-                            "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Maintain neutral lower back, push hips back.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB RDL",
-                                    "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
-                                },
-                                {
-                                    "Exercise": "45° Hyperextension",
-                                    "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
-                                }
-                            ]
-                        }
-                    ]
+                  "Exercise": "Machine Shoulder Press",
+                  "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
                 }
-            ]
+              ]
+            }
+          ]
         },
         {
-            "Week": 2,
-            "Workouts": [
+          "Day": "Pull #1",
+          "Exercises": [
+            {
+              "Exercise": "Lat Pulldown (Feeder Sets)",
+              "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
+              "WarmupSets": 0,
+              "WorkingSets": 4,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "",
+              "Rest": "~2-3 min",
+              "Notes": "Gradually increase weight over sets, last set to failure.",
+              "Substitutions": [
                 {
-                    "Day": "Push #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Bench Press",
-                            "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "3-5",
-                            "MinReps": 3,
-                            "MaxReps": 5,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB Bench Press",
-                                    "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
-                                },
-                                {
-                                    "Exercise": "Machine Chest Press",
-                                    "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Standing Dumbbell Arnold Press",
-                            "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Seated DB Shoulder Press",
-                                    "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
-                                },
-                                {
-                                    "Exercise": "Machine Shoulder Press",
-                                    "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
-                                }
-                            ]
-                        }
-                    ]
+                  "Exercise": "Machine Pulldown",
+                  "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
                 },
                 {
-                    "Day": "Pull #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Lat Pulldown (Feeder Sets)",
-                            "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
-                            "WarmupSets": 0,
-                            "WorkingSets": 4,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "",
-                            "Rest": "~2-3 min",
-                            "Notes": "Gradually increase weight over sets, last set to failure.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Machine Pulldown",
-                                    "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
-                                },
-                                {
-                                    "Exercise": "Pull-Up",
-                                    "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Omni-Grip Machine Chest-Supported Row",
-                            "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Use 3 different grips, going from wider to closer.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Incline Chest-Supported DB Row",
-                                    "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
-                                },
-                                {
-                                    "Exercise": "Cable Seated Row",
-                                    "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Day": "Legs #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Squat",
-                            "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "2-4",
-                            "MinReps": 2,
-                            "MaxReps": 4,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Sit back and down, keep upper back tight.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Hack Squat",
-                                    "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
-                                },
-                                {
-                                    "Exercise": "DB Bulgarian Split Squat",
-                                    "ExerciseLink": "https://youtu.be/htDXu61MPio"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Barbell RDL",
-                            "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Maintain neutral lower back, push hips back.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB RDL",
-                                    "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
-                                },
-                                {
-                                    "Exercise": "45° Hyperextension",
-                                    "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
-                                }
-                            ]
-                        }
-                    ]
+                  "Exercise": "Pull-Up",
+                  "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
                 }
-            ]
+              ]
+            },
+            {
+              "Exercise": "Omni-Grip Machine Chest-Supported Row",
+              "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Use 3 different grips, going from wider to closer.",
+              "Substitutions": [
+                {
+                  "Exercise": "Incline Chest-Supported DB Row",
+                  "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
+                },
+                {
+                  "Exercise": "Cable Seated Row",
+                  "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
+                }
+              ]
+            }
+          ]
         },
         {
-            "Week": 3,
-            "Workouts": [
+          "Day": "Legs #1",
+          "Exercises": [
+            {
+              "Exercise": "Squat",
+              "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
+              "Reps": "2-4",
+              "MinReps": 2,
+              "MaxReps": 4,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Sit back and down, keep upper back tight.",
+              "Substitutions": [
                 {
-                    "Day": "Push #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Bench Press",
-                            "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "3-5",
-                            "MinReps": 3,
-                            "MaxReps": 5,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB Bench Press",
-                                    "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
-                                },
-                                {
-                                    "Exercise": "Machine Chest Press",
-                                    "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Standing Dumbbell Arnold Press",
-                            "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Seated DB Shoulder Press",
-                                    "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
-                                },
-                                {
-                                    "Exercise": "Machine Shoulder Press",
-                                    "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
-                                }
-                            ]
-                        }
-                    ]
+                  "Exercise": "Hack Squat",
+                  "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
                 },
                 {
-                    "Day": "Pull #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Lat Pulldown (Feeder Sets)",
-                            "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
-                            "WarmupSets": 0,
-                            "WorkingSets": 4,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "",
-                            "Rest": "~2-3 min",
-                            "Notes": "Gradually increase weight over sets, last set to failure.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Machine Pulldown",
-                                    "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
-                                },
-                                {
-                                    "Exercise": "Pull-Up",
-                                    "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Omni-Grip Machine Chest-Supported Row",
-                            "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Use 3 different grips, going from wider to closer.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Incline Chest-Supported DB Row",
-                                    "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
-                                },
-                                {
-                                    "Exercise": "Cable Seated Row",
-                                    "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Day": "Legs #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Squat",
-                            "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "2-4",
-                            "MinReps": 2,
-                            "MaxReps": 4,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Sit back and down, keep upper back tight.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Hack Squat",
-                                    "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
-                                },
-                                {
-                                    "Exercise": "DB Bulgarian Split Squat",
-                                    "ExerciseLink": "https://youtu.be/htDXu61MPio"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Barbell RDL",
-                            "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Maintain neutral lower back, push hips back.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB RDL",
-                                    "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
-                                },
-                                {
-                                    "Exercise": "45° Hyperextension",
-                                    "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
-                                }
-                            ]
-                        }
-                    ]
+                  "Exercise": "DB Bulgarian Split Squat",
+                  "ExerciseLink": "https://youtu.be/htDXu61MPio"
                 }
-            ]
-        },
-        {
-            "Week": 4,
-            "Workouts": [
+              ]
+            },
+            {
+              "Exercise": "Barbell RDL",
+              "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Maintain neutral lower back, push hips back.",
+              "Substitutions": [
                 {
-                    "Day": "Push #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Bench Press",
-                            "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "3-5",
-                            "MinReps": 3,
-                            "MaxReps": 5,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB Bench Press",
-                                    "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
-                                },
-                                {
-                                    "Exercise": "Machine Chest Press",
-                                    "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Standing Dumbbell Arnold Press",
-                            "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Seated DB Shoulder Press",
-                                    "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
-                                },
-                                {
-                                    "Exercise": "Machine Shoulder Press",
-                                    "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
-                                }
-                            ]
-                        }
-                    ]
+                  "Exercise": "DB RDL",
+                  "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
                 },
                 {
-                    "Day": "Pull #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Lat Pulldown (Feeder Sets)",
-                            "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
-                            "WarmupSets": 0,
-                            "WorkingSets": 4,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "",
-                            "Rest": "~2-3 min",
-                            "Notes": "Gradually increase weight over sets, last set to failure.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Machine Pulldown",
-                                    "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
-                                },
-                                {
-                                    "Exercise": "Pull-Up",
-                                    "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Omni-Grip Machine Chest-Supported Row",
-                            "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Use 3 different grips, going from wider to closer.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Incline Chest-Supported DB Row",
-                                    "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
-                                },
-                                {
-                                    "Exercise": "Cable Seated Row",
-                                    "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Day": "Legs #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Squat",
-                            "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "2-4",
-                            "MinReps": 2,
-                            "MaxReps": 4,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Sit back and down, keep upper back tight.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Hack Squat",
-                                    "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
-                                },
-                                {
-                                    "Exercise": "DB Bulgarian Split Squat",
-                                    "ExerciseLink": "https://youtu.be/htDXu61MPio"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Barbell RDL",
-                            "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Maintain neutral lower back, push hips back.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB RDL",
-                                    "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
-                                },
-                                {
-                                    "Exercise": "45° Hyperextension",
-                                    "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
-                                }
-                            ]
-                        }
-                    ]
+                  "Exercise": "45° Hyperextension",
+                  "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
                 }
-            ]
-        },
-        {
-            "Week": 5,
-            "Workouts": [
-                {
-                    "Day": "Push #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Bench Press",
-                            "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "3-5",
-                            "MinReps": 3,
-                            "MaxReps": 5,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB Bench Press",
-                                    "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
-                                },
-                                {
-                                    "Exercise": "Machine Chest Press",
-                                    "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Standing Dumbbell Arnold Press",
-                            "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Seated DB Shoulder Press",
-                                    "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
-                                },
-                                {
-                                    "Exercise": "Machine Shoulder Press",
-                                    "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Day": "Pull #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Lat Pulldown (Feeder Sets)",
-                            "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
-                            "WarmupSets": 0,
-                            "WorkingSets": 4,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "",
-                            "Rest": "~2-3 min",
-                            "Notes": "Gradually increase weight over sets, last set to failure.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Machine Pulldown",
-                                    "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
-                                },
-                                {
-                                    "Exercise": "Pull-Up",
-                                    "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Omni-Grip Machine Chest-Supported Row",
-                            "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Use 3 different grips, going from wider to closer.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Incline Chest-Supported DB Row",
-                                    "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
-                                },
-                                {
-                                    "Exercise": "Cable Seated Row",
-                                    "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Day": "Legs #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Squat",
-                            "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "2-4",
-                            "MinReps": 2,
-                            "MaxReps": 4,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~3-4 min",
-                            "Notes": "Sit back and down, keep upper back tight.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Hack Squat",
-                                    "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
-                                },
-                                {
-                                    "Exercise": "DB Bulgarian Split Squat",
-                                    "ExerciseLink": "https://youtu.be/htDXu61MPio"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Barbell RDL",
-                            "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "8-9",
-                            "Rest": "~2-3 min",
-                            "Notes": "Maintain neutral lower back, push hips back.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB RDL",
-                                    "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
-                                },
-                                {
-                                    "Exercise": "45° Hyperextension",
-                                    "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "Week": 6,
-            "Workouts": [
-                {
-                    "Day": "Push #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Bench Press",
-                            "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "3-5",
-                            "MinReps": 3,
-                            "MaxReps": 5,
-                            "Load": 0,
-                            "RPE": "7",
-                            "Rest": "~3-4 min",
-                            "Notes": "Set up a comfortable arch, quick pause on the chest, explode up.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB Bench Press",
-                                    "ExerciseLink": "https://youtu.be/URQ1Wn7lY3A"
-                                },
-                                {
-                                    "Exercise": "Machine Chest Press",
-                                    "ExerciseLink": "https://youtu.be/k1S_Any3NIA?t=240"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Standing Dumbbell Arnold Press",
-                            "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "7",
-                            "Rest": "~2-3 min",
-                            "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Seated DB Shoulder Press",
-                                    "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
-                                },
-                                {
-                                    "Exercise": "Machine Shoulder Press",
-                                    "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Day": "Pull #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Lat Pulldown (Feeder Sets)",
-                            "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
-                            "WarmupSets": 0,
-                            "WorkingSets": 4,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "7",
-                            "Rest": "~2-3 min",
-                            "Notes": "Gradually increase weight over sets, last set to failure.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Machine Pulldown",
-                                    "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
-                                },
-                                {
-                                    "Exercise": "Pull-Up",
-                                    "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Omni-Grip Machine Chest-Supported Row",
-                            "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "10-12",
-                            "MinReps": 10,
-                            "MaxReps": 12,
-                            "Load": 0,
-                            "RPE": "7",
-                            "Rest": "~2-3 min",
-                            "Notes": "Use 3 different grips, going from wider to closer.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Incline Chest-Supported DB Row",
-                                    "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
-                                },
-                                {
-                                    "Exercise": "Cable Seated Row",
-                                    "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "Day": "Legs #1",
-                    "Exercises": [
-                        {
-                            "Exercise": "Squat",
-                            "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
-                            "WarmupSets": "3-4",
-                            "WorkingSets": 1,
-                            "Reps": "2-4",
-                            "MinReps": 2,
-                            "MaxReps": 4,
-                            "Load": 0,
-                            "RPE": "7",
-                            "Rest": "~3-4 min",
-                            "Notes": "Sit back and down, keep upper back tight.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "Hack Squat",
-                                    "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
-                                },
-                                {
-                                    "Exercise": "DB Bulgarian Split Squat",
-                                    "ExerciseLink": "https://youtu.be/htDXu61MPio"
-                                }
-                            ]
-                        },
-                        {
-                            "Exercise": "Barbell RDL",
-                            "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
-                            "WarmupSets": 2,
-                            "WorkingSets": 3,
-                            "Reps": "8-10",
-                            "MinReps": 8,
-                            "MaxReps": 10,
-                            "Load": 0,
-                            "RPE": "7",
-                            "Rest": "~2-3 min",
-                            "Notes": "Maintain neutral lower back, push hips back.",
-                            "Substitutions": [
-                                {
-                                    "Exercise": "DB RDL",
-                                    "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
-                                },
-                                {
-                                    "Exercise": "45° Hyperextension",
-                                    "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+              ]
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "Week": 2,
+      "Workouts": [
+        {
+          "Day": "Push #1",
+          "Exercises": [
+            {
+              "Exercise": "Bench Press",
+              "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
+              "Warmup Sets": "3-4",
+              "Working Sets": "1",
+              "Reps": "3-5",
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
+              "Substitution Option 1": "DB Bench Press",
+              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
+              "Substitution Option 2": "Machine Chest Press",
+              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+            },
+            {
+              "Exercise": "Standing Dumbbell Arnold Press",
+              "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
+              "Substitutions": [
+                {
+                  "Exercise": "Seated DB Shoulder Press",
+                  "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                },
+                {
+                  "Exercise": "Machine Shoulder Press",
+                  "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Pull #1",
+          "Exercises": [
+            {
+              "Exercise": "Lat Pulldown (Feeder Sets)",
+              "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
+              "WarmupSets": 0,
+              "WorkingSets": 4,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "",
+              "Rest": "~2-3 min",
+              "Notes": "Gradually increase weight over sets, last set to failure.",
+              "Substitutions": [
+                {
+                  "Exercise": "Machine Pulldown",
+                  "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
+                },
+                {
+                  "Exercise": "Pull-Up",
+                  "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                }
+              ]
+            },
+            {
+              "Exercise": "Omni-Grip Machine Chest-Supported Row",
+              "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Use 3 different grips, going from wider to closer.",
+              "Substitutions": [
+                {
+                  "Exercise": "Incline Chest-Supported DB Row",
+                  "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
+                },
+                {
+                  "Exercise": "Cable Seated Row",
+                  "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Legs #1",
+          "Exercises": [
+            {
+              "Exercise": "Squat",
+              "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
+              "Reps": "2-4",
+              "MinReps": 2,
+              "MaxReps": 4,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Sit back and down, keep upper back tight.",
+              "Substitutions": [
+                {
+                  "Exercise": "Hack Squat",
+                  "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
+                },
+                {
+                  "Exercise": "DB Bulgarian Split Squat",
+                  "ExerciseLink": "https://youtu.be/htDXu61MPio"
+                }
+              ]
+            },
+            {
+              "Exercise": "Barbell RDL",
+              "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Maintain neutral lower back, push hips back.",
+              "Substitutions": [
+                {
+                  "Exercise": "DB RDL",
+                  "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
+                },
+                {
+                  "Exercise": "45° Hyperextension",
+                  "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Week": 3,
+      "Workouts": [
+        {
+          "Day": "Push #1",
+          "Exercises": [
+            {
+              "Exercise": "Bench Press",
+              "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
+              "Warmup Sets": "3-4",
+              "Working Sets": "1",
+              "Reps": "3-5",
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
+              "Substitution Option 1": "DB Bench Press",
+              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
+              "Substitution Option 2": "Machine Chest Press",
+              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+            },
+            {
+              "Exercise": "Standing Dumbbell Arnold Press",
+              "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
+              "Substitutions": [
+                {
+                  "Exercise": "Seated DB Shoulder Press",
+                  "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                },
+                {
+                  "Exercise": "Machine Shoulder Press",
+                  "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Pull #1",
+          "Exercises": [
+            {
+              "Exercise": "Lat Pulldown (Feeder Sets)",
+              "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
+              "WarmupSets": 0,
+              "WorkingSets": 4,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "",
+              "Rest": "~2-3 min",
+              "Notes": "Gradually increase weight over sets, last set to failure.",
+              "Substitutions": [
+                {
+                  "Exercise": "Machine Pulldown",
+                  "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
+                },
+                {
+                  "Exercise": "Pull-Up",
+                  "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                }
+              ]
+            },
+            {
+              "Exercise": "Omni-Grip Machine Chest-Supported Row",
+              "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Use 3 different grips, going from wider to closer.",
+              "Substitutions": [
+                {
+                  "Exercise": "Incline Chest-Supported DB Row",
+                  "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
+                },
+                {
+                  "Exercise": "Cable Seated Row",
+                  "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Legs #1",
+          "Exercises": [
+            {
+              "Exercise": "Squat",
+              "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
+              "Reps": "2-4",
+              "MinReps": 2,
+              "MaxReps": 4,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Sit back and down, keep upper back tight.",
+              "Substitutions": [
+                {
+                  "Exercise": "Hack Squat",
+                  "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
+                },
+                {
+                  "Exercise": "DB Bulgarian Split Squat",
+                  "ExerciseLink": "https://youtu.be/htDXu61MPio"
+                }
+              ]
+            },
+            {
+              "Exercise": "Barbell RDL",
+              "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Maintain neutral lower back, push hips back.",
+              "Substitutions": [
+                {
+                  "Exercise": "DB RDL",
+                  "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
+                },
+                {
+                  "Exercise": "45° Hyperextension",
+                  "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Week": 4,
+      "Workouts": [
+        {
+          "Day": "Push #1",
+          "Exercises": [
+            {
+              "Exercise": "Bench Press",
+              "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
+              "Warmup Sets": "3-4",
+              "Working Sets": "1",
+              "Reps": "3-5",
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
+              "Substitution Option 1": "DB Bench Press",
+              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
+              "Substitution Option 2": "Machine Chest Press",
+              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+            },
+            {
+              "Exercise": "Standing Dumbbell Arnold Press",
+              "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
+              "Substitutions": [
+                {
+                  "Exercise": "Seated DB Shoulder Press",
+                  "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                },
+                {
+                  "Exercise": "Machine Shoulder Press",
+                  "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Pull #1",
+          "Exercises": [
+            {
+              "Exercise": "Lat Pulldown (Feeder Sets)",
+              "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
+              "WarmupSets": 0,
+              "WorkingSets": 4,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "",
+              "Rest": "~2-3 min",
+              "Notes": "Gradually increase weight over sets, last set to failure.",
+              "Substitutions": [
+                {
+                  "Exercise": "Machine Pulldown",
+                  "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
+                },
+                {
+                  "Exercise": "Pull-Up",
+                  "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                }
+              ]
+            },
+            {
+              "Exercise": "Omni-Grip Machine Chest-Supported Row",
+              "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Use 3 different grips, going from wider to closer.",
+              "Substitutions": [
+                {
+                  "Exercise": "Incline Chest-Supported DB Row",
+                  "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
+                },
+                {
+                  "Exercise": "Cable Seated Row",
+                  "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Legs #1",
+          "Exercises": [
+            {
+              "Exercise": "Squat",
+              "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
+              "Reps": "2-4",
+              "MinReps": 2,
+              "MaxReps": 4,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Sit back and down, keep upper back tight.",
+              "Substitutions": [
+                {
+                  "Exercise": "Hack Squat",
+                  "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
+                },
+                {
+                  "Exercise": "DB Bulgarian Split Squat",
+                  "ExerciseLink": "https://youtu.be/htDXu61MPio"
+                }
+              ]
+            },
+            {
+              "Exercise": "Barbell RDL",
+              "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Maintain neutral lower back, push hips back.",
+              "Substitutions": [
+                {
+                  "Exercise": "DB RDL",
+                  "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
+                },
+                {
+                  "Exercise": "45° Hyperextension",
+                  "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Week": 5,
+      "Workouts": [
+        {
+          "Day": "Push #1",
+          "Exercises": [
+            {
+              "Exercise": "Bench Press",
+              "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
+              "Warmup Sets": "3-4",
+              "Working Sets": "1",
+              "Reps": "3-5",
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
+              "Substitution Option 1": "DB Bench Press",
+              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
+              "Substitution Option 2": "Machine Chest Press",
+              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+            },
+            {
+              "Exercise": "Standing Dumbbell Arnold Press",
+              "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
+              "Substitutions": [
+                {
+                  "Exercise": "Seated DB Shoulder Press",
+                  "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                },
+                {
+                  "Exercise": "Machine Shoulder Press",
+                  "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Pull #1",
+          "Exercises": [
+            {
+              "Exercise": "Lat Pulldown (Feeder Sets)",
+              "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
+              "WarmupSets": 0,
+              "WorkingSets": 4,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "",
+              "Rest": "~2-3 min",
+              "Notes": "Gradually increase weight over sets, last set to failure.",
+              "Substitutions": [
+                {
+                  "Exercise": "Machine Pulldown",
+                  "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
+                },
+                {
+                  "Exercise": "Pull-Up",
+                  "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                }
+              ]
+            },
+            {
+              "Exercise": "Omni-Grip Machine Chest-Supported Row",
+              "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Use 3 different grips, going from wider to closer.",
+              "Substitutions": [
+                {
+                  "Exercise": "Incline Chest-Supported DB Row",
+                  "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
+                },
+                {
+                  "Exercise": "Cable Seated Row",
+                  "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Legs #1",
+          "Exercises": [
+            {
+              "Exercise": "Squat",
+              "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
+              "Reps": "2-4",
+              "MinReps": 2,
+              "MaxReps": 4,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~3-4 min",
+              "Notes": "Sit back and down, keep upper back tight.",
+              "Substitutions": [
+                {
+                  "Exercise": "Hack Squat",
+                  "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
+                },
+                {
+                  "Exercise": "DB Bulgarian Split Squat",
+                  "ExerciseLink": "https://youtu.be/htDXu61MPio"
+                }
+              ]
+            },
+            {
+              "Exercise": "Barbell RDL",
+              "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "8-9",
+              "Rest": "~2-3 min",
+              "Notes": "Maintain neutral lower back, push hips back.",
+              "Substitutions": [
+                {
+                  "Exercise": "DB RDL",
+                  "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
+                },
+                {
+                  "Exercise": "45° Hyperextension",
+                  "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Week": 6,
+      "Workouts": [
+        {
+          "Day": "Push #1",
+          "Exercises": [
+            {
+              "Exercise": "Bench Press",
+              "ExerciseLink": "https://youtu.be/vcBig73ojpE?t=134",
+              "Warmup Sets": "3-4",
+              "Working Sets": "1",
+              "Reps": "3-5",
+              "RPE": "7",
+              "Rest": "~3-4 min",
+              "Notes": "Set up a comfortable arch, quick pause on the chest and explode up on each rep",
+              "Substitution Option 1": "DB Bench Press",
+              "Substitution Option 1 Link": "https://youtu.be/URQ1Wn7lY3A",
+              "Substitution Option 2": "Machine Chest Press",
+              "Substitution Option 2 Link": "https://youtu.be/k1S_Any3NIA?t=240"
+            },
+            {
+              "Exercise": "Standing Dumbbell Arnold Press",
+              "ExerciseLink": "https://www.youtube.com/watch?v=zOpA1Op0zvc",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "7",
+              "Rest": "~2-3 min",
+              "Notes": "Start with elbows in front, palms facing in, rotate outward while pressing.",
+              "Substitutions": [
+                {
+                  "Exercise": "Seated DB Shoulder Press",
+                  "ExerciseLink": "https://youtu.be/ae9IxwoEpQ8?t=507"
+                },
+                {
+                  "Exercise": "Machine Shoulder Press",
+                  "ExerciseLink": "https://www.youtube.com/watch?v=flr4ohSl0j8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Pull #1",
+          "Exercises": [
+            {
+              "Exercise": "Lat Pulldown (Feeder Sets)",
+              "ExerciseLink": "https://youtu.be/O94yEoGXtBY?t=150",
+              "WarmupSets": 0,
+              "WorkingSets": 4,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "7",
+              "Rest": "~2-3 min",
+              "Notes": "Gradually increase weight over sets, last set to failure.",
+              "Substitutions": [
+                {
+                  "Exercise": "Machine Pulldown",
+                  "ExerciseLink": "https://youtu.be/j8Q50oBDK44"
+                },
+                {
+                  "Exercise": "Pull-Up",
+                  "ExerciseLink": "https://youtu.be/Hdc7Mw6BIEE?t=99"
+                }
+              ]
+            },
+            {
+              "Exercise": "Omni-Grip Machine Chest-Supported Row",
+              "ExerciseLink": "https://youtu.be/w2YTOoDBOZg",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "10-12",
+              "MinReps": 10,
+              "MaxReps": 12,
+              "Load": 0,
+              "RPE": "7",
+              "Rest": "~2-3 min",
+              "Notes": "Use 3 different grips, going from wider to closer.",
+              "Substitutions": [
+                {
+                  "Exercise": "Incline Chest-Supported DB Row",
+                  "ExerciseLink": "https://youtu.be/bsx8PIGIuaI"
+                },
+                {
+                  "Exercise": "Cable Seated Row",
+                  "ExerciseLink": "https://youtu.be/FbWfA_s0XL8?t=273"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Day": "Legs #1",
+          "Exercises": [
+            {
+              "Exercise": "Squat",
+              "ExerciseLink": "https://youtu.be/bEv6CCg2BC8?t=147",
+              "WarmupSets": "3-4",
+              "WorkingSets": 1,
+              "Reps": "2-4",
+              "MinReps": 2,
+              "MaxReps": 4,
+              "Load": 0,
+              "RPE": "7",
+              "Rest": "~3-4 min",
+              "Notes": "Sit back and down, keep upper back tight.",
+              "Substitutions": [
+                {
+                  "Exercise": "Hack Squat",
+                  "ExerciseLink": "https://youtu.be/wEgQUCdtFLg"
+                },
+                {
+                  "Exercise": "DB Bulgarian Split Squat",
+                  "ExerciseLink": "https://youtu.be/htDXu61MPio"
+                }
+              ]
+            },
+            {
+              "Exercise": "Barbell RDL",
+              "ExerciseLink": "https://youtu.be/_oyxCn2iSjU?t=95",
+              "WarmupSets": 2,
+              "WorkingSets": 3,
+              "Reps": "8-10",
+              "MinReps": 8,
+              "MaxReps": 10,
+              "Load": 0,
+              "RPE": "7",
+              "Rest": "~2-3 min",
+              "Notes": "Maintain neutral lower back, push hips back.",
+              "Substitutions": [
+                {
+                  "Exercise": "DB RDL",
+                  "ExerciseLink": "https://youtu.be/V5u2AP9wBwE"
+                },
+                {
+                  "Exercise": "45° Hyperextension",
+                  "ExerciseLink": "https://youtu.be/J46aPqFl0WE?t=178"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
