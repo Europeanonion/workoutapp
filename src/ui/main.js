@@ -7,12 +7,12 @@
     // Global error handlers
     window.addEventListener('unhandledrejection', event => {
         console.error('Unhandled promise rejection:', event.reason);
-        showToast("An unexpected error occurred", "danger");
+        handlePageError(event.reason);
     });
 
     window.addEventListener('error', event => {
         console.error('Global error:', event.error);
-        showToast("An unexpected error occurred", "danger");
+        handlePageError(event.error);
     });
 
     let entriesPerPage = 10;
@@ -898,4 +898,16 @@
      * Initialize and Start Application on Window Load
      */
     window.addEventListener("load", init);
+
+    function handlePageError(error, redirectTo = '/') {
+        console.error('[Error Handler]', error);
+        if (error.status === 404) {
+            window.location.href = '/404.html';
+        } else {
+            showToast("An unexpected error occurred", "danger");
+            if (redirectTo) {
+                setTimeout(() => window.location.href = redirectTo, 2000);
+            }
+        }
+    }
 })();
