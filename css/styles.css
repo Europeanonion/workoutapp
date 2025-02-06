@@ -152,3 +152,40 @@ body.dark-mode {
     padding: 12px; /* Larger touch targets */
   }
 }
+
+.skeleton-loader {
+    animation: loading 1.5s infinite;
+}
+
+.skeleton-loader .skeleton-title {
+    height: 24px;
+    background: #f0f0f0;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.skeleton-loader .skeleton-inputs {
+    height: 80px;
+    background: #f0f0f0;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.skeleton-loader .skeleton-text {
+    height: 40px;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.loading-text {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@keyframes loading {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}

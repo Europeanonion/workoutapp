@@ -20,7 +20,17 @@
     console.log(`[Workout] Fetching workout data from: ${phaseUrl}`);
 
     try {
-        const response = await fetch(phaseUrl);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+        const response = await fetch(phaseUrl, {
+            signal: controller.signal,
+            headers: {
+                'Cache-Control': 'no-cache'
+            }
+        });
+
+        clearTimeout(timeoutId);
         console.log("[Workout] Response Status:", response.status);
 
         if (!response.ok) {
@@ -28,14 +38,32 @@
         }
 
         const data = await response.json();
-        console.log("[Workout] Workout Data:", data);
+        
+        if (!validateWorkoutData(data)) {
+            throw new Error('Invalid workout data structure');
+        }
 
+        console.log("[Workout] Workout Data:", data);
         return data;
     } catch (error) {
-        console.error("[Workout] JSON Load Error:", error);
-        showToast("Error loading workout data. Please try again later.", "danger");
-        throw error; // Re-throw to allow further handling if needed
+        if (error.name === 'AbortError') {
+            console.error("[Workout] Request timeout");
+            showToast("Request timeout. Please check your connection.", "danger");
+        } else {
+            console.error("[Workout] JSON Load Error:", error);
+            showToast("Error loading workout data. Please try again later.", "danger");
+        }
+        throw error;
     }
+  }
+
+  function validateWorkoutData(data) {
+    return data?.Phase && 
+           Array.isArray(data?.Weeks) && 
+           data.Weeks.every(week => 
+               week.Week && 
+               Array.isArray(week.Workouts)
+           );
   }
 
    /**
@@ -43,42 +71,54 @@
    * @param {object} data - The workout data
    */
   function displayWorkout(data) {
-    console.log("[Workout] JSON Data Received:", data);
     const container = document.getElementById('workout-container');
-  
+    const fragment = document.createDocumentFragment();
+    
     try {
-      // Normalize data structure
-      const normalizedData = {
-        weeks: (data.Weeks || data.weeks || []).map(week => ({
-          week: week.Week || week.week,
-          workouts: (week.Workouts || week.workouts || []).map(workout => ({
-            day: workout.Day || workout.day,
-            exercises: (workout.Exercises || workout.exercises || [])
-          }))
-        }))
-      };
-  
-      if (!normalizedData.weeks.length) {
-        throw new Error("Invalid workout data format");
-      }
-  
-      container.innerHTML = '';
-  
-      normalizedData.weeks.forEach(weekObj => {
-        weekObj.workouts.forEach(workoutDay => {
-          workoutDay.exercises.forEach((exercise, index) => {
-            const placeholder = createExercisePlaceholder(exercise, index);
-            container.appendChild(placeholder);
-            lazyLoadExercises(placeholder, exercise, index);
-          });
+        document.getElementById('loading-spinner').classList.remove('d-none');
+        
+        const normalizedData = {
+            weeks: (data.Weeks || data.weeks || []).map(week => ({
+                week: week.Week || week.week,
+                workouts: (week.Workouts || week.workouts || []).map(workout => ({
+                    day: workout.Day || workout.day,
+                    exercises: (workout.Exercises || workout.exercises || [])
+                }))
+            }))
+        };
+
+        normalizedData.weeks.forEach(week => {
+            const weekElement = document.createElement('div');
+            weekElement.className = 'week mb-4';
+            weekElement.innerHTML = `<h2>Week ${week.week}</h2>`;
+            
+            week.workouts.forEach(workout => {
+                const workoutElement = document.createElement('div');
+                workoutElement.className = 'workout mb-3';
+                workoutElement.innerHTML = `<h3>${workout.day}</h3>`;
+                
+                workout.exercises.forEach((exercise, index) => {
+                    const placeholder = createExercisePlaceholder(exercise, index);
+                    workoutElement.appendChild(placeholder);
+                    lazyLoadExercises(placeholder, exercise, index);
+                });
+                
+                weekElement.appendChild(workoutElement);
+            });
+            
+            fragment.appendChild(weekElement);
         });
-      });
+        
+        container.replaceChildren(fragment);
+        
     } catch (error) {
-      console.error("[Workout] Display error:", error);
-      container.innerHTML = '<div class="alert alert-danger">Failed to display workout data</div>';
-      showToast("Error displaying workout data", "danger");
+        console.error("[Workout] Display error:", error);
+        container.innerHTML = '<div class="alert alert-danger">Failed to display workout data</div>';
+        showToast("Error displaying workout data", "danger");
+    } finally {
+        document.getElementById('loading-spinner').classList.add('d-none');
     }
-  }
+}
 
  /**
    * Create Exercise Element
@@ -190,26 +230,33 @@
     const div = document.createElement('div');
     div.classList.add('exercise', 'col-md-6', 'mb-4', 'exercise-placeholder');
     div.dataset.exerciseIndex = index;
-    div.dataset.exerciseData = JSON.stringify(exercise);
-    div.innerHTML = '<div class="card shadow-sm p-3"><div class="placeholder-glow"><span class="placeholder col-12"></span></div></div>';
+    div.innerHTML = `
+        <div class="card shadow-sm p-3">
+            <div class="skeleton-loader">
+                <div class="skeleton-title"></div>
+                <div class="skeleton-inputs"></div>
+                <div class="skeleton-text"></div>
+                <div class="loading-text">Loading ${exercise.Exercise || 'exercise'}...</div>
+            </div>
+        </div>`;
     return div;
-  }
+}
 
-  function lazyLoadExercises(element, exercise, index) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const exerciseElement = createExerciseElement(exercise, index);
-          entry.target.replaceWith(exerciseElement);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      rootMargin: '50px',
-      threshold: 0.1
-    });
-
-    observer.observe(element);
-  }
+function lazyLoadExercises(placeholder, exercise, index) {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const exerciseElement = createExerciseElement(exercise, index);
+                    placeholder.replaceWith(exerciseElement);
+                    observer.disconnect();
+                }
+            });
+        },
+        { rootMargin: '100px', threshold: 0.1 }
+    );
+    
+    observer.observe(placeholder);
+}
 
 })();

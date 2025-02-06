@@ -16,25 +16,34 @@
    * Initialize the Application
    */
   function init() {
-    console.log("[Main] Initializing application.");
-
-    // Ensure PHASE_OPTIONS is defined
-    if (!window.PHASE_OPTIONS) {
-      window.PHASE_OPTIONS = [
-        { value: "data/workout_plan_phase_1_with_links.json", label: "Phase 1 - Base Hypertrophy" },
-        { value: "data/workout_plan_phase_2_with_links.json", label: "Phase 2 - Maximum Effort" },
-        { value: "data/workout_plan_phase_3_with_links.json", label: "Phase 3 - Hypertrophy & Endurance" }
-      ];
-      console.log("[Main] PHASE_OPTIONS was not defined. Default options have been set.");
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeComponents();
+        });
+    } else {
+        initializeComponents();
     }
+  }
 
-    populatePhaseSelector();
-    bindUIEvents();
-    loadSavedTheme();
-    loadSavedPhase();
-    initializeTooltips();
-    initializeGestures();
-    console.log("[Main] Application initialized successfully.");
+  /**
+   * Initialize all components
+   */
+  function initializeComponents() {
+    try {
+        populatePhaseSelector();
+        bindUIEvents();
+        loadSavedTheme();
+        loadSavedPhase();
+        initializeTooltips();
+        initializeGestures();
+        
+        // Show ready state
+        document.getElementById('loading-spinner').style.display = 'none';
+        showToast('App initialized successfully', 'success');
+    } catch (error) {
+        handleError(error, 'Initialization');
+    }
   }
 
   /**
@@ -64,33 +73,65 @@
    * Bind UI Events
    */
   function bindUIEvents() {
-    console.log("[Main] Binding UI events.");
-    document.getElementById("phase-selector").addEventListener("change", handlePhaseChange);
-    document.getElementById("reset-data-btn").addEventListener("click", resetAllData);
-    document.getElementById("export-csv-btn").addEventListener("click", exportCSV);
-    document.getElementById("filter-exercise").addEventListener("input", debounce(updateHistoryTable, 300));
-    document.getElementById("sort-select").addEventListener("change", updateHistoryTable);
-    document.getElementById("prev-page").addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        updateHistoryTable();
-        console.log(`[Main] Navigated to previous page: ${currentPage}`);
-      }
-    });
-    document.getElementById("next-page").addEventListener("click", () => {
-      const totalPages = Math.ceil(getFilteredData().length / entriesPerPage);
-      if (currentPage < totalPages) {
-        currentPage++;
-        updateHistoryTable();
-        console.log(`[Main] Navigated to next page: ${currentPage}`);
-      }
-    });
-    document.getElementById("theme-switch").addEventListener("change", toggleTheme);
+    // Phase selector
+    const phaseSelector = document.getElementById('phase-selector');
+    if (phaseSelector) {
+        phaseSelector.addEventListener('change', handlePhaseChange);
+    }
 
-    // Initialize history modal content when it's about to be shown
-    var historyModal = document.getElementById('historyModal');
-    historyModal.addEventListener('show.bs.modal', updateHistoryTable);
-    console.log("[Main] UI events bound successfully.");
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-switch');
+    if (themeToggle) {
+        themeToggle.addEventListener('change', toggleTheme);
+    }
+
+    // Export button
+    const exportBtn = document.getElementById('export-csv-btn');
+    if (exportBtn) {
+        exportBtn.addEventListener('click', exportCSV);
+    }
+
+    // Reset button
+    const resetBtn = document.getElementById('reset-data-btn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', resetAllData);
+    }
+
+    // Filter and sort
+    const filterInput = document.getElementById('filter-exercise');
+    if (filterInput) {
+        filterInput.addEventListener('input', debounce(updateHistoryTable, 300));
+    }
+
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', updateHistoryTable);
+    }
+
+    // Pagination
+    const prevBtn = document.getElementById('prev-page');
+    const nextBtn = document.getElementById('next-page');
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updateHistoryTable();
+            }
+        });
+        nextBtn.addEventListener('click', () => {
+            const totalPages = Math.ceil(getFilteredData().length / entriesPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                updateHistoryTable();
+            }
+        });
+    }
+
+    // History modal
+    const historyModal = document.getElementById('historyModal');
+    if (historyModal) {
+        historyModal.addEventListener('show.bs.modal', updateHistoryTable);
+    }
   }
 
   /**
