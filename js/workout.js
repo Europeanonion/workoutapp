@@ -87,44 +87,43 @@
    * @returns {HTMLElement} - The created exercise element
    */
  function createExerciseElement(exercise, index) {
-  console.log(`[Workout] Creating Exercise: ${exercise.Exercise || "Untitled"}`);
+  const normalized = normalizeExerciseData(exercise);
+  console.log(`[Workout] Creating Exercise: ${normalized.name}`);
 
-  // Ensure correct property mapping
-  const exerciseName = exercise.Exercise || exercise.name || "Unnamed Exercise";
-  const exerciseLink = exercise.ExerciseLink || exercise.link || "#";
-  const setsValue = getSavedValue(`sets_${index}`, exercise["Working Sets"] || exercise.WorkingSets || exercise.working_sets || 3);
-  const repsValue = getSavedValue(`reps_${index}`, exercise.Reps || exercise.reps || 10);
-  const loadValue = getSavedValue(`load_${index}`, exercise.Load || exercise.load || 0);
-
-  console.log(`[Workout] Exercise: ${exerciseName}, Sets: ${setsValue}, Reps: ${repsValue}, Load: ${loadValue}`);
-
-  // Create Exercise Card
   const exerciseDiv = document.createElement("div");
   exerciseDiv.classList.add("exercise", "col-md-6", "mb-4");
 
   exerciseDiv.innerHTML = `
     <div class="card shadow-sm p-3">
       <h2>
-        <a href="${sanitize(exerciseLink)}" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-external-link-alt me-2"></i> ${sanitize(exerciseName)}
+        <a href="${sanitize(normalized.link)}" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-external-link-alt me-2"></i> ${sanitize(normalized.name)}
         </a>
       </h2>
       <div class="row">
-        <div class="col-md-4 mb-3">
-          <label for="sets-${index}" class="form-label">Sets</label>
-          <input type="number" min="0" class="form-control" id="sets-${index}" value="${setsValue}" placeholder="e.g., 3" required />
+        <div class="col-md-3 mb-3">
+          <label for="warmup-sets-${index}" class="form-label">Warmup Sets</label>
+          <input type="number" min="0" class="form-control" id="warmup-sets-${index}" value="${normalized.warmupSets}" placeholder="e.g., 2" required />
         </div>
-        <div class="col-md-4 mb-3">
-          <label for="reps-${index}" class="form-label">Reps</label>
-          <input type="number" min="0" class="form-control" id="reps-${index}" value="${repsValue}" placeholder="e.g., 10" required />
+        <div class="col-md-3 mb-3">
+          <label for="sets-${index}" class="form-label">Working Sets</label>
+          <input type="number" min="0" class="form-control" id="sets-${index}" value="${normalized.workingSets}" placeholder="e.g., 3" required />
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-3 mb-3">
+          <label for="reps-${index}" class="form-label">Reps Range</label>
+          <div class="input-group">
+            <input type="number" min="0" class="form-control" id="min-reps-${index}" value="${normalized.minReps}" required />
+            <span class="input-group-text">-</span>
+            <input type="number" min="0" class="form-control" id="max-reps-${index}" value="${normalized.maxReps}" required />
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
           <label for="load-${index}" class="form-label">Load (kg)</label>
-          <input type="number" min="0" class="form-control" id="load-${index}" value="${loadValue}" placeholder="Weight" required />
+          <input type="number" min="0" class="form-control" id="load-${index}" value="${normalized.load}" placeholder="Weight" required />
         </div>
       </div>
-      <p class="mb-2"><strong>Rest:</strong> ${sanitize(exercise.Rest || 'N/A')}</p>
-      <p class="mb-2"><strong>Notes:</strong> ${sanitize(exercise.Notes || 'No notes available')}</p>
+      <p class="mb-2"><strong>Rest:</strong> ${sanitize(normalized.rest)}</p>
+      <p class="mb-2"><strong>Notes:</strong> ${sanitize(normalized.notes)}</p>
       <button class="btn btn-primary mt-2" id="save-btn-${index}">
         <i class="fas fa-save me-2"></i> Save
       </button>
@@ -177,9 +176,13 @@
       name: exercise.Exercise || exercise.name || "Unnamed Exercise",
       link: exercise.ExerciseLink || exercise.link || "#",
       workingSets: exercise["Working Sets"] || exercise.WorkingSets || 3,
+      warmupSets: exercise["Warmup Sets"] || exercise.WarmupSets || 2,
       reps: exercise.Reps || exercise.reps || "10-12",
-      rest: exercise.Rest || "~2-3 min",
-      notes: exercise.Notes || "No notes available"
+      minReps: exercise.MinReps || parseInt(exercise.Reps) || 10,
+      maxReps: exercise.MaxReps || parseInt(exercise.Reps) || 12,
+      load: exercise.Load || exercise.load || 0,
+      rest: exercise.Rest || exercise.rest || "~2-3 min",
+      notes: exercise.Notes || exercise.notes || "No notes available"
     };
   }
 
