@@ -2,6 +2,11 @@ import { STORAGE_KEYS } from '../core/constants.js';
 import { showToast } from '../core/utils.js';
 
 export class StorageService {
+    constructor() {
+        this.cache = new Map();
+        this.cacheTimeout = 5 * 60 * 1000; // 5 minutes
+    }
+
     /**
      * @typedef {Object} WorkoutData
      * @property {string} Phase - The workout phase name
@@ -35,9 +40,25 @@ export class StorageService {
     }
 
     getValue(key, defaultValue = null) {
+        // Check memory cache first
+        if (this.cache.has(key)) {
+            const {value, timestamp} = this.cache.get(key);
+            if (Date.now() - timestamp < this.cacheTimeout) {
+                return value;
+            }
+            this.cache.delete(key);
+        }
+
         try {
             const value = localStorage.getItem(key);
-            return value ? JSON.parse(value) : defaultValue;
+            if (value) {
+                const parsed = JSON.parse(value);
+                this.cache.set(key, {
+                    value: parsed,
+                    timestamp: Date.now()
+                });
+                return parsed;
+            }
         } catch {
             return defaultValue;
         }
@@ -173,6 +194,13 @@ export class StorageService {
                 const trimmedHistory = history.slice(-MAX_HISTORY_ITEMS);
                 this.setValue(STORAGE_KEYS.WORKOUT_HISTORY, trimmedHistory);
                 console.log(`[Storage] Cleaned up history to ${MAX_HISTORY_ITEMS} items`);
+            }
+            
+            // Clear old cache entries
+            for (const [key, {timestamp}] of this.cache) {
+                if (Date.now() - timestamp > this.cacheTimeout) {
+                    this.cache.delete(key);
+                }
             }
         } catch (error) {
             console.error('[Storage] Cleanup failed:', error);

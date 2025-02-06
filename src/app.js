@@ -2,7 +2,7 @@ import { StorageService } from './services/storage.js';
 import { WorkoutService } from './services/workout.js';
 import { WorkoutState } from './core/state.js';
 import { WorkoutView } from './views/WorkoutView.js';
-import { HistoryView } from './views/HistoryView.js';
+import { WorkoutHistoryView } from './views/WorkoutHistoryView.js';
 
 class App {
     constructor() {
@@ -23,14 +23,12 @@ class App {
     initViews() {
         this.workoutView = new WorkoutView(
             document.querySelector('#workout-container'),
-            this.workoutService,
-            this.storageService
+            this.state
         );
 
-        this.historyView = new HistoryView(
+        this.historyView = new WorkoutHistoryView(
             document.querySelector('#history-container'),
-            this.workoutService,
-            this.storageService
+            this.state
         );
     }
 }
