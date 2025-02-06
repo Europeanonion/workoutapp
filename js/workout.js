@@ -45,16 +45,27 @@
   function displayWorkout(data) {
     console.log("[Workout] JSON Data Received:", data);
     const container = document.getElementById('workout-container');
-    
+  
     try {
-      if (!data || !data.weeks) {
+      // Normalize data structure
+      const normalizedData = {
+        weeks: (data.Weeks || data.weeks || []).map(week => ({
+          week: week.Week || week.week,
+          workouts: (week.Workouts || week.workouts || []).map(workout => ({
+            day: workout.Day || workout.day,
+            exercises: (workout.Exercises || workout.exercises || [])
+          }))
+        }))
+      };
+  
+      if (!normalizedData.weeks.length) {
         throw new Error("Invalid workout data format");
       }
   
       container.innerHTML = '';
   
-      data.weeks.forEach((weekObj) => {
-        weekObj.workouts.forEach((workoutDay) => {
+      normalizedData.weeks.forEach(weekObj => {
+        weekObj.workouts.forEach(workoutDay => {
           workoutDay.exercises.forEach((exercise, index) => {
             const placeholder = createExercisePlaceholder(exercise, index);
             container.appendChild(placeholder);
