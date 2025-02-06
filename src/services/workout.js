@@ -1,3 +1,7 @@
+import { fetchWithRetry, showToast, sanitize } from '../core/utils.js';
+import { state } from '../core/state.js';
+import { PHASE_OPTIONS } from '../core/constants.js';
+
 // js/workout.js
 
 (function() {
