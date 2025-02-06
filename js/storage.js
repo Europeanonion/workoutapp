@@ -210,6 +210,72 @@ function cleanupStorage() {
   }
 }
 
+/**
+ * Batch save multiple workout data entries
+ * @param {Array<{index: number, data: object}>} exercises - Array of exercise data to save
+ * @returns {Promise<void>} - Promise that resolves when all saves are complete
+ */
+function batchSaveWorkoutData(exercises) {
+  const operations = exercises.map(({index, data}) =>
+    saveWorkoutData(index, data)
+  );
+  return Promise.all(operations);
+}
+
+/**
+ * Save Complete Workout Session
+ */
+async function saveWorkoutSession(sessionData) {
+  try {
+    const { exercises, date, phase } = sessionData;
+    const operations = [];
+
+    // Batch save exercise data
+    operations.push(batchSaveWorkoutData(exercises));
+
+    // Save session history
+    const historyEntry = {
+      date,
+      phase,
+      exercises: exercises.map(({ exercise, sets, reps, load }) => ({
+        exercise, sets, reps, load,
+        volume: sets * reps * load
+      }))
+    };
+    operations.push(saveWorkoutHistory(historyEntry));
+
+    await Promise.all(operations);
+    console.log('[Storage] Workout session saved successfully');
+    return true;
+  } catch (error) {
+    console.error('[Storage] Failed to save workout session:', error);
+    showToast("Failed to save workout session", "danger");
+    return false;
+  }
+}
+
+/**
+ * Optimize Storage Space
+ */
+function optimizeStorage() {
+  try {
+    // Clean up old history entries
+    cleanupStorage();
+    
+    // Remove cached data for unused phases
+    const currentPhase = getSelectedPhase();
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith('cached_') && !key.includes(currentPhase)) {
+        localStorage.removeItem(key);
+      }
+    });
+    
+    console.log('[Storage] Storage optimization complete');
+  } catch (error) {
+    console.error('[Storage] Storage optimization failed:', error);
+  }
+}
+
 // Expose functions to the global scope if needed
 window.saveWorkoutData = saveWorkoutData;
 window.getWorkoutData = getWorkoutData;
@@ -222,3 +288,6 @@ window.getTheme = getTheme;
 window.clearWorkoutData = clearWorkoutData;
 window.getSavedValue = getSavedValue;
 window.saveValue = saveValue;
+window.batchSaveWorkoutData = batchSaveWorkoutData;
+window.saveWorkoutSession = saveWorkoutSession;
+window.optimizeStorage = optimizeStorage;

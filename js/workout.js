@@ -1,6 +1,9 @@
 // js/workout.js
 
 (function() {
+  // Add workout cache
+  const workoutCache = new Map();
+  
   // Constants and Configuration
   const PHASE_OPTIONS = [
     { value: "data/workout_plan_phase_1_with_links.json", label: "Phase 1 - Base Hypertrophy" },
@@ -17,43 +20,28 @@
    * @returns {Promise<Object>} - The workout data JSON
    */
   async function fetchWorkoutData(phaseUrl) {
-    console.log(`[Workout] Fetching workout data from: ${phaseUrl}`);
+    // Check cache first
+    if (workoutCache.has(phaseUrl)) {
+      console.log(`[Workout] Cache hit for ${phaseUrl}`);
+      return workoutCache.get(phaseUrl);
+    }
 
+    showLoadingState(true);
     try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-        const response = await fetch(phaseUrl, {
-            signal: controller.signal,
-            headers: {
-                'Cache-Control': 'no-cache'
-            }
-        });
-
-        clearTimeout(timeoutId);
-        console.log("[Workout] Response Status:", response.status);
-
-        if (!response.ok) {
-            throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        
-        if (!validateWorkoutData(data)) {
-            throw new Error('Invalid workout data structure');
-        }
-
-        console.log("[Workout] Workout Data:", data);
-        return data;
+      const response = await fetchWithRetry(phaseUrl);
+      if (!validateWorkoutData(response)) {
+        throw new Error('Invalid workout data structure');
+      }
+      // Cache the response
+      workoutCache.set(phaseUrl, response);
+      console.log(`[Workout] Cached data for ${phaseUrl}`);
+      return response;
     } catch (error) {
-        if (error.name === 'AbortError') {
-            console.error("[Workout] Request timeout");
-            showToast("Request timeout. Please check your connection.", "danger");
-        } else {
-            console.error("[Workout] JSON Load Error:", error);
-            showToast("Error loading workout data. Please try again later.", "danger");
-        }
-        throw error;
+      console.error('[Workout] Error in fetchWorkoutData:', error);
+      showToast("Failed to load workout data", "danger");
+      return null;
+    } finally {
+      showLoadingState(false);
     }
   }
 
@@ -71,6 +59,13 @@
    * @param {object} data - The workout data
    */
   function displayWorkout(data) {
+    const newState = JSON.stringify(data);
+    if (newState === previousWorkoutState) {
+      console.log('[Workout] Skipping render - no state change');
+      return;
+    }
+    previousWorkoutState = newState;
+
     const container = document.getElementById('workout-container');
     const fragment = document.createDocumentFragment();
     
@@ -258,5 +253,38 @@ function lazyLoadExercises(placeholder, exercise, index) {
     
     observer.observe(placeholder);
 }
+
+function showLoadingState(isLoading) {
+    const spinner = document.getElementById('loading-spinner');
+    const container = document.getElementById('workout-container');
+    spinner.style.display = isLoading ? 'block' : 'none';
+    container.style.opacity = isLoading ? '0.5' : '1';
+}
+
+async function fetchWithRetry(url, retries = 3) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            const response = await fetch(url);
+            if (response.ok) return response.json();
+        } catch (error) {
+            if (i === retries - 1) throw error;
+            await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, i)));
+        }
+    }
+}
+
+// Add state tracking for render optimization
+let previousWorkoutState = null;
+
+/**
+ * Clear Workout Cache
+ */
+function clearWorkoutCache() {
+  workoutCache.clear();
+  console.log('[Workout] Cache cleared');
+}
+
+// Expose additional functions
+window.clearWorkoutCache = clearWorkoutCache;
 
 })();
