@@ -1,5 +1,5 @@
 import { StorageService } from '../services/storage.js';
-import { WorkoutState } from './state.js';
+import { WorkoutState } from './WorkoutState.js';
 
 export function initializeServices() {
     const storageService = new StorageService();

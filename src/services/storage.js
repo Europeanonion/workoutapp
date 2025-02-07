@@ -216,30 +216,12 @@ export class StorageService {
 
     async saveWorkoutSession(sessionData) {
         try {
-            const { exercises, date, phase } = sessionData;
-            if (!exercises?.length || !date || !phase) {
-                throw new Error('Invalid session data format');
-            }
-            const operations = [];
-
-            operations.push(this.batchSaveWorkoutData(exercises));
-
-            const historyEntry = {
-                date,
-                phase,
-                exercises: exercises.map(({ exercise, sets, reps, load }) => ({
-                    exercise, sets, reps, load,
-                    volume: sets * reps * load
-                }))
-            };
-            operations.push(this.saveWorkoutHistory(historyEntry));
-
-            await Promise.all(operations);
-            console.log('[Storage] Workout session saved successfully');
+            const sessions = await this.getWorkoutSessions() || [];
+            sessions.push(sessionData);
+            localStorage.setItem('workoutSessions', JSON.stringify(sessions));
             return true;
         } catch (error) {
-            console.error('[Storage] Failed to save workout session:', error);
-            showToast("Failed to save workout session", "danger");
+            console.error("Error saving workout session:", error);
             return false;
         }
     }

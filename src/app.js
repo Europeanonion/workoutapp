@@ -1,34 +1,22 @@
-import { StorageService } from './services/storage.js';
-import { WorkoutService } from './services/workout.js';
-import { WorkoutState } from './core/state.js';
+import { initializeServices } from './core/di.js';
 import { WorkoutView } from './views/WorkoutView.js';
 import { WorkoutHistoryView } from './views/WorkoutHistoryView.js';
 
 class App {
     constructor() {
-        this.initServices();
-        this.initState();
-        this.initViews();
+        const services = initializeServices();
+        this.initViews(services.workoutState);
     }
 
-    initServices() {
-        this.storageService = new StorageService();
-        this.workoutService = new WorkoutService(this.storageService);
-    }
-
-    initState() {
-        this.state = new WorkoutState(this.storageService);
-    }
-
-    initViews() {
+    initViews(state) {
         this.workoutView = new WorkoutView(
             document.querySelector('#workout-container'),
-            this.state
+            state
         );
 
         this.historyView = new WorkoutHistoryView(
             document.querySelector('#history-container'),
-            this.state
+            state
         );
     }
 }
